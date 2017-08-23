@@ -23,9 +23,9 @@ class App extends Component {
         <Website url={"https://wry-noise.herokuapp.com/"}/>
         <Website url={"https://drinking-buddies.herokuapp.com/"}/>
         <Website url={"http://eatertain_me.surge.sh/"}/>
+        <Website url={"http://musicator.surge.sh/"}/>
         <Website url={"http://senbenito.surge.sh/"}/>
         <Website url={"http://utopian-locket.surge.sh/"}/>
-        <Website url={"http://musicator.surge.sh/"}/>
       </div>
     );
   }

@@ -11,7 +11,7 @@
   height: 80px;
 }
 .App-logo3 {
-  animation: App-logo-spin infinite 21s frames(10);
+  animation: App-logo-spin infinite 21s cubic-bezier(0.1, 0.7, 1.0, 0.1);;
   height: 80px;
 }
 .App-logo4 {
@@ -19,7 +19,7 @@
   height: 80px;
 }
 .App-logo5 {
-  animation: App-logo-spin infinite 21s frames(10);
+  animation: App-logo-spin infinite 21s cubic-bezier(0.1, 0.7, 1.0, 0.1);;
   height: 80px;
 }
 .App-logo6 {
