@@ -39,23 +39,22 @@ export default class Login extends React.Component{
   notify=(message)=>toast(message);
 
   async handleSubmit(event) {
-   event.preventDefault();
-   this.notify(`Hey, ${this.state.username}. You down? We'll see....`);
-   const response = await fetch('https://senbenito-server.herokuapp.com/login',
-   {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-    },
-    body: qs.stringify(this.state)
-   })
-   if (response.status !== 200) return this.notify(`Could not login: ${this.state.username}`);
-   const data = await response.json();
-   this.notify(`Righteous. ${data.username}, welcome to the fun!`);
-  //  let pathEnd = data.url;
-  //  setTimeout(()=>{
-  //    this._reactInternalInstance._context.router.history.push(pathEnd, null);}
-  //    , 1500);
+    event.preventDefault();
+    this.notify(`Hey, ${this.state.username}. You down? We'll see....`);
+    const response = await fetch('https://senbenito-server.herokuapp.com/login',
+      {method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      body: qs.stringify(this.state)});
+    if (response.status !== 200) return this.notify(`Could not login: ${this.state.username}`);
+    const data = await response.json();
+    this.notify(`Righteous. Welcome to the fun, ${data.greeting}`);
+    let pathEnd = data.url;
+    //before VVVVV implement Router and create /addwebsite component
+    // setTimeout(()=>{
+    //  this._reactInternalInstance._context.router.history.push(pathEnd, null);}
+    //  , 1500);
   }
 
   render(){
