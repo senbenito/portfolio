@@ -23,6 +23,7 @@ I knew I wasn't done making websites and wanting to show them off. Rather than m
 
 Here's the [personal-server](https://github.com/senbenito/personal-server) repo to dive into this crucial step.
 
-HOLD ON! Someone else could Post to my website database, so let's bring in some basic authentication via [Bcrypt](https://www.npmjs.com/package/bcrypt) and allow user persistence via [JSON Web Tokens](https://www.npmjs.com/package/jsonwebtoken).
+HOLD ON! Someone else could Post to my website database, so let's bring in some basic authentication via [BcryptJS](https://www.npmjs.com/package/bcryptjs) and allow user persistence via [JSON Web Tokens](https://www.npmjs.com/package/jsonwebtoken).
 
 At this point, I'm loving Polymorphism because I've just added some serious backend functionality with a few NPM packages; rock on modularity!!!
+_note: I started out with Bcrypt, but ELF header errors plagued my Heroku build, so I finally found BcryptJS which is slower... but works!_
