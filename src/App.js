@@ -7,29 +7,21 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      websites:[
-        {id: 8,
-        url: 'https://serene-green.herokuapp.com/',
-        title:'Serene'},
-
-        {id: 7,
-        url: 'http://checkout-vr.surge.sh/',
-        title:'Checkout VR'},
-      ],
+      websites:[],
     }
-    // this.fetchPlaces = this.fetchPlaces.bind(this);
+    this.fetchPlaces = this.fetchPlaces.bind(this);
   }
 
-  // async fetchPlaces(){
-  //   const response = await fetch('https://senbenito-server.herokuapp.com/sites');
-  //   const websites = await response.json()
-  //   this.setState({
-  //     websites: websites
-  //   });
-  // }
+  async fetchPlaces(){
+    const response = await fetch('https://senbenito-server.herokuapp.com/sites');
+    const websites = await response.json()
+    this.setState({
+      websites: websites
+    });
+  }
 
   componentWillMount() {
-    // this.fetchPlaces();
+    this.fetchPlaces();
   }
 
   render() {
