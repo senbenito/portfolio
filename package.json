@@ -7,7 +7,10 @@
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.2",
     "react-dom": "^15.6.1",
+<<<<<<< HEAD:package.json
     "react-router-dom": "^4.2.2",
+=======
+>>>>>>> 7de08b79ca75f4a304bb52b9f06cf633ed619e14:package.json
     "react-scripts": "1.0.11",
     "react-toastify": "^2.0.0"
   },
