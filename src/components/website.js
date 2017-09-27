@@ -1,6 +1,12 @@
 import React from 'react';
 
 export default class Website extends React.Component{
+<<<<<<< HEAD
+=======
+  constructor(props){
+     super(props)
+   }
+>>>>>>> 7de08b79ca75f4a304bb52b9f06cf633ed619e14
    render(){
       return(
          <div>
