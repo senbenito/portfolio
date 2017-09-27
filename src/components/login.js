@@ -41,8 +41,7 @@ export default class Login extends React.Component{
   async handleLogin(event) {
     event.preventDefault();
     this.notify(`Hey, ${this.state.username}. You down? We'll see....`);
-    // const response = await fetch('https://senbenito-server.herokuapp.com/login',
-    const response = await fetch('http://localhost:6969/login',
+    const response = await fetch('https://senbenito-server.herokuapp.com/login',
       {method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
@@ -74,7 +73,7 @@ export default class Login extends React.Component{
       <img className={this.state.chickenClass} src="https://orig00.deviantart.net/c283/f/2014/021/5/2/chicken_caw_animation_by_captaintoog-d7338wq.gif" alt="./chicken_caw_animation_by_captaintoog-d7338wq.gif" onClick={this.toggleForm}/>
     )
     return(
-      <div>
+      <div className="chicken">
         <ToastContainer
          position="top-right"
          type="default"

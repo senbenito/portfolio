@@ -26,13 +26,12 @@ export default class AddWebsite extends React.Component{
   async handleSubmit(event) {
     event.preventDefault();
     this.notify(`Yeah buddy! You made another site!! Let's add ${this.state.title}`);
-    // const response = await fetch('https://senbenito-server.herokuapp.com/sites',
-    const response = await fetch('http://localhost:6969/sites',
+    const response = await fetch('https://senbenito-server.herokuapp.com/sites',
       {method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
-      credentials: 'include', 
+      credentials: 'include',
       body: qs.stringify(this.state)});
     if (response.status !== 200) {
       this.notify(`Something went wrong, dude.`)
