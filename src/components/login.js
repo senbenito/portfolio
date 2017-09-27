@@ -47,6 +47,7 @@ export default class Login extends React.Component{
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
+      credentials: 'include',
       body: qs.stringify(this.state)});
     this.setState({
       hideForm: !this.state.hideForm,

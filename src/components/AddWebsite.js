@@ -32,6 +32,7 @@ export default class AddWebsite extends React.Component{
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
+      credentials: 'include', 
       body: qs.stringify(this.state)});
     if (response.status !== 200) {
       this.notify(`Something went wrong, dude.`)
