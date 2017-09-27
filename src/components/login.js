@@ -13,7 +13,7 @@ export default class Login extends React.Component{
        username: '',
        password: ''
      };
-      this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleLogin = this.handleLogin.bind(this);
    };
 
   toggleForm=()=>{
@@ -28,7 +28,7 @@ export default class Login extends React.Component{
     } , 1500)
   };
 
-  handleChange=(event)=>{
+  handleInput=(event)=>{
     const value = event.target.value;
     const name = event.target.name;
     this.setState({
@@ -38,10 +38,11 @@ export default class Login extends React.Component{
 
   notify=(message)=>toast(message);
 
-  async handleSubmit(event) {
+  async handleLogin(event) {
     event.preventDefault();
     this.notify(`Hey, ${this.state.username}. You down? We'll see....`);
-    const response = await fetch('https://senbenito-server.herokuapp.com/login',
+    // const response = await fetch('https://senbenito-server.herokuapp.com/login',
+    const response = await fetch('http://localhost:6969/login',
       {method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
@@ -62,9 +63,9 @@ export default class Login extends React.Component{
 
   render(){
     const LoginForm = () => (
-      <form onSubmit={this.handleSubmit}>
-        <input placeholder="username" name="username" type="text" value={this.state.username} onChange={this.handleChange} />
-        <input placeholder="password" name="password" type="password" value={this.state.password} onChange={this.handleChange} />
+      <form onSubmit={this.handleLogin}>
+        <input placeholder="username" name="username" type="text" value={this.state.username} onChange={this.handleInput} />
+        <input placeholder="password" name="password" type="password" value={this.state.password} onChange={this.handleInput} />
         <input type="submit" value="Submit" />
       </form>
     )
