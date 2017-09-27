@@ -19,7 +19,7 @@ export default class Login extends React.Component{
 
   toggleForm=()=>{
     this.setState({
-      chickenClass: 'chickenReveal'
+      chickenClass: 'chickenRoll'
     });
     setTimeout(()=>{
       this.setState({

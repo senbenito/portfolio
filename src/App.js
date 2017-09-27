@@ -6,7 +6,7 @@ import Portfolio from './components/Portfolio.js';
 import AddWebsite from './components/AddWebsite.js';
 
 const App = () => (
-  <div className="Home-header">
+  <div>
     <Login />
     <div id="React-body">
       <Route exact path="/" component={Portfolio}/>

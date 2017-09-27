@@ -26,7 +26,7 @@ export default class Portfolio extends Component {
   render() {
     return (
       <div className="portfolio">
-        Hey! Check it out... this is some of the neat stuff <a href="https://github.com/senbenito">senbenito</a> has crafted:
+        <h3>this is some of the neat stuff <a href="https://github.com/senbenito">senbenito</a> has crafted:</h3>
 
         {this.state.websites.map(website =>
           <Website

@@ -1,5 +1,12 @@
-.App, .portfolio, .chicken {
+.chicken {
   text-align: center;
+  background-color: #3f3344;
+  background: repeating-linear-gradient(45deg, #998090 0%, #998090 10%, #3f3344 0%, #3f3344 50%) 0 / 15px 15px;
+}
+
+.portfolio {
+  text-align: center;
+  color: white;
   background-image: url('./rfm25es1j2iz.jpg');
 }
 
@@ -14,9 +21,50 @@
   animation: chicken-spin infinite 7s ease-in;
   height: 80px;
 }
-.chickenReveal {
-  animation: 1.7s linear 0s 1 alternate move_chicken;
+
+.chickenRoll {
+  animation: 1.7s linear 0s 1 alternate rollOut;
   height: 80px;
+}
+
+h1{
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  color: #B6FF00;
+  font-family: 'Monoton', cursive;
+  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+
+h1:hover {
+  color: #B6FF00;
+  -webkit-animation: none;
+  -moz-animation: none;
+  animation: none;
+}
+
+.hover-glow, h3{
+  font-family: 'Monoton', cursive;
+  color: #B6FF00;
+  -webkit-animation: none;
+  -moz-animation: none;
+  animation: none;
+  margin-left: 12px;
+}
+
+.hover-glow:hover, h3:hover {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  color: #B6FF00;
+  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+  margin-left: 12px;
 }
 
 form {
@@ -24,7 +72,7 @@ form {
   padding-top: 20px;
 }
 
-.App-header {
+/*.App-header {
   background-color: #222;
   height: 150px;
   padding: 20px;
@@ -33,14 +81,29 @@ form {
 
 .App-intro {
   font-size: large;
-}
+}*/
 
-@keyframes move_chicken {
-  from { margin-left: -20%; }
-  to   { margin-right: 100%; }
-}
-
-@keyframes chicken-spin {
+@-webkit-keyframes chicken-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@-webkit-keyframes rollOut {
+   0% {
+      opacity: 1;
+      transform: translateX(0px) rotate(0deg);
+   }
+   100% {
+      opacity: 0;
+      transform: translateX(-100%) rotate(320deg);
+   }
+}
+
+@-webkit-keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #B6FF00, 0 0 70px #B6FF00, 0 0 80px #B6FF00, 0 0 100px #B6FF00, 0 0 150px #B6FF00;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #B6FF00, 0 0 35px #B6FF00, 0 0 40px #B6FF00, 0 0 50px #B6FF00, 0 0 75px #B6FF00;
+  }
 }
