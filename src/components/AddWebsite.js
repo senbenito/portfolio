@@ -25,20 +25,24 @@ export default class AddWebsite extends React.Component{
 
   async handleSubmit(event) {
     event.preventDefault();
-    this.notify(`Hey, ${this.state.username}. You down? We'll see....`);
-    const response = await fetch('https://senbenito-server.herokuapp.com/sites',
+    this.notify(`Yeah buddy! You made another site!! Let's add ${this.state.title}`);
+    // const response = await fetch('https://senbenito-server.herokuapp.com/sites',
+    const response = await fetch('http://localhost:6969/sites',
       {method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
       body: qs.stringify(this.state)});
-    if (response.status !== 200) return this.notify(`Could not login: ${this.state.username}`);
-    const data = await response.json();
-    this.notify(`Righteous. Welcome to the fun, ${data.greeting}`);
-    let pathEnd = data.url;
-    // setTimeout(()=>{
-    //  this._reactInternalInstance._context.router.history.push(pathEnd, null);}
-    //  , 1500);
+    if (response.status !== 200) {
+      this.notify(`Something went wrong, dude.`)
+    } else {
+      const data = await response.json();
+      this.notify(`Another site added: ${data.title}... ROCK ON!!`);
+      let pathEnd = data.url;
+      setTimeout(()=>{
+        this._reactInternalInstance._context.router.history.push(pathEnd, null);}
+        , 1500);
+    }
   }
 
   render(){
@@ -54,7 +58,7 @@ export default class AddWebsite extends React.Component{
          pauseOnHover
         />
         <form onSubmit={this.handleSubmit}>
-          <input placeholder="website" name="website" type="text" value={this.state.url} onChange={this.handleChange} />
+          <input placeholder="website" name="url" type="text" value={this.state.url} onChange={this.handleChange} />
           <input placeholder="title" name="title" type="text" value={this.state.title} onChange={this.handleChange} />
           <input type="submit" value="Submit" />
         </form>
