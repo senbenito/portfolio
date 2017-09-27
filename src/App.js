@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Login from './components/Login.js';
 import Portfolio from './components/Portfolio.js';
 import AddWebsite from './components/AddWebsite.js';

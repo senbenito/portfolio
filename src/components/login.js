@@ -47,6 +47,10 @@ export default class Login extends React.Component{
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
       body: qs.stringify(this.state)});
+    this.setState({
+      hideForm: !this.state.hideForm,
+      hideChicken: !this.state.hideChicken
+    });
     if (response.status !== 200) return this.notify(`Could not login: ${this.state.username}`);
     const data = await response.json();
     this.notify(`Righteous. Welcome to the fun, ${data.greeting}`);
