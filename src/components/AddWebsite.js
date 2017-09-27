@@ -2,6 +2,7 @@ import React from 'react';
 import qs from 'qs';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
+import '../App.css';
 
 export default class AddWebsite extends React.Component{
   constructor(props){
@@ -47,7 +48,7 @@ export default class AddWebsite extends React.Component{
 
   render(){
     return(
-      <div>
+      <div className="addSite">
         <ToastContainer
          position="top-right"
          type="default"
