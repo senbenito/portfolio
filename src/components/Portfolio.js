@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Website from './components/website.js';
+import Website from './components/Website.js';
 
 export default class Portfolio extends Component {
   constructor(props){
