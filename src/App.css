@@ -3,7 +3,7 @@
 }
 
 .login-bar {
-  height: 13.5vh;
+  height: 14vh;
   width: 150vw;
   text-align: center;
   background: repeating-linear-gradient(59deg, #998090 0%, #998090 10%, #3f3344 0%, #3f3344 50%) 0 / 15px 15px;
@@ -20,8 +20,8 @@
 
 .addsite {
   text-align: center;
-  height: 100vh;
   width: 100vw;
+  padding-top: 14vh;
 }
 
 .chicken-bounce {
