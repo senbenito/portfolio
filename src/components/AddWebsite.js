@@ -48,7 +48,7 @@ export default class AddWebsite extends React.Component{
 
   render(){
     return(
-      <div className="addSite">
+      <div className="addsite">
         <ToastContainer
          position="top-right"
          type="default"

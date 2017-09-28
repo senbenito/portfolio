@@ -2,12 +2,13 @@
   background-image: url('./rfm25es1j2iz.jpg');
 }
 
-.chicken {
-  height: 13vh;
+.login-bar {
+  height: 13.5vh;
   width: 150vw;
   text-align: center;
   background: repeating-linear-gradient(59deg, #998090 0%, #998090 10%, #3f3344 0%, #3f3344 50%) 0 / 15px 15px;
   animation: 100s linear 0s infinite alternate cylon-eye;
+  animation: cylon-eye 100s linear 0s infinite alternate;
   position: absolute;
   top: 0px;
 }
@@ -17,20 +18,20 @@
   color: white;
 }
 
-.addSite {
+.addsite {
   text-align: center;
   height: 100vh;
   width: 100vw;
 }
 
-.chickenBounce {
-  animation: chicken-bounce infinite 10s ease-in-out alternate;
+.chicken-bounce {
+  animation: chicken-bounce infinite 13s ease-in-out 5s alternate;
   height: 100px;
   position: relative;
 }
 
-.chickenRoll {
-  animation: 1.7s ease-out 0s 1 alternate rollOut;
+.chicken-roll {
+  animation: roll-out 2.7s ease-out 0s 1;
   height: 200px;
 }
 
@@ -60,31 +61,26 @@ form {
 
 @-webkit-keyframes chicken-bounce {
   0% {
-    transform: translateX(-480px) translateY(-35px) rotate(0deg);
+    transform: translateX(0px) translateY(0px) rotate(0deg);
   }
   20% {
-    transform: translateX(222px) translateY(-15px) rotate(320deg);
+    transform: translateX(-422px) translateY(-15px) rotate(320deg);
   }
   40% {
-    transform: translateX(-80px) translateY(24px) rotate(123deg);
+    transform: translateX(580px) translateY(-24px) rotate(123deg);
   }
   60% {
-    transform: translateX(520px) translateY(-25px) rotate(23deg);
+    transform: translateX(-320px) translateY(25px) rotate(23deg);
   }
   80% {
-    transform: translateX(-275px) translateY(-35px) rotate(196deg);
+    transform: translateX(275px) translateY(-35px) rotate(196deg);
   }
   100% {
-    transform: translateX(10px) translateY(5px) rotate(32deg);
+    transform: translateX(-10px) translateY(5px) rotate(32deg);
   }
 }
 
-@-webkit-keyframes chicken-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@-webkit-keyframes rollOut {
+@-webkit-keyframes roll-out {
    from {
       opacity: 1;
       transform: translateX(0px) rotate(0deg);

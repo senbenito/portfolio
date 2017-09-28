@@ -10,7 +10,7 @@ export default class Login extends React.Component{
      this.state = {
        hideForm: true,
        hideChicken: false,
-       chickenClass: 'chickenBounce',
+       chickenClass: 'chicken-bounce',
        username: '',
        password: ''
      };
@@ -19,7 +19,7 @@ export default class Login extends React.Component{
 
   toggleForm=()=>{
     this.setState({
-      chickenClass: 'chickenRoll'
+      chickenClass: 'chicken-roll'
     });
     setTimeout(()=>{
       this.setState({
@@ -51,7 +51,7 @@ export default class Login extends React.Component{
     this.setState({
       hideForm: !this.state.hideForm,
       hideChicken: !this.state.hideChicken,
-      chickenClass: 'chickenBounce'
+      chickenClass: 'chicken-bounce'
     });
     if (response.status !== 200) return this.notify(`Could not login: ${this.state.username}`);
     const data = await response.json();
@@ -84,7 +84,7 @@ export default class Login extends React.Component{
          closeOnClick
          pauseOnHover
         />
-        <div className="chicken">
+        <div className="login-bar">
           {!this.state.hideChicken && <Chicken />}
           {!this.state.hideForm && <LoginForm />}
         </div>
