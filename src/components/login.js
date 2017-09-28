@@ -8,9 +8,9 @@ export default class Login extends React.Component{
   constructor(props){
      super(props);
      this.state = {
-       chickenClass: 'chickenSpin',
        hideForm: true,
        hideChicken: false,
+       chickenClass: 'chickenBounce',
        username: '',
        password: ''
      };
@@ -50,7 +50,8 @@ export default class Login extends React.Component{
       body: qs.stringify(this.state)});
     this.setState({
       hideForm: !this.state.hideForm,
-      hideChicken: !this.state.hideChicken
+      hideChicken: !this.state.hideChicken,
+      chickenClass: 'chickenBounce'
     });
     if (response.status !== 200) return this.notify(`Could not login: ${this.state.username}`);
     const data = await response.json();
@@ -73,7 +74,7 @@ export default class Login extends React.Component{
       <img className={this.state.chickenClass} src="https://orig00.deviantart.net/c283/f/2014/021/5/2/chicken_caw_animation_by_captaintoog-d7338wq.gif" alt="./chicken_caw_animation_by_captaintoog-d7338wq.gif" onClick={this.toggleForm}/>
     )
     return(
-      <div className="chicken">
+      <div>
         <ToastContainer
          position="top-right"
          type="default"
@@ -83,8 +84,10 @@ export default class Login extends React.Component{
          closeOnClick
          pauseOnHover
         />
-        {!this.state.hideChicken && <Chicken />}
-        {!this.state.hideForm && <LoginForm />}
+        <div className="chicken">
+          {!this.state.hideChicken && <Chicken />}
+          {!this.state.hideForm && <LoginForm />}
+        </div>
       </div>
     )
    }

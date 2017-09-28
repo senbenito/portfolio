@@ -1,62 +1,43 @@
+#React-body {
+  background-image: url('./rfm25es1j2iz.jpg');
+}
+
 .chicken {
+  height: 4vh;
+  width: 150vw;
   text-align: center;
-  background-color: #3f3344;
-  background: repeating-linear-gradient(45deg, #998090 0%, #998090 10%, #3f3344 0%, #3f3344 50%) 0 / 15px 15px;
+  background: repeating-linear-gradient(59deg, #998090 0%, #998090 10%, #3f3344 0%, #3f3344 50%) 0 / 15px 15px;
+  animation: 22s linear 0s infinite alternate cylon-eye;
 }
 
 .portfolio {
   text-align: center;
   color: white;
-  background-image: url('./rfm25es1j2iz.jpg');
 }
 
 .addSite {
   text-align: center;
   height: 100vh;
   width: 100vw;
-  background-image: url('./rfm25es1j2iz.jpg');
 }
 
-.chickenSpin {
-  animation: chicken-spin infinite 7s ease-in;
-  height: 80px;
+.chickenBounce {
+  animation: chicken-bounce infinite 10s ease-in-out alternate;
+  height: 100px;
 }
 
 .chickenRoll {
-  animation: 1.7s linear 0s 1 alternate rollOut;
-  height: 80px;
+  animation: 1.7s ease-out 0s 1 alternate rollOut;
+  height: 200px;
 }
 
-h1{
-  text-align: center;
-  text-decoration: none;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  transition: all 0.5s;
-  color: #B6FF00;
-  font-family: 'Monoton', cursive;
-  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-  animation: neon1 1.5s ease-in-out infinite alternate;
-}
-
-h1:hover {
-  color: #B6FF00;
-  -webkit-animation: none;
-  -moz-animation: none;
-  animation: none;
-}
-
-.hover-glow, h3{
+h3{
   font-family: 'Monoton', cursive;
   color: #B6FF00;
-  -webkit-animation: none;
-  -moz-animation: none;
-  animation: none;
   margin-left: 12px;
 }
 
-.hover-glow:hover, h3:hover {
+h3:hover {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   transition: all 0.5s;
@@ -69,19 +50,33 @@ h1:hover {
 
 form {
   height: 80px;
-  padding-top: 20px;
 }
 
-/*.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+@keyframes cylon-eye {
+  from { transform: translateX(-40vw); }
+  to   { transform: translateX(-10vw); }
 }
 
-.App-intro {
-  font-size: large;
-}*/
+@-webkit-keyframes chicken-bounce {
+  0% {
+    transform: translateX(-480px) translateY(-35px) rotate(0deg);
+  }
+  20% {
+    transform: translateX(222px) translateY(-15px) rotate(30deg);
+  }
+  40% {
+    transform: translateX(-80px) translateY(15px) rotate(68deg);
+  }
+  60% {
+    transform: translateX(520px) translateY(-25px) rotate(93deg);
+  }
+  80% {
+    transform: translateX(-275px) translateY(15px) rotate(123deg);
+  }
+  100% {
+    transform: translateX(10px) translateY(35px) rotate(180deg);
+  }
+}
 
 @-webkit-keyframes chicken-spin {
   from { transform: rotate(0deg); }
@@ -89,11 +84,11 @@ form {
 }
 
 @-webkit-keyframes rollOut {
-   0% {
+   from {
       opacity: 1;
       transform: translateX(0px) rotate(0deg);
    }
-   100% {
+   to {
       opacity: 0;
       transform: translateX(-100%) rotate(320deg);
    }
