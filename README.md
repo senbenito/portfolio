@@ -14,13 +14,13 @@ I selected [React.js](https://facebook.github.io/react/) because:
 
 At this point, React is probably overkill to display a few iframes, but I am a fan of the [Polymorphism Principle of Object-Oriented Programming (POOP) (and its dependency Inheritance)](https://stackoverflow.com/a/27642444 "Travis J on StackOverflow") and React embodies this ability of object-oriented languages like Javascript to instantiate new Object classes / "children" / component by extending an original / "parent" / app Object ensuring plug&play component compatability (kinda like my old NES but fixing problems with React console instead of blowing on cartridges). So I can find amazing NPM modules that someone else has created and wire them up to extend my portfolio's functionality - cool!!
 
-Those [`<iframes>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe "refer to the MDN docs") tho... I recognized the power of a simple <iframe> during that [React-a-thon](https://github.com/lerning/gelato) - you can just supply a URI with API key as the src - so I wanted to bring them in here. Who knows, we may find future advances replacing the <iframes> but for now, I like their simplicity and literal window into another world...
+Those [`<iframes>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe "refer to the MDN docs") tho... I recognized the power of a simple <iframe> during that [React-a-thon](https://github.com/lerning/gelato) - you can just supply a URI with API key as the src - so I wanted to bring them in here. Who knows, we may find future advances replacing the <iframe>s but for now, I like their simplicity and literal window into another world...
 
 At this point, we have a simple front-end, so let's deploy to [Surge](http://surge.sh/) for a quick preview: [senbenito's portfolio](http://senbenito-portfolio.surge.sh/ "basic front-end on surge.sh"). This was a super-simple deployment thanks to create-react-app's `yarn build` command. Just `surge` in the `build` directory and **POOF!** ... *website*.
 >Git branch [master](https://github.com/senbenito/portfolio-frontend)
 
 ## Step 2: let's get dynamic!
-I knew I wasn't done making websites and wanting to show them off. Rather than manually add in a new <iframe> each time I make a new site to rebuild and redeploy, I took a lesson from my [Serene MVP](https://github.com/adam-serene/serene-mvp) Google Map integration and decided to query a [Knex.js](http://knexjs.org/) [PostgreSQL](https://www.postgresql.org/) database via a RESTful [Express.js](https://expressjs.com/) server. This way, I can just [.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) a data array of submitted websites into those beloved `<iframes>`.
+I knew I wasn't done making websites and wanting to show them off. Rather than manually add in a new <iframe> each time I make a new site to rebuild and redeploy, I took a lesson from my [Serene MVP](https://github.com/adam-serene/serene-mvp) Google Map integration and decided to query a [Knex.js](http://knexjs.org/) [PostgreSQL](https://www.postgresql.org/) database via a RESTful [Express.js](https://expressjs.com/) server. This way, I can just [.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) a data array of submitted websites into those beloved <iframe>s.
 
 Here's the [personal-server](https://github.com/senbenito/personal-server) repo to dive into this crucial step.
 
@@ -43,3 +43,7 @@ So I've animated my chicken GIF to run around and make it bothersome to login, a
 
 It was at this point I realized that rather than replace the portfolio component upon successful login, it would make more sense to just replace the login with the submission form instead. React rocks because I can just toggle these swap around where these components are toggled and rendered... voila! I'm going to save the AddWebsite component skeleton & routing to point to the About page that will store this recap ;)
 >Git branch [refactor-login-add](https://github.com/senbenito/portfolio-frontend/tree/refactor-login-add)
+
+## Step 4: revamp the display functionality
+As alluded to earlier, it's time to fix up the <iframe>s. Displaying a list of my sites to select one that will display in a single <iframe> is going to cut down on load-time as well as hide all those console errors from the sites. Getting back to Bootstrap 4 via [reactstrap] () seems like a good jumping off point because of components like Jumbotron and Cards...
+>Git branch [revamp-portfolio-display]()
