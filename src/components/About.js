@@ -10,7 +10,6 @@ export default class About extends React.Component{
        url: '',
        title: ''
      };
-      this.handleSubmit = this.handleSubmit.bind(this);
    };
 
   handleChange=(event)=>{
@@ -22,8 +21,6 @@ export default class About extends React.Component{
   };
 
   notify=(message)=>toast(message);
-
-
 
   render(){
     return(
@@ -37,7 +34,7 @@ export default class About extends React.Component{
          closeOnClick
          pauseOnHover
         />
-
+      <h1>Hello World!</h1>
       </div>
     )
    }
