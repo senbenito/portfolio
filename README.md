@@ -41,5 +41,5 @@ My plan is to integrate some [Sass](http://sass-lang.com/) CSS framework shortly
 So I've animated my chicken GIF to run around and make it bothersome to login, and used my favorite CSS font effect, [neon glow](https://codepen.io/FelixRilling/pen/qzfoc) and thrown a little texture and imagery into the site.
 >Git branch [super-basic-styling](https://github.com/senbenito/portfolio-frontend/tree/super-basic-styling)
 
-It was at this point I realized that rather than replace the portfolio component upon successful login, it would make more sense to just replace the login with the submission form. React rocks because I can just toggle these swap around where these components are toggled and rendered... voila!
->Git branch [refactor-login-add]()
+It was at this point I realized that rather than replace the portfolio component upon successful login, it would make more sense to just replace the login with the submission form instead. React rocks because I can just toggle these swap around where these components are toggled and rendered... voila! I'm going to save the AddWebsite component skeleton & routing to point to the About page that will store this recap ;)
+>Git branch [refactor-login-add](https://github.com/senbenito/portfolio-frontend/tree/refactor-login-add)
