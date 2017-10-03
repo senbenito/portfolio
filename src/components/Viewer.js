@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import Modal from 'react-modal';
+
 
 export default class Viewer extends React.Component{
   constructor(props){
@@ -10,19 +11,10 @@ export default class Viewer extends React.Component{
     };
   };
 
-  toggle=()=>{
-    this.setState({
-      modal: !this.state.hideModal
-    });
-  };
-
-  render(props){
+  render(){
     return(
        <div>
-       {this.state.hideModal}
-         <Modal isOpen={!this.state.hideModal} toggle={this.toggle} className="modal">
-           <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
-           <ModalBody>
+         <Modal isOpen={!this.state.hideModal} contentLabel="Modal">
              <iframe
               id="player"
               title="jumbotron"
@@ -32,11 +24,6 @@ export default class Viewer extends React.Component{
               src= {this.state.url}
               frameBorder="10">
              </iframe>
-           </ModalBody>
-           <ModalFooter>
-             <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
-             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-           </ModalFooter>
          </Modal>
        </div>
     )

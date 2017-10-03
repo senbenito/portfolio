@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import Viewer from './Viewer';
+import { Button } from 'reactstrap';
 
 export default class Portfolio extends Component {
   constructor(props){
@@ -30,7 +31,7 @@ export default class Portfolio extends Component {
 
   toggleModal=()=>{
     this.setState({
-      modal: !this.state.hideModal
+      hideModal: false
     });
   };
 
@@ -57,16 +58,8 @@ export default class Portfolio extends Component {
         <ul>
         {this.state.websites.map((website) => this.siteListItem(website))}
         </ul>
-          <Modal isOpen={!this.state.hideModal}>
-            <ModalHeader>Modal title</ModalHeader>
-            <ModalBody>
-{this.state.url}
-            </ModalBody>
-            <ModalFooter>
-              <Button color="primary" onClick={this.toggleModal}>Do Something</Button>{' '}
-              <Button color="secondary" onClick={this.toggleModal}>Cancel</Button>
-            </ModalFooter>
-          </Modal>
+        <Button onClick={this.toggleModal}>Click</Button>
+        <Viewer url={this.state.viewerURL}/>
       </div>
     );
   }
