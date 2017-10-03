@@ -24,7 +24,7 @@ export default class Viewer extends React.Component{
    )
     return(
        <div>
-        {!this.state.hideJumbotron && <Iframe /> }
+        {!this.props.hideJumbotron && <Iframe /> }
        </div>
     )
   };
