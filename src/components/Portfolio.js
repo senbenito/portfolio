@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import Viewer from './Viewer.js';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 export default class Portfolio extends Component {
   constructor(props){
@@ -8,8 +8,7 @@ export default class Portfolio extends Component {
     this.state = {
       websites:[],
       viewerURL: '',
-      testSite: {},
-      hideJumbotron: true
+      hideModal: true
     }
     this.fetchPlaces = this.fetchPlaces.bind(this);
   }
@@ -19,15 +18,19 @@ export default class Portfolio extends Component {
     const websites = await response.json()
     this.setState({
       websites: websites,
-      viewerURL: websites[0].url,
-      testSite: websites[0]
     });
   };
 
   handleSiteClick=(e, passVal)=>{
     this.setState({
       viewerURL: passVal,
-      hideJumbotron: !this.state.hideJumbotron
+      hideModal: false
+    });
+  };
+
+  toggleModal=()=>{
+    this.setState({
+      modal: !this.state.hideModal
     });
   };
 
@@ -52,13 +55,18 @@ export default class Portfolio extends Component {
       <div className="portfolio">
         <h3>this is some of the neat stuff <a href="https://github.com/senbenito">senbenito</a> has crafted:</h3>
         <ul>
-        {this.state.websites.map(
-          (website) => this.siteListItem(website))}
+        {this.state.websites.map((website) => this.siteListItem(website))}
         </ul>
-        <Viewer
-          url={this.state.viewerURL}
-          hideJumbotron={this.state.hideJumbotron}
-        />
+          <Modal isOpen={!this.state.hideModal}>
+            <ModalHeader>Modal title</ModalHeader>
+            <ModalBody>
+{this.state.url}
+            </ModalBody>
+            <ModalFooter>
+              <Button color="primary" onClick={this.toggleModal}>Do Something</Button>{' '}
+              <Button color="secondary" onClick={this.toggleModal}>Cancel</Button>
+            </ModalFooter>
+          </Modal>
       </div>
     );
   }
