@@ -44,8 +44,8 @@ export default class Portfolio extends Component {
   siteListItem=(website, index)=>{
     let passVal = website.url;
     switch (index){
-      case 0:
-      case 1:
+      // case 0:
+      // case 1:
       case 2:
         return (
           <div id="inner-orbit" key={website.id}>
@@ -57,9 +57,8 @@ export default class Portfolio extends Component {
             </div>
           </div>
         )
-        // break;
-      case 3:
-      case 4:
+      // case 3:
+      // case 4:
       case 5:
         return (
           <div id="middle-orbit" key={website.id}>
@@ -71,9 +70,8 @@ export default class Portfolio extends Component {
             </div>
           </div>
         )
-        // break;
-      case 6:
-      case 7:
+      // case 6:
+      // case 7:
       case 8:
         return (
           <div id="outer-orbit" key={website.id}>
@@ -85,7 +83,6 @@ export default class Portfolio extends Component {
             </div>
           </div>
         )
-        // break;
       default:
         return (
           <div id="outer-orbit" key={website.id}>
@@ -97,7 +94,6 @@ export default class Portfolio extends Component {
             </div>
           </div>
         )
-        // break;
     }
   }
 

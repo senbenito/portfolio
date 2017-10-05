@@ -115,19 +115,21 @@ form {
 /* ---------- Inner orbit - This is the circles closest to the central point ---------- */
 #inner-orbit {
   position: absolute;
+  z-index: 1;
   top: 75px;
   left: 75px;
   width: 150px;
   height: 150px;
   border: 2px pink dashed;
   border-radius: 100%;
-  -webkit-animation: spin-right 10s linear infinite;
-  animation: spin-right 10s linear infinite;
+  -webkit-animation: spin-right 110s linear infinite;
+  animation: spin-right 110s linear infinite;
 }
 
 /* ---------- Repeating styles for the inner orbiting circles ---------- */
 .inner-orbit-cirlces {
   position: absolute;
+  z-index: 10;
   top: 62px;
   left: -6px;
   height: 10px;
@@ -139,19 +141,21 @@ form {
 /* ---------- Middle orbit - This is the circles second closest to the central point ---------- */
 #middle-orbit {
   position: absolute;
+  z-index: 1;
   top: 35px;
   left: 35px;
   width: 225px;
   height: 225px;
   border: 2px pink dashed;
   border-radius: 100%;
-  -webkit-animation: spin-right 15s linear infinite;
-  animation: spin-right 15s linear infinite;
+  -webkit-animation: spin-right 115s linear infinite;
+  animation: spin-right 115s linear infinite;
 }
 
 /* ---------- Repeating styles for the middle orbiting circles ---------- */
 .middle-orbit-cirlces {
   position: absolute;
+  z-index: 10;
   top: 25px;
   left: 17px;
   height: 20px;
@@ -163,19 +167,21 @@ form {
 /* ---------- Outer orbit - This is the circles furthest away from the central point ---------- */
 #outer-orbit {
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 294px;
   height: 294px;
   border: 2px pink dashed;
   border-radius: 100%;
-  -webkit-animation: spin-right 20s linear infinite;
-  animation: spin-right 20s linear infinite;
+  -webkit-animation: spin-right 120s linear infinite;
+  animation: spin-right 120s linear infinite;
 }
 
 /* ---------- Repeating styles for the outer orbiting circles ---------- */
 .outer-orbit-cirlces {
   position: absolute;
+  z-index: 10;
   top: -17px;
   left: 125px;
   height: 30px;
