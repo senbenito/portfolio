@@ -57,12 +57,23 @@ export default class Portfolio extends Component {
             </div>
           </div>
         )
-      // case 3:
-      // case 4:
+      case 3:
+        let circleClass = `middle-orbit-cirlces${index}`;
+        return (
+          <div id="middle-orbit" key={website.id}>
+            <div className={circleClass}
+            onClick={(e)=>this.handleSiteClick(e, passVal)}
+            key={website.id}
+            value={website.url}>
+              {website.title}
+            </div>
+          </div>
+        )
+      case 4:
       case 5:
         return (
           <div id="middle-orbit" key={website.id}>
-            <div className="middle-orbit-cirlces"
+            <div className={circleClass}
             onClick={(e)=>this.handleSiteClick(e, passVal)}
             key={website.id}
             value={website.url}>
