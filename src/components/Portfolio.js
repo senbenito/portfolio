@@ -48,8 +48,8 @@ export default class Portfolio extends Component {
       // case 1:
       case 2:
         return (
-          <div id="inner-orbit" key={website.id}>
-            <div className="inner-orbit-cirlces"
+          <div id="outer-orbit" key={website.id}>
+            <div className="outer-orbit-cirlces"
             onClick={(e)=>this.handleSiteClick(e, passVal)}
             key={website.id}
             value={website.url}>
@@ -74,8 +74,8 @@ export default class Portfolio extends Component {
       // case 7:
       case 8:
         return (
-          <div id="outer-orbit" key={website.id}>
-            <div className="outer-orbit-cirlces"
+          <div id="inner-orbit" key={website.id}>
+            <div className="inner-orbit-cirlces"
             onClick={(e)=>this.handleSiteClick(e, passVal)}
             key={website.id}
             value={website.url}>
@@ -85,8 +85,8 @@ export default class Portfolio extends Component {
         )
       default:
         return (
-          <div id="outer-orbit" key={website.id}>
-            <div className="outer-orbit-cirlces"
+          <div id="inner-orbit" key={website.id}>
+            <div className="inner-orbit-cirlces"
             onClick={(e)=>this.handleSiteClick(e, passVal)}
             key={website.id}
             value={website.url}>
