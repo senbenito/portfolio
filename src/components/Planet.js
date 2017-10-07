@@ -18,10 +18,10 @@ export default class Planet extends React.Component{
   // };
 
   render(){
-    let passVal = {this.state.website.url};
+    // let passVal = {this.state.website.url};
     return(
       <div className={this.state.className}
-      onClick={(e)=>this.state.handleSiteClick(e, passVal)}
+      onClick={(e)=>this.state.handleSiteClick(e)}
       key={this.state.website.id}
       value={this.state.website.url}>
         {this.state.website.title}

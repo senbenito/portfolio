@@ -6,7 +6,51 @@ export default class Orbit extends React.Component{
     super(props);
     this.state = {
       viewerURL: this.props.viewerURL,
+      websites: [],
+      // websites: this.props.websites,
+      // websites: [
+      //   {id: 1,
+      //   url: 'abc',
+      //   title: 'ABC'},
+      //   {id: 2,
+      //   url: 'xyz',
+      //   title: 'XYZ'},
+      //   {id: 3,
+      //   url: 'jkl',
+      //   title: 'JKL'},
+      //   {id: 4,
+      //   url: 'abc',
+      //   title: 'ABC'},
+      //   {id: 5,
+      //   url: 'xyz',
+      //   title: 'XYZ'},
+      //   {id: 6,
+      //   url: 'jkl',
+      //   title: 'JKL'},
+      //   {id: 7,
+      //   url: 'abc',
+      //   title: 'ABC'},
+      //   {id: 8,
+      //   url: 'xyz',
+      //   title: 'XYZ'},
+      //   {id: 9,
+      //   url: 'jkl',
+      //   title: 'JKL'},
+      // ],
     };
+    this.fetchPlaces = this.fetchPlaces.bind(this);
+  }
+
+  async fetchPlaces(){
+    const response = await fetch('https://senbenito-server.herokuapp.com/sites');
+    const websites = await response.json()
+    this.setState({
+      websites: websites,
+    });
+  };
+
+  componentWillMount() {
+    this.fetchPlaces();
   };
 
   handleSiteClick=(e, passVal)=>{
@@ -16,121 +60,28 @@ export default class Orbit extends React.Component{
     });
   };
 
-  makePlanet=(website, index)=>{
-    switch (index){
-      case 0:
-      case 1:
-      case 2:
-        // let circleClass = `outer-orbit-cirlces${index}`;
-        let circleClass = `outer-orbit-cirlces`;
-        return (
-          <Planet className={circleClass}
-          onClick={(e)=>this.handleSiteClick(e, passVal)}
-          website={website}/>
-        )
-      case 4:
-      case 5:
-      case 6:
-        // let circleClass = `middle-orbit-cirlces${index}`;
-        let circleClass = `middle-orbit-cirlces`;
-        return (
-          <Planet className={circleClass}
-          onClick={(e)=>this.handleSiteClick(e, passVal)}
-          website={website}/>
-        )
-      case 7:
-      case 8:
-      case 9:
-        // let circleClass = `inner-orbit-cirlces${index}`;
-        let circleClass = `inner-orbit-cirlces`;
-        return (
-          <Planet className={circleClass}
-          onClick={(e)=>this.handleSiteClick(e, passVal)}
-          website={website}/>
-        )
-      default:
-        break;
-    }
-  }
-
-  siteListItem=(website, index)=>{
+  makePlanet=(website, index, orbit)=>{
     let passVal = website.url;
-    switch (index){
-      // case 0:
-      // case 1:
-      case 2:
-        return (
-          <div id="outer-orbit" key={website.id}>
-            <div className="outer-orbit-cirlces"
-            onClick={(e)=>this.handleSiteClick(e, passVal)}
-            key={website.id}
-            value={website.url}>
-              {website.title}
-            </div>
-          </div>
-        )
-      case 3:
-        let circleClass = `middle-orbit-cirlces${index}`;
-        return (
-          <div id="middle-orbit" key={website.id}>
-            <div className={circleClass}
-            onClick={(e)=>this.handleSiteClick(e, passVal)}
-            key={website.id}
-            value={website.url}>
-              {website.title}
-            </div>
-          </div>
-        )
-      case 4:
-      case 5:
-        return (
-          <div id="middle-orbit" key={website.id}>
-            <div className={circleClass}
-            onClick={(e)=>this.handleSiteClick(e, passVal)}
-            key={website.id}
-            value={website.url}>
-              {website.title}
-            </div>
-          </div>
-        )
-      // case 6:
-      // case 7:
-      case 8:
-        return (
-          <div id="inner-orbit" key={website.id}>
-            <div className="inner-orbit-cirlces"
-            onClick={(e)=>this.handleSiteClick(e, passVal)}
-            key={website.id}
-            value={website.url}>
-              {website.title}
-            </div>
-          </div>
-        )
-      default:
-        return (
-          <div id="inner-orbit" key={website.id}>
-            <div className="inner-orbit-cirlces"
-            onClick={(e)=>this.handleSiteClick(e, passVal)}
-            key={website.id}
-            value={website.url}>
-              {website.title}
-            </div>
-          </div>
-        )
-    }
+    let planetClass = `${orbit}-orbit-planet${index}`;
+    return (
+      <Planet key={index}
+      className={planetClass}
+      onClick={(e)=>this.handleSiteClick(e, passVal)}
+      website={website}/>
+    )
   };
 
   render(){
     return(
       <div id="circle-orbit-container">
         <div id="outer-orbit">
-          {this.state.websites.map((website, index) => this.makePlanet(website, index))}
+          {this.state.websites.slice(0,3).map((website, index)=> this.makePlanet(website, index, 'outer'))}
         </div>
         <div id="middle-orbit">
-          {this.state.websites.map((website, index) => this.makePlanet(website, index))}
+          {this.state.websites.slice(3,6).map((website, index)=> this.makePlanet(website, index, 'middle'))}
         </div>
         <div id="inner-orbit">
-          {this.state.websites.map((website, index) => this.makePlanet(website, index))}
+          {this.state.websites.slice(6).map((website, index)=> this.makePlanet(website, index, 'inner'))}
         </div>
       </div>
     )
