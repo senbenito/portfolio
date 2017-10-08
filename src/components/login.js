@@ -104,7 +104,7 @@ export default class Login extends React.Component{
       </form>
     )
     return(
-      <div>
+      <div className="login-container">
         <ToastContainer
          position="top-right"
          type="default"
@@ -119,6 +119,7 @@ export default class Login extends React.Component{
           {!this.state.hideLogin && <LoginForm />}
           {!this.state.hideAddSite && <AddWebsite />}
         </div>
+        <div className="login-rotisserie"/>
       </div>
     )
    }

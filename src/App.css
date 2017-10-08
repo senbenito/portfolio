@@ -1,20 +1,37 @@
 #React-body {
   background-image: url('./rfm25es1j2iz.jpg');
+  top: 14vh;
+  left: 0;
+}
+
+.login-container {
+  top: 0;
+  /*position: absolute;*/
 }
 
 .login-bar {
+  top: 0;
+  left: 0;
   height: 14vh;
-  width: 150vw;
+  width: 100vw;
   text-align: center;
   background: repeating-linear-gradient(59deg, #998090 0%, #998090 10%, #3f3344 0%, #3f3344 50%) 0 / 15px 15px;
-  animation: 100s linear 0s infinite alternate cylon-eye;
-  animation: cylon-eye 100s linear 0s infinite alternate;
   position: absolute;
-  top: 0px;
+}
+
+.login-rotisserie {
+  top: 0;
+  left: 0;
+  height: 14vh;
+  width: 100vw;
+  animation: rotisserie infinite 2s ease-out 0 alternate;
+  position: absolute;
 }
 
 .portfolio {
   text-align: center;
+  width: 78vw;
+  left: 11vw;
   color: white;
 }
 
@@ -25,14 +42,14 @@
 }
 
 .chicken-bounce {
-  animation: chicken-bounce infinite 13s ease-in-out 5s alternate;
-  height: 100px;
+  animation: chicken-bounce infinite 53s ease-in-out 5s alternate;
+  height: 16vh;
   position: relative;
 }
 
 .chicken-roll {
   animation: roll-out 2.7s ease-out 0s 1;
-  height: 200px;
+  height: 25vh;
 }
 
 a{
@@ -54,9 +71,15 @@ form {
   height: 80px;
 }
 
-@keyframes cylon-eye {
-  from { transform: translateX(-40vw); }
-  to   { transform: translateX(-10vw); }
+@keyframes rotisserie {
+  from {
+    transform: rotateX();
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  to   {
+    transform: rotateX(360deg);
+    background-color: rgba(255, 255, 255, 0.8);
+   }
 }
 
 @-webkit-keyframes chicken-bounce {
@@ -105,11 +128,11 @@ form {
 /* ---------- Container for the orbiting circles animation ---------- */
 #circle-orbit-container {
   position: relative;
-  top: 25px;
-  left: 25px;
-  height: 300px;
-  width: 300px;
-  margin-left: 200px;
+  top: 3.5vh;
+  left: 35vw;
+  height: 85vh;
+  width: 64vw;
+  background-color: black;
 }
 
 /* ---------- Inner orbit - This is the circles closest to the central point ---------- */
