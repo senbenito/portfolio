@@ -60,9 +60,9 @@ a{
 
 h3 {
   font-family: 'Monoton', cursive;
+  animation: neon1 1.1s ease-in-out infinite alternate;
   font-size: 5vh;
   transition: all 0.5s;
-  animation: neon1 1.1s ease-in-out infinite alternate;
   position: relative;
   padding-top: 2vh;
 }
