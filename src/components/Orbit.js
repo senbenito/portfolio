@@ -1,5 +1,7 @@
 import React from 'react';
 import Planet from './Planet.js';
+import { Link } from 'react-router-dom';
+
 
 export default class Orbit extends React.Component{
   constructor(props){
@@ -7,23 +9,27 @@ export default class Orbit extends React.Component{
     this.state = {
       viewerURL: this.props.viewerURL,
       websites: [
-        {id:0, url: 'abc', title: 'ABC'},
-        {id:1, url: 'abc', title: 'ABC'},
-        {id:2, url: 'abc', title: 'ABC'},
-        {id:3, url: 'abc', title: 'ABC'},
-        {id:4, url: 'abc', title: 'ABC'},
-        {id:5, url: 'abc', title: 'ABC'},
-        {id:6, url: 'abc', title: 'ABC'},
-        {id:7, url: 'abc', title: 'ABC'},
-        {id:8, url: 'abc', title: 'ABC'},
-        {id:9, url: 'abc', title: 'ABC'},
-        {id:10, url: 'abc', title: 'ABC'},
-        {id:11, url: 'abc', title: 'ABC'},
-        {id:12, url: 'abc', title: 'ABC'},
-        {id:13, url: 'abc', title: 'ABC'},
-        {id:14, url: 'abc', title: 'ABC'},
-
-      ],
+        [
+          {id:0, url: 'abc', title: 'ABC'},
+          {id:1, url: 'abc', title: 'ABC'},
+          {id:2, url: 'abc', title: 'ABC'}
+        ],
+        [
+          {id:3, url: 'abc', title: 'ABC'},
+          {id:4, url: 'abc', title: 'ABC'},
+          {id:5, url: 'abc', title: 'ABC'}
+        ],
+        [
+          {id:6, url: 'abc', title: 'ABC'},
+          {id:7, url: 'abc', title: 'ABC'},
+          {id:8, url: 'abc', title: 'ABC'}
+        ],
+        [
+          {id:9, url: 'abc', title: 'ABC'},
+          {id:10, url: 'abc', title: 'ABC'},
+          {id:11, url: 'abc', title: 'ABC'}
+        ]
+      ]
     };
     this.fetchPlaces = this.fetchPlaces.bind(this);
   }
@@ -54,21 +60,35 @@ export default class Orbit extends React.Component{
   render(){
     return(
       <div id="circle-orbit-container">
-        <div id="fifth-orbit">
-          {this.state.websites.slice(0,3).map((website, index)=> this.makePlanet(website, index, 'fifth'))}
-        </div>
-        <div id="fourth-orbit">
-          {this.state.websites.slice(3,6).map((website, index)=> this.makePlanet(website, index, 'fourth'))}
-        </div>
-        <div id="third-orbit">
-          {this.state.websites.slice(6,9).map((website, index)=> this.makePlanet(website, index, 'third'))}
-        </div>
-        <div id="second-orbit">
-          {this.state.websites.slice(9,12).map((website, index)=> this.makePlanet(website, index, 'second'))}
-        </div>
-        <div id="first-orbit">
-          {this.state.websites.slice(12).map((website, index)=> this.makePlanet(website, index, 'first'))}
-        </div>
+      {this.state.websites.map((array, index)=>{
+        switch (index){
+          case 0:
+            return (
+              <div id="fifth-orbit">
+                {array.map((website, index)=> this.makePlanet(website, index, 'fifth'))};
+              </div>
+            )
+          case 1:
+            return (
+              <div id="fourth-orbit">
+                {array.map((website, index)=> this.makePlanet(website, index, 'fourth'))};
+              </div>
+            )
+          case 2:
+            return (
+              <div id="third-orbit">
+                {array.map((website, index)=> this.makePlanet(website, index, 'third'))};
+              </div>
+            )
+          case 3:
+            return (
+              <div id="second-orbit">
+                {array.map((website, index)=> this.makePlanet(website, index, 'second'))};
+              </div>
+            )
+        }
+      })}
+        <Link to="/about" id="about"/>
       </div>
     )
   };

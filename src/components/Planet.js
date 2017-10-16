@@ -10,13 +10,6 @@ export default class Planet extends React.Component{
     };
   };
 
-  // handleSiteClick=(e, passVal)=>{
-  //   this.setState({
-  //     viewerURL: passVal,
-  //     hideModal: false
-  //   });
-  // };
-
   render(){
     return(
       <div className={this.state.className}
