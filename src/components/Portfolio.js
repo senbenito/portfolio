@@ -15,6 +15,14 @@ export default class Portfolio extends Component {
     }
   };
 
+  handleSiteClick=(e, passVal)=>{
+    console.log(passVal);
+    this.setState({
+      viewerURL: passVal,
+      hideModal: false
+    });
+  };
+
   toggleModal=()=>{
     this.setState({
       hideModal: !this.state.hideModal
@@ -25,7 +33,7 @@ export default class Portfolio extends Component {
     return (
       <div className="portfolio">
         <h3>this is some of the neat stuff <a href="https://github.com/senbenito">senbenito</a> has crafted:</h3>
-        <Orbit />
+        <Orbit handleSiteClick={this.handleSiteClick}/>
         <Modal isOpen={!this.state.hideModal} contentLabel="Modal">
           <Viewer viewerURL={this.state.viewerURL}/>
           <Button onClick={this.toggleModal}/>

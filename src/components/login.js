@@ -41,11 +41,7 @@ export default class Login extends React.Component{
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
-      body:
-        qs.stringify({
-          username: username,
-          password: password
-        })
+      body: qs.stringify({username, password})
       });
     if (response.status !== 200) return this.notify(`Could not login: ${username}`);
     const data = await response.json();
@@ -72,11 +68,7 @@ export default class Login extends React.Component{
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
       credentials: 'include',
-      body:
-        qs.stringify({
-          url: url,
-          title: title
-        })
+      body: qs.stringify({url, title})
       });
     if (response.status !== 200) {
       this.notify(`Something went wrong, dude.`)
@@ -116,7 +108,6 @@ export default class Login extends React.Component{
          closeOnClick
          pauseOnHover
         />
-        <div className="login-rotisserie"/>
         <div className="login-bar">
           {!this.state.hideChicken && <Chicken />}
           {!this.state.hideLogin && <LoginForm />}

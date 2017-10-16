@@ -10,10 +10,10 @@ import About from './components/About.js';
 const App = () => (
   <div>
     <Login />
-      <div id="React-body">
-        <Route exact path="/" component={Portfolio}/>
-        <Route path="/about" component={About}/>
-      </div>
+    <div id="React-body">
+      <Route exact path="/" component={Portfolio}/>
+      <Route path="/about" component={About}/>
+    </div>
   </div>
 )
 
