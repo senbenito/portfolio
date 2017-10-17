@@ -110,7 +110,13 @@ export default class Orbit extends React.Component{
             )
         }
       })}
-        <Link to="/about" id="about"/>
+        <Link to="/about" id="about">
+        <div className="ring1"/>
+        <div className="ring2"/>
+        <div className="ring3"/>
+        <div className="ring4"/>
+        <div className="ring5"/>
+        </Link>
       </div>
     )
   };
