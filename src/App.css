@@ -20,9 +20,9 @@
 
 .portfolio {
   text-align: center;
-  width: 78vw;
-  left: 11vw;
+  width: 100vw;
   color: white;
+  overflow: hidden;
 }
 
 .about {
@@ -119,18 +119,29 @@ form {
 /* ---------- Container for the orbiting circles animation ---------- */
 #circle-orbit-container {
   position: relative;
-  top: 3.5vh;
-  left: 5vw;
-  height: 85vh;
+  top: 2.5vh;
+  left: 2.5vw;
+  height: 87vh;
   width: 95vw;
-  /*overflow-y: hidden;*/
+}
+
+.ring {
+  width: 150%;
+  height: 150%;
+  border: solid 10px red;
+  border-radius: 50%;
+  top: -25%;
+  left: -25%;
+  position: absolute;
+  transform: rotate3d(0.8, 0.2, 0, 75deg);
+  box-sizing: border-box;
 }
 
 /* ---------- First orbit - This is the closest to the central point ---------- */
 #about {
   position: absolute;
-  top: 39vw;
-  left: 39vw;
+  top: 43.5vw;
+  left: 43.5vw;
   width: 8vw;
   height: 8vw;
   border: 2px orange dashed;
@@ -141,8 +152,8 @@ form {
 /* ---------- Second orbit - This is the second closest to the central point ---------- */
 #second-orbit {
   position: absolute;
-  top: 30vw;
-  left: 30vw;
+  top: 35vw;
+  left: 35vw;
   width: 25vw;
   height: 25vw;
   border: 2px orange dashed;
@@ -155,29 +166,27 @@ form {
 .second-orbit-planet0 {
   position: absolute;
   bottom: 4vw;
-  right: -0.6vw;
+  right: -2vw;
   height: 8vw;
   width: 8vw;
   border-radius: 100%;
-  background-color: lime;
-  -webkit-animation: spin-right 40s linear infinite;
-  animation: spin-right 40s linear infinite;
+  background-color: gray;
+  -webkit-animation: spin-right 12s ease-in-out infinite;
+  animation: spin-right 12s ease-in-out infinite;
 }
 
 .second-orbit-moon00 {
   position: absolute;
   bottom: 4vw;
-  right: -0.6vw;
-  height: 8vw;
-  width: 8vw;
+  right: -1.5vw;
+  height: 1vw;
+  width: 1vw;
   border-radius: 100%;
-  background-color: lime;
-  -webkit-animation: spin-right 40s linear infinite;
-  animation: spin-right 40s linear infinite;
+  background-color: gray;
 }
 
 .second-orbit-planet1 {
-  position: absolute;
+  position: relative;
   top: 4vw;
   left: -0.6vw;
   height: 4vw;
@@ -185,10 +194,11 @@ form {
   border-radius: 100%;
   background-color: gray;
 }
+
 .second-orbit-planet2 {
   position: absolute;
-  top: -0.6vw;
-  right: 4vw;
+  bottom: .2vw;
+  left: 4vw;
   height: 4vw;
   width: 4vw;
   border-radius: 100%;
@@ -198,8 +208,8 @@ form {
 /* ---------- Third orbit - This is the middle closest to the central point ---------- */
 #third-orbit {
   position: absolute;
-  top: 20vw;
-  left: 20vw;
+  top: 25vw;
+  left: 25vw;
   width: 45vw;
   height: 45vw;
   border: 2px orange dashed;
@@ -211,17 +221,31 @@ form {
 /* ---------- Repeating styles for the third orbit planets ---------- */
 .third-orbit-planet0 {
   position: absolute;
-  bottom: 6vw;
-  right: 1vw;
-  height: 10vw;
-  width: 10vw;
+  top: 2vw;
+  right: 1.5vw;
+  height: 9vw;
+  width: 9vw;
+  border-radius: 100%;
+  background-color: gray;
+  -webkit-animation: spin-right 8s ease-in-out infinite;
+  animation: spin-right 8s ease-in-out infinite;
+}
+
+.third-orbit-moon00 {
+  position: absolute;
+  bottom: 4vw;
+  right: -1.5vw;
+  height: 1vw;
+  width: 1vw;
   border-radius: 100%;
   background-color: gray;
 }
+
 .third-orbit-planet1 {
   position: absolute;
+  transform-style: preserve-3d;
   top: 6vw;
-  left: 1vw;
+  left: .5vw;
   height: 8vw;
   width: 8vw;
   border-radius: 100%;
@@ -231,8 +255,8 @@ form {
   position: absolute;
   bottom: -1vw;
   left: 10vw;
-  height: 16vw;
-  width: 16vw;
+  height: 6vw;
+  width: 6vw;
   border-radius: 100%;
   background-color: gray;
 }
@@ -240,10 +264,10 @@ form {
 /* ---------- Fourth orbit - This is the circles second farthest to the central point ---------- */
 #fourth-orbit {
   position: absolute;
-  top: 10vw;
-  left: 10vw;
-  width: 65vw;
-  height: 65vw;
+  top: 11vw;
+  left: 11vw;
+  width: 73vw;
+  height: 73vw;
   border: 2px orange dashed;
   border-radius: 100%;
   -webkit-animation: spin-right 80s linear infinite;
@@ -253,30 +277,52 @@ form {
 /* ---------- Repeating styles for the fourth orbit planets ---------- */
 .fourth-orbit-planet0 {
   position: absolute;
-  top: 10vw;
-  right: 1.4vw;
+  bottom: 13vw;
+  right: 3.5vw;
   height: 6vw;
   width: 6vw;
+  border-radius: 100%;
+  background-color: gray;
+  -webkit-animation: spin-right 5s ease-in-out infinite;
+  animation: spin-right 5s ease-in-out infinite;
+}
+
+.fourth-orbit-moon00 {
+  position: absolute;
+  bottom: 4vw;
+  right: -1.5vw;
+  height: 1vw;
+  width: 1vw;
+  border-radius: 100%;
+  background-color: gray;
+}
+
+.fourth-orbit-moon01 {
+  position: absolute;
+  bottom: 4vw;
+  left: -3vw;
+  height: 2vw;
+  width: 2vw;
   border-radius: 100%;
   background-color: gray;
 }
 
 .fourth-orbit-planet1 {
   position: absolute;
-  bottom: 10vw;
-  left: 1.4vw;
-  height: 4vw;
-  width: 4vw;
+  bottom: 6vw;
+  left: 8vw;
+  height: 7vw;
+  width: 7vw;
   border-radius: 100%;
   background-color: gray;
 }
 
 .fourth-orbit-planet2 {
   position: absolute;
-  top: 1.4vw;
-  left: 12vw;
-  height: 3vw;
-  width: 3vw;
+  top: 2vw;
+  left: 15vw;
+  height: 6vw;
+  width: 6vw;
   border-radius: 100%;
   background-color: gray;
 }
@@ -284,52 +330,76 @@ form {
 /* ---------- Fifth orbit - This is the circles furthest away from the central point ---------- */
 #fifth-orbit {
   position: absolute;
-  top: 5vw;
-  left: 5vw;
-  width: 75vw;
-  height: 75vw;
+  top: -.5vw;
+  left: -1vw;
+  width: 97vw;
+  height: 97vw;
   border: 2px orange dashed;
   border-radius: 100%;
-  -webkit-animation: spin-right 100s linear infinite;
-  animation: spin-right 100s linear infinite;
+  -webkit-animation: spin-right 90s linear infinite;
+  animation: spin-right 90s linear infinite;
 }
 
 /* ---------- Repeating styles for the fifth orbit planets ---------- */
 .fifth-orbit-planet0 {
   position: absolute;
   top: 40vw;
-  right: -5vw;
+  right: -2vw;
   height: 5vw;
   width: 5vw;
   border-radius: 100%;
+  /*background-color: gray;*/
+  -webkit-animation: spin-right 2s linear infinite;
+  animation: spin-right 2s linear infinite;
+}
+
+.fifth-orbit-moon00 {
+  position: absolute;
+  top: -2vw;
+  right: 0;
+  height: 3.5vw;
+  width: 3.5vw;
+  border-radius: 100%;
   background-color: gray;
 }
+
+.fifth-orbit-moon01 {
+  position: absolute;
+  bottom: -1vw;
+  right: 0;
+  height: 4.2vw;
+  width: 4.2vw;
+  border-radius: 100%;
+  background-color: gray;
+}
+
 .fifth-orbit-planet1 {
   position: absolute;
+  transform-style: preserve-3d;
   left: 40vw;
   bottom: -5vw;
-  height: 10vw;
-  width: 10vw;
+  height: 11vw;
+  width: 11vw;
   border-radius: 100%;
   background-color: gray;
 }
 .fifth-orbit-planet2 {
   position: absolute;
-  top: 8vw;
-  left: 8vw;
-  height: 4vw;
-  width: 4vw;
+  top: 9.5vw;
+  left: 9.5vw;
+  height: 9vw;
+  width: 9vw;
   border-radius: 100%;
   background-color: gray;
 }
 
 /* ---------- Animation ---------- */
 @-webkit-keyframes spin-right {
-  /*100% {
+  100% {
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     -o-transform: rotate(360deg);
     transform: rotate(360deg);
-  }*/
+  }
 }
