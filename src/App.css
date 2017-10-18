@@ -22,7 +22,7 @@
   text-align: center;
   width: 100vw;
   color: white;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 .about {
@@ -502,19 +502,6 @@ form {
 
 .fourth-orbit-planet1 {
   position: absolute;
-  bottom: 6vw;
-  left: 0vw;
-  height: 17vw;
-  width: 17vw;
-  border-radius: 100%;
-  background-color: gray;
-  -webkit-animation: spin-right 40s linear infinite;
-  animation: spin-right 40s linear infinite;
-  animation-direction: reverse;
-}
-
-.fourth-orbit-planet2 {
-  position: absolute;
   top: -2vw;
   left: 15vw;
   height: 12vw;
@@ -590,6 +577,18 @@ form {
   right: 9.5vw;
   height: 9vw;
   width: 9vw;
+  border-radius: 100%;
+  background-color: gray;
+  -webkit-animation: spin-right 50s linear infinite;
+  animation: spin-right 50s linear infinite;
+  animation-direction: reverse;
+}
+.fifth-orbit-planet3 {
+  position: absolute;
+  bottom: 13vw;
+  left: 0vw;
+  height: 17vw;
+  width: 17vw;
   border-radius: 100%;
   background-color: gray;
   -webkit-animation: spin-right 50s linear infinite;

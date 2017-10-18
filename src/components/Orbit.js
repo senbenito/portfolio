@@ -14,10 +14,10 @@ export default class Orbit extends React.Component{
         [
           {id:0, url: 'abc', title: 'ABC'},
           {id:1, url: 'abc', title: 'ABC'},
-          {id:2, url: 'abc', title: 'ABC'}
+          {id:2, url: 'abc', title: 'ABC'},
+          {id:3, url: 'abc', title: 'ABC'}
         ],
         [
-          {id:3, url: 'abc', title: 'ABC'},
           {id:4, url: 'abc', title: 'ABC'},
           {id:5, url: 'abc', title: 'ABC'}
         ],
