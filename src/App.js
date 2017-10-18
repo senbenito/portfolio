@@ -10,27 +10,22 @@ export default class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      hideLogin: true,
-      hideAddSite: true,
+      hideLogin: true
     };
 
   };
   toggleForm=()=>{
-    console.log('toggling login');
-    // this.setState({hideLogin: !this.state.hideLogin})
+    this.setState({hideLogin: !this.state.hideLogin})
   };
 
   render(){
     return (
       <div>
-        <Login
-          hideLogin={this.state.hideLogin}
-          hideAddSite={this.state.hideAddSite}
-        />
          <div id="React-body">
            <PropsRoute exact path="/" component={Portfolio} toggleForm={this.toggleForm}/>
            <PropsRoute path="/about" component={About}/>
          </div>
+         <Login hideLogin={this.state.hideLogin}/>
        </div>
      )
    }

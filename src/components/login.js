@@ -8,8 +8,7 @@ export default class Login extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      hideLogin: this.props.hideLogin,
-      hideAddSite: this.props.hideAddSite,
+      hideAddSite: true,
     };
     this.handleLogin = this.handleLogin.bind(this);
     this.handleSiteSubmit = this.handleSiteSubmit.bind(this);
@@ -33,8 +32,8 @@ export default class Login extends React.Component{
     const data = await response.json();
     this.notify(`Righteous. Welcome to the fun, ${data.greeting}`);
     this.setState({
-      hideLogin: !this.state.hideLogin,
-      hideAddSite: !this.state.hideAddSite
+      hideLogin: true,
+      hideAddSite: false
     })
   }
 
@@ -45,7 +44,6 @@ export default class Login extends React.Component{
     this.notify(`Yeah buddy! You made another site!! Let's add ${title}`);
     this.setState({
         hideAddSite: !this.state.hideAddSite,
-        hideChicken: !this.state.hideChicken,
     });
     const response = await fetch('https://senbenito-server.herokuapp.com/sites',
       {method: 'POST',
@@ -60,6 +58,10 @@ export default class Login extends React.Component{
     } else {
       const data = await response.json();
       this.notify(`Another site added: ${data.title}... ROCK ON!!`);
+      this.setState({
+        hideLogin: true,
+        hideAddSite: true
+      })
     }
   }
 
@@ -80,19 +82,21 @@ export default class Login extends React.Component{
       </form>
     )
     return(
-      <div className="login-bar">
-          <ToastContainer
-          position="top-right"
-          type="default"
-          autoClose={5000}
-          hideProgressBar={true}
-          newestOnTop={false}
-          closeOnClick
-          pauseOnHover
-          />
-          {!this.state.hideLogin && <LoginForm />}
-          {!this.state.hideAddSite && <AddWebsite />}
+      <div>
+        <ToastContainer
+        position="top-right"
+        type="default"
+        autoClose={5000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnHover
+        />
+        <div className="login-bar">
           <h3>this is some of the neat stuff <a href="https://github.com/senbenito">senbenito</a> has crafted:</h3>
+          {!this.props.hideLogin && <LoginForm />}
+          {!this.state.hideAddSite && <AddWebsite />}
+        </div>
       </div>
     )
    }

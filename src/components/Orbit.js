@@ -12,24 +12,24 @@ export default class Orbit extends React.Component{
       viewerURL: this.props.viewerURL,
       websites: [
         [
-          {id:0, url: 'abc', title: 'ABC'},
-          {id:1, url: 'abc', title: 'ABC'},
-          {id:2, url: 'abc', title: 'ABC'},
-          {id:3, url: 'abc', title: 'ABC'}
+          {id:0, url: 'abc', title: '123'},
+          {id:1, url: 'def', title: '456'},
+          {id:2, url: 'ghi', title: '789'},
+          {id:3, url: 'jkl', title: '111'}
         ],
         [
-          {id:4, url: 'abc', title: 'ABC'},
-          {id:5, url: 'abc', title: 'ABC'}
+          {id:4, url: 'mno', title: '222'},
+          {id:5, url: 'pqr', title: '333'}
         ],
         [
-          {id:6, url: 'abc', title: 'ABC'},
-          {id:7, url: 'abc', title: 'ABC'},
-          {id:8, url: 'abc', title: 'ABC'}
+          {id:6, url: 'stu', title: '444'},
+          {id:7, url: 'vwx', title: '555'},
+          {id:8, url: 'yzz', title: '666'}
         ],
         [
-          {id:9, url: 'abc', title: 'ABC'},
-          {id:10, url: 'abc', title: 'ABC'},
-          {id:11, url: 'abc', title: 'ABC'}
+          {id:9, url: 'aaa', title: '777'},
+          {id:10, url: 'bbb', title: '888'},
+          {id:11, url: 'ccc', title: '999'}
         ]
       ]
     };

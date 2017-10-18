@@ -73,21 +73,16 @@ export default class PlanetMoon extends React.Component{
           )
         case 'fifth':
           return(
-            <div className={this.props.className}
-            onClick={this.props.toggleForm()}
-            key={this.props.website.id}
-            value={this.props.website.url}>
+            <div className={this.props.className + '-moon-orbit'}>
               <div className={this.props.orbit + '-orbit-moon-chicken'}
-              onClick={this.props.toggleForm()}
-              key={this.props.website.id + 10}
-              value={this.props.website.url}>
-                <img className="chicken" src="https://orig00.deviantart.net/c283/f/2014/021/5/2/chicken_caw_animation_by_captaintoog-d7338wq.gif" alt="chicken" onClick={this.props.toggleForm()}/>
+              onClick={this.props.toggleForm}
+              key="login-chicken">
+                <img className="chicken" src="https://orig00.deviantart.net/c283/f/2014/021/5/2/chicken_caw_animation_by_captaintoog-d7338wq.gif" alt="chicken"/>
               </div>
               <div className={this.props.orbit + '-orbit-moon-egg'}
-              onClick={this.props.toggleForm()}
-              key={this.props.website.id + 11}
-              value={this.props.website.url}>
-                <img className="egg" src="https://orig00.deviantart.net/1039/f/2012/008/7/5/8bit_egg_by_xxx515xxx-d4ls0ll.png" alt="egg" onClick={this.props.toggleForm()}/>
+              onClick={this.props.toggleForm}
+              key="login-egg">
+                <img className="egg" src="https://orig00.deviantart.net/1039/f/2012/008/7/5/8bit_egg_by_xxx515xxx-d4ls0ll.png" alt="egg"/>
               </div>
             </div>
           )

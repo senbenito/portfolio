@@ -1,5 +1,4 @@
 #React-body {
-  background-image: url('./rfm25es1j2iz.jpg');
   top: 14vh;
   left: 0;
   position:relative;
@@ -11,7 +10,7 @@
   height: 14vh;
   width: 100vw;
   text-align: center;
-  background: repeating-linear-gradient(59deg, #998090 0%, #998090 10%, #3f3344 0%, #3f3344 50%) 0 / 15px 15px;
+  /*background: repeating-linear-gradient(59deg, #998090 0%, #998090 10%, #3f3344 0%, #3f3344 50%) 0 / 15px 15px;*/
   position: absolute;
 }
 
@@ -20,7 +19,7 @@
   top: 14vh;
   width: 100vw;
   color: white;
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 
 .about {
@@ -43,10 +42,6 @@ h3 {
   transition: all 0.5s;
   position: relative;
   padding-top: 2vh;
-}
-
-form {
-  height: 80px;
 }
 
 @-webkit-keyframes neon1 {
@@ -471,16 +466,26 @@ form {
 }
 
 /* ---------- Repeating styles for the fifth orbit planets ---------- */
-.fifth-orbit-planet0 {
+/*.fifth-orbit-planet0 {
   position: absolute;
   top: 40vw;
   right: -2vw;
   height: 5vw;
   width: 5vw;
   border-radius: 100%;
-  /*background-color: lime;*/
   -webkit-animation: spin-right 4s ease alternate infinite;
   animation: spin-right 4s ease alternate infinite;
+}*/
+
+.fifth-orbit-planet0-moon-orbit {
+  position: absolute;
+  top: 40vw;
+  right: -2vw;
+  height: 5vw;
+  width: 5vw;
+  border-radius: 100%;
+  -webkit-animation: spin-right 5s ease alternate infinite;
+  animation: spin-right 5s ease alternate infinite;
 }
 
 .fifth-orbit-moon-chicken {
@@ -508,7 +513,7 @@ form {
   height: 3.2vw;
   width: 3.2vw;
   border-radius: 100%;
-  background-color: lime;
+  background-color: gray;
 }
 
 .egg {
