@@ -14,20 +14,20 @@ I selected [React.js](https://facebook.github.io/react/) because:
 
 At this point, React is probably overkill to display a few iframes, but I am a fan of the [Polymorphism Principle of Object-Oriented Programming (POOP) (and its dependency Inheritance)](https://stackoverflow.com/a/27642444 "Travis J on StackOverflow") and React embodies this ability of object-oriented languages like Javascript to instantiate new Object classes / "children" / component by extending an original / "parent" / app Object ensuring plug&play component compatability (kinda like my old NES but fixing problems with React console instead of blowing on cartridges). So I can find amazing NPM modules that someone else has created and wire them up to extend my portfolio's functionality - cool!!
 
-Those [`<iframes>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe "refer to the MDN docs") tho... I recognized the power of a simple <iframe> during that [React-a-thon](https://github.com/lerning/gelato) - you can just supply a URI with API key as the src - so I wanted to bring them in here. Who knows, we may find future advances replacing the <iframe>s but for now, I like their simplicity and literal window into another world...
+Those [`<iframe>`s](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe "refer to the MDN docs") tho... I recognized the power of a simple `<iframe>` during that [React-a-thon](https://github.com/lerning/gelato) - you can just supply a URI with API key as the src - so I wanted to bring them in here. Who knows, we may find future advances replacing the `<iframe>`s but for now, I like their simplicity and literal window into another world...
 
 At this point, we have a simple front-end, so let's deploy to [Surge](http://surge.sh/) for a quick preview: [senbenito's portfolio](http://senbenito-portfolio.surge.sh/ "basic front-end on surge.sh"). This was a super-simple deployment thanks to create-react-app's `yarn build` command. Just `surge` in the `build` directory and **POOF!** ... *website*.
 >Git branch [master](https://github.com/senbenito/portfolio-frontend)
 
 ## Step 2: let's get dynamic!
-I knew I wasn't done making websites and wanting to show them off. Rather than manually add in a new <iframe> each time I make a new site to rebuild and redeploy, I took a lesson from my [Serene MVP](https://github.com/adam-serene/serene-mvp) Google Map integration and decided to query a [Knex.js](http://knexjs.org/) [PostgreSQL](https://www.postgresql.org/) database via a RESTful [Express.js](https://expressjs.com/) server. This way, I can just [.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) a data array of submitted websites into those beloved <iframe>s.
+I knew I wasn't done making websites and wanting to show them off. Rather than manually add in a new `<iframe>` each time I make a new site to rebuild and redeploy, I took a lesson from my [Serene MVP](https://github.com/adam-serene/serene-mvp) Google Map integration and decided to query a [Knex.js](http://knexjs.org/) [PostgreSQL](https://www.postgresql.org/) database via a RESTful [Express.js](https://expressjs.com/) server. This way, I can just [.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) a data array of submitted websites into those beloved `<iframe>`s.
 
 Here's the [personal-server](https://github.com/senbenito/personal-server) repo to dive into this crucial step.
 
 HOLD ON! Someone else could Post to my website database, so let's bring in some basic authentication via [BcryptJS](https://www.npmjs.com/package/bcryptjs) and allow user persistence via [JSON Web Tokens](https://www.npmjs.com/package/jsonwebtoken).
 _note: I started out with Bcrypt, but ELF header errors plagued my Heroku build, so I finally found BcryptJS which is slower... but works!_
 
-Which brings up an interesting 'problem': I've created a couple components to deal with (portfolio, login, submit website) so let's add [React Router DOM] (https://www.npmjs.com/package/react-router-dom) to take care of rendering components as needed!
+Which brings up an interesting 'problem': I've created a couple components to deal with (portfolio, login, submit website) so let's add [React Router DOM](https://www.npmjs.com/package/react-router-dom) to take care of rendering components as needed!
 >Git branch [react-router](https://github.com/senbenito/portfolio-frontend/tree/react-router)
 
 Way back on my Q1 Project, [Eatertain.Me](http://eatertain_me.surge.sh/), I had a [chicken GIF](https://captaintoog.deviantart.com/) easter egg that would display chicken recipes. It became a "thing" that we'd sneak the chicken into our quarterly projects [Family Hub: add 'chicken' to grocery list and mark it done](https://familyhub.herokuapp.com/), [ReZact Hunter: click on Difficulty Level bar to face Chicken Boss](https://github.com/zpassarelli/rezact-hunter), [Serene: click the chicken icon to view chicken restaurants](https://serene-green.herokuapp.com/chickenplaces) - so as an ode to my friends-forever from g[49], my login bar is accessed by clicking the chicken.
@@ -45,5 +45,30 @@ It was at this point I realized that rather than replace the portfolio component
 >Git branch [refactor-login-add](https://github.com/senbenito/portfolio-frontend/tree/refactor-login-add)
 
 ## Step 4: revamp the display functionality
-As alluded to earlier, it's time to fix up the <iframe>s. Displaying a list of my sites to select one that will display in a single <iframe> is going to cut down on load-time as well as hide all those console errors from the sites. Getting back to Bootstrap 4 via [reactstrap] () seems like a good jumping off point because of components like Jumbotron and Cards...
->Git branch [revamp-portfolio-display]()
+As alluded to earlier, it's time to fix up the `<iframe>`s. Displaying a list of my sites to select one that will display in a single `<iframe>` is going to cut down on load-time as well as hide all those console errors from the sites. Getting back to Bootstrap 4 via [reactstrap](https://reactstrap.github.io/) seems like a good jumping off point because of components like Jumbotron, Modal and Cards...
+
+But there's a known [issue](https://github.com/reactstrap/reactstrap/issues/502) with reactstrap modals which means I'll use [react-modal](https://www.npmjs.com/package/react-modal)!
+
+And then I remember this sketch I made of my portfolio site back in Q2, so now I've gotta make my site ... 'out of this world' ([r/dadjokes](https://www.reddit.com/r/dadjokes/)):
+![solar-wireframe](./PortfolioWireframe.jpg)
+
+A quick search on [CSS-Tricks]() gave me a basic [orbiting planet framework](https://codepen.io/alandunning/pen/bNNRvQ) I could tinker with, which I did - [A LOT](#step-5:-the-joys-of-building-a-solar-system).
+>Git branch [revamp-portfolio-display](https://github.com/senbenito/portfolio-frontend/tree/revamp-portfolio-display)
+
+## Step 5: the joys of building a solar system
+Since this orbiting display is literally the centerpiece of this site, we should make it pretty AND functional.
+
+I noticed the orbit `<div>`s wouldn't allow clicking when I used JSX to `.map()` over the website array I got back from the server. So I started splitting out `<Planet />`s from `<Orbit />`, and then thought `<PlanetMoon />`s and `<PlanetRings>`s would be cool.
+
+It was in here that I swapped out the controlled input on the `<Login />` for an [uncontrolled input](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/) which took care of that losing focus after each keypress; "control only what you need to."
+
+Tinkering with all those CSS values and effects, I stumbled on a neat way of gimballing my planets so they're always up: **counter-rotation**! If you rotate an object at the same rate widdershins as the object's orbit proceeds deasil, the top will always point up; thanks... Euclid?
+
+My [bouncing chicken](#-Step-3:-very-basic-styling) is getting a little ridiculous with all this celestial whirling, and I'm a little tired of chasing the thing around... let's just strand our chicken out in the furthest reaches of space to ponder an age-old question!
+
+This chicken toggle is pretty awesome:
++ from a great-great-grandchild component, `<PlanetMoon />`, a `state` change is propogated up to `App`
++ and then back down to another grandchild component, `<Login />`
+
+That said, any much further and we should bring in [Redux](http://redux.js.org/) to easily manage `state` from one central container.
+>Git branch [orbit-component](https://github.com/senbenito/portfolio-frontend/tree/orbit-component)
