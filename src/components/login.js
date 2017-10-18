@@ -6,68 +6,44 @@ import '../App.css';
 
 export default class Login extends React.Component{
   constructor(props){
-     super(props);
-     this.state = {
-       hideChicken: false,
-       hideLogin: true,
-       hideAddSite: true,
-       chickenClass: 'chicken-bounce',
-       username: '',
-       password: '',
-       url: '',
-       title: ''
-     };
-     this.handleLogin = this.handleLogin.bind(this);
-     this.handleSubmit = this.handleSubmit.bind(this);
+    super(props);
+    this.state = {
+      hideAddSite: true,
+    };
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleSiteSubmit = this.handleSiteSubmit.bind(this);
    };
-
-  toggleForm=()=>{
-    this.setState({
-      chickenClass: 'chicken-roll'
-    });
-    setTimeout(()=>{
-      this.setState({
-        hideLogin: !this.state.hideLogin,
-        hideChicken: !this.state.hideChicken
-      })
-    } , 1500)
-  };
-
-  handleInput=(event)=>{
-    const value = event.target.value;
-    const name = event.target.name;
-    this.setState({
-      [name]: value
-    });
-  };
 
   notify=(message)=>toast(message);
 
   async handleLogin(event) {
     event.preventDefault();
-    this.notify(`Hey, ${this.state.username}. You down? We'll see....`);
+    const username = this._username.value;
+    const password = this._password.value;
+    this.notify(`Hey, ${username}. You down? We'll see....`);
     const response = await fetch('https://senbenito-server.herokuapp.com/login',
       {method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
-      body: qs.stringify(this.state)});
-    if (response.status !== 200) return this.notify(`Could not login: ${this.state.username}`);
+      body: qs.stringify({username, password})
+      });
+    if (response.status !== 200) return this.notify(`Could not login: ${username}`);
     const data = await response.json();
     this.notify(`Righteous. Welcome to the fun, ${data.greeting}`);
     this.setState({
-      hideLogin: !this.state.hideLogin,
-      hideAddSite: !this.state.hideAddSite
+      hideLogin: true,
+      hideAddSite: false
     })
   }
 
-  async handleSubmit(event) {
+  async handleSiteSubmit(event) {
     event.preventDefault();
-    this.notify(`Yeah buddy! You made another site!! Let's add ${this.state.title}`);
+    const url = this._url.value;
+    const title = this._title.value;
+    this.notify(`Yeah buddy! You made another site!! Let's add ${title}`);
     this.setState({
-      hideAddSite: !this.state.hideAddSite,
-      hideChicken: !this.state.hideChicken,
-      chickenClass: 'chicken-bounce'
+        hideAddSite: !this.state.hideAddSite,
     });
     const response = await fetch('https://senbenito-server.herokuapp.com/sites',
       {method: 'POST',
@@ -75,48 +51,50 @@ export default class Login extends React.Component{
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
       credentials: 'include',
-      body: qs.stringify(this.state)});
+      body: qs.stringify({url, title})
+      });
     if (response.status !== 200) {
       this.notify(`Something went wrong, dude.`)
     } else {
       const data = await response.json();
       this.notify(`Another site added: ${data.title}... ROCK ON!!`);
+      this.setState({
+        hideLogin: true,
+        hideAddSite: true
+      })
     }
   }
 
   render(){
     const LoginForm = () => (
       <form onSubmit={this.handleLogin}>
-        <input placeholder="username" name="username" type="text" value={this.state.username} onChange={this.handleInput} />
-        <input placeholder="password" name="password" type="password" value={this.state.password} onChange={this.handleInput} />
+        <input placeholder="username" name="username" type="text" ref={input => this._username = input} />
+        <input placeholder="password" name="password" type="password" ref={input => this._password = input} />
         <input type="submit" value="Submit" />
       </form>
     )
-    const Chicken = () => (
-      <img className={this.state.chickenClass} src="https://orig00.deviantart.net/c283/f/2014/021/5/2/chicken_caw_animation_by_captaintoog-d7338wq.gif" alt="./chicken_caw_animation_by_captaintoog-d7338wq.gif" onClick={this.toggleForm}/>
-    )
 
     const AddWebsite = () => (
-      <form onSubmit={this.handleSubmit}>
-        <input placeholder="website" name="url" type="text" value={this.state.url} onChange={this.handleInput} />
-        <input placeholder="title" name="title" type="text" value={this.state.title} onChange={this.handleInput} />
+      <form onSubmit={this.handleSiteSubmit}>
+        <input placeholder="website" name="url" type="text" ref={input => this._url = input} />
+        <input placeholder="title" name="title" type="text" ref={input => this._title = input} />
         <input type="submit" value="Submit" />
       </form>
     )
     return(
       <div>
         <ToastContainer
-         position="top-right"
-         type="default"
-         autoClose={5000}
-         hideProgressBar={true}
-         newestOnTop={false}
-         closeOnClick
-         pauseOnHover
+        position="top-right"
+        type="default"
+        autoClose={5000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnHover
         />
         <div className="login-bar">
-          {!this.state.hideChicken && <Chicken />}
-          {!this.state.hideLogin && <LoginForm />}
+          <h3>this is some of the neat stuff <a href="https://github.com/senbenito">senbenito</a> has crafted:</h3>
+          {!this.props.hideLogin && <LoginForm />}
           {!this.state.hideAddSite && <AddWebsite />}
         </div>
       </div>
