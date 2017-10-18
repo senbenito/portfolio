@@ -116,6 +116,9 @@ export default class Orbit extends React.Component{
         <div className="ring3"/>
         <div className="ring4"/>
         <div className="ring5"/>
+        <div className="ring6"/>
+        <div className="ring7"/>
+        <div className="ring8"/>
         </Link>
       </div>
     )

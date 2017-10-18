@@ -22,7 +22,7 @@
   text-align: center;
   width: 100vw;
   color: white;
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 
 .about {
@@ -128,7 +128,7 @@ form {
 .ring {
   width: 150%;
   height: 150%;
-  border: solid 10px white;
+  border: double 10px darkgray;
   border-radius: 50%;
   top: -25%;
   left: -25%;
@@ -140,61 +140,113 @@ form {
 .ring1 {
   width: 150%;
   height: 150%;
-  border: solid 10px white;
+  border: double 10px gold;
   border-radius: 50%;
   top: -25%;
   left: -25%;
   position: absolute;
   transform: rotate3d(0.8, 0.2, 0, 75deg);
   box-sizing: border-box;
+  -webkit-animation: spin-right 2s linear infinite alternate;
+  animation: spin-right 2s linear infinite alternate;
 }
 
 .ring2 {
   width: 150%;
   height: 150%;
-  border: solid 10px lime;
+  border: double 10px silver;
   border-radius: 50%;
   top: -25%;
   left: -25%;
   position: absolute;
   transform: rotate3d(1.8, 1.2, 0, 75deg);
   box-sizing: border-box;
+  -webkit-animation: spin-right 4s linear infinite alternate;
+  animation: spin-right 4s linear infinite alternate;
 }
 
 .ring3 {
   width: 150%;
   height: 150%;
-  border: solid 10px white;
+  border: double 10px gold;
   border-radius: 50%;
   top: -25%;
   left: -25%;
   position: absolute;
-  transform: rotate3d(2.8, 1.2, 0, 75deg);
+  transform: rotate3d(0.8, 1.2, 0, 75deg);
   box-sizing: border-box;
+  -webkit-animation: spin-right 8s linear infinite alternate;
+  animation: spin-right 8s linear infinite alternate;
 }
 
 .ring4 {
   width: 150%;
   height: 150%;
-  border: solid 10px white;
+  border: double 10px silver;
   border-radius: 50%;
   top: -25%;
   left: -25%;
   position: absolute;
-  transform: rotate3d(2.8, 3.2, 0, 75deg);
+  transform: rotate3d(0.4, 2.2, 0, 75deg);
   box-sizing: border-box;
+  -webkit-animation: spin-right 1s linear infinite alternate;
+  animation: spin-right 1s linear infinite alternate;
 }
 
 .ring5 {
   width: 150%;
   height: 150%;
-  border: solid 10px lime;
+  border: double 10px gold;
   border-radius: 50%;
   top: -25%;
   left: -25%;
   position: absolute;
-  transform: rotate3d(4.8, 3.2, 0, 75deg);
+  transform: rotate3d(-.4, 2.2, 0, 75deg);
   box-sizing: border-box;
+  -webkit-animation: spin-right 2s linear infinite alternate;
+  animation: spin-right 2s linear infinite alternate;
+}
+
+.ring6 {
+  width: 150%;
+  height: 150%;
+  border: double 10px silver;
+  border-radius: 50%;
+  top: -25%;
+  left: -25%;
+  position: absolute;
+  transform: rotate3d(-.8, 1.2, 0, 75deg);
+  box-sizing: border-box;
+  -webkit-animation: spin-right 4s linear infinite alternate;
+  animation: spin-right 4s linear infinite alternate;
+}
+
+.ring7 {
+  width: 150%;
+  height: 150%;
+  border: double 10px gold;
+  border-radius: 50%;
+  top: -25%;
+  left: -25%;
+  position: absolute;
+  transform: rotate3d(-1.2, .8, 0, 75deg);
+  box-sizing: border-box;
+  -webkit-animation: spin-right 8s linear infinite alternate;
+  animation: spin-right 8s linear infinite alternate;
+}
+
+.ring8 {
+  width: 150%;
+  height: 150%;
+  border: double 10px silver;
+  border-radius: 50%;
+  top: -25%;
+  left: -25%;
+  position: absolute;
+  transform: rotate3d(-1.2, .2, 0, 75deg);
+  box-sizing: border-box;
+  -webkit-animation: spin-right 1s linear infinite alternate;
+  animation: spin-right 1s linear infinite alternate;
 }
 
 /* ---------- First orbit - This is the closest to the central point ---------- */
@@ -206,7 +258,10 @@ form {
   width: 8vw;
   height: 8vw;
   border-radius: 100%;
-  background-color: rgba(0,0,0,.7);
+  background-color: rgba(0,0,0,.8);
+  -webkit-animation: spin-right 12s linear infinite alternate;
+  animation: spin-right 12s linear infinite alternate;
+  animation-direction: reverse;
 }
 
 /* ---------- Second orbit - This is the second closest to the central point ---------- */
@@ -218,30 +273,30 @@ form {
   height: 25vw;
   border: 2px orange dashed;
   border-radius: 100%;
-  -webkit-animation: spin-right 40s linear infinite;
-  animation: spin-right 40s linear infinite;
+  -webkit-animation: spin-right 20s linear infinite;
+  animation: spin-right 20s linear infinite;
 }
 
 /* ---------- Repeating styles for the second orbit planets ---------- */
 .second-orbit-planet0 {
   position: absolute;
-  bottom: 4vw;
+  top: 4vw;
   right: -2vw;
-  height: 8vw;
-  width: 8vw;
+  height: 6vw;
+  width: 6vw;
   border-radius: 100%;
   background-color: gray;
-  -webkit-animation: spin-right 40s linear infinite;
-  animation: spin-right 40s linear infinite;
+  -webkit-animation: spin-right 20s linear infinite;
+  animation: spin-right 20s linear infinite;
   animation-direction: reverse;
 }
 
 .second-orbit-planet0-moon-orbit {
   position: absolute;
-  bottom: 4vw;
+  top: 4vw;
   right: -2vw;
-  height: 8vw;
-  width: 8vw;
+  height: 6vw;
+  width: 6vw;
   border-radius: 100%;
   -webkit-animation: spin-right 12s linear infinite;
   animation: spin-right 12s linear infinite;
@@ -260,26 +315,26 @@ form {
 .second-orbit-planet1 {
   position: relative;
   top: 4vw;
-  left: -0.6vw;
-  height: 4vw;
-  width: 4vw;
+  left: -1.2vw;
+  height: 6vw;
+  width: 6vw;
   border-radius: 100%;
   background-color: gray;
-  -webkit-animation: spin-right 40s linear infinite;
-  animation: spin-right 40s linear infinite;
+  -webkit-animation: spin-right 20s linear infinite;
+  animation: spin-right 20s linear infinite;
   animation-direction: reverse;
 }
 
 .second-orbit-planet2 {
   position: absolute;
-  bottom: .2vw;
-  left: 4vw;
-  height: 4vw;
-  width: 4vw;
+  bottom: -3.2vw;
+  left: 6vw;
+  height: 8vw;
+  width: 8vw;
   border-radius: 100%;
   background-color: gray;
-  -webkit-animation: spin-right 40s linear infinite;
-  animation: spin-right 40s linear infinite;
+  -webkit-animation: spin-right 20s linear infinite;
+  animation: spin-right 20s linear infinite;
   animation-direction: reverse;
 }
 
@@ -292,8 +347,8 @@ form {
   height: 45vw;
   border: 2px orange dashed;
   border-radius: 100%;
-  -webkit-animation: spin-right 60s linear infinite;
-  animation: spin-right 60s linear infinite;
+  -webkit-animation: spin-right 30s linear infinite;
+  animation: spin-right 30s linear infinite;
 }
 
 /* ---------- Repeating styles for the third orbit planets ---------- */
@@ -305,8 +360,8 @@ form {
   width: 9vw;
   border-radius: 100%;
   background-color: gray;
-  -webkit-animation: spin-right 90s linear infinite;
-  animation: spin-right 90s linear infinite;
+  -webkit-animation: spin-right 30s linear infinite;
+  animation: spin-right 30s linear infinite;
   animation-direction: reverse;
 }
 
@@ -331,6 +386,36 @@ form {
   background-color: gray;
 }
 
+.third-orbit-moon01 {
+  position: absolute;
+  top: 4vw;
+  left: -2vw;
+  height: 1.5vw;
+  width: 1.5vw;
+  border-radius: 100%;
+  background-color: gray;
+}
+
+.third-orbit-moon02 {
+  position: absolute;
+  top: 0;
+  right: -1.5vw;
+  height: 2.2vw;
+  width: 2.2vw;
+  border-radius: 100%;
+  background-color: gray
+}
+
+.third-orbit-moon03 {
+  position: absolute;
+  bottom: -.5vw;
+  right: 1vw;
+  height: 1vw;
+  width: 1vw;
+  border-radius: 100%;
+  background-color: gray;
+}
+
 .third-orbit-planet1 {
   position: absolute;
   transform-style: preserve-3d;
@@ -340,8 +425,8 @@ form {
   width: 8vw;
   border-radius: 100%;
   background-color: gray;
-  -webkit-animation: spin-right 60s linear infinite;
-  animation: spin-right 60s linear infinite;
+  -webkit-animation: spin-right 30s linear infinite;
+  animation: spin-right 30s linear infinite;
   animation-direction: reverse;
 }
 .third-orbit-planet2 {
@@ -352,8 +437,8 @@ form {
   width: 6vw;
   border-radius: 100%;
   background-color: gray;
-  -webkit-animation: spin-right 60s linear infinite;
-  animation: spin-right 60s linear infinite;
+  -webkit-animation: spin-right 30s linear infinite;
+  animation: spin-right 30s linear infinite;
   animation-direction: reverse;
 }
 
@@ -366,30 +451,30 @@ form {
   height: 73vw;
   border: 2px orange dashed;
   border-radius: 100%;
-  -webkit-animation: spin-right 80s linear infinite;
-  animation: spin-right 80s linear infinite;
+  -webkit-animation: spin-right 40s linear infinite;
+  animation: spin-right 40s linear infinite;
 }
 
 /* ---------- Repeating styles for the fourth orbit planets ---------- */
 .fourth-orbit-planet0 {
   position: absolute;
   bottom: 13vw;
-  right: 3.5vw;
-  height: 6vw;
-  width: 6vw;
+  right: -1vw;
+  height: 12vw;
+  width: 12vw;
   border-radius: 100%;
   background-color: gray;
-  -webkit-animation: spin-right 80s linear infinite;
-  animation: spin-right 80s linear infinite;
+  -webkit-animation: spin-right 40s linear infinite;
+  animation: spin-right 40s linear infinite;
   animation-direction: reverse;
 }
 
 .fourth-orbit-planet0-moon-orbit {
   position: absolute;
   bottom: 13vw;
-  right: 3.5vw;
-  height: 6vw;
-  width: 6vw;
+  right: -1vw;
+  height: 12vw;
+  width: 12vw;
   border-radius: 100%;
   -webkit-animation: spin-right 5s linear infinite;
   animation: spin-right 5s linear infinite;
@@ -418,26 +503,26 @@ form {
 .fourth-orbit-planet1 {
   position: absolute;
   bottom: 6vw;
-  left: 8vw;
-  height: 7vw;
-  width: 7vw;
+  left: 0vw;
+  height: 17vw;
+  width: 17vw;
   border-radius: 100%;
   background-color: gray;
-  -webkit-animation: spin-right 80s linear infinite;
-  animation: spin-right 80s linear infinite;
+  -webkit-animation: spin-right 40s linear infinite;
+  animation: spin-right 40s linear infinite;
   animation-direction: reverse;
 }
 
 .fourth-orbit-planet2 {
   position: absolute;
-  top: 2vw;
+  top: -2vw;
   left: 15vw;
-  height: 6vw;
-  width: 6vw;
+  height: 12vw;
+  width: 12vw;
   border-radius: 100%;
   background-color: gray;
-  -webkit-animation: spin-right 80s linear infinite;
-  animation: spin-right 80s linear infinite;
+  -webkit-animation: spin-right 40s linear infinite;
+  animation: spin-right 40s linear infinite;
   animation-direction: reverse;
 }
 
@@ -450,8 +535,8 @@ form {
   height: 97vw;
   border: 2px orange dashed;
   border-radius: 100%;
-  -webkit-animation: spin-right 90s linear infinite;
-  animation: spin-right 90s linear infinite;
+  -webkit-animation: spin-right 50s linear infinite;
+  animation: spin-right 50s linear infinite;
 }
 
 /* ---------- Repeating styles for the fifth orbit planets ---------- */
@@ -495,20 +580,20 @@ form {
   width: 11vw;
   border-radius: 100%;
   background-color: gray;
-  -webkit-animation: spin-right 90s linear infinite;
-  animation: spin-right 90s linear infinite;
+  -webkit-animation: spin-right 50s linear infinite;
+  animation: spin-right 50s linear infinite;
   animation-direction: reverse;
 }
 .fifth-orbit-planet2 {
   position: absolute;
   top: 9.5vw;
-  left: 9.5vw;
+  right: 9.5vw;
   height: 9vw;
   width: 9vw;
   border-radius: 100%;
   background-color: gray;
-  -webkit-animation: spin-right 90s linear infinite;
-  animation: spin-right 90s linear infinite;
+  -webkit-animation: spin-right 50s linear infinite;
+  animation: spin-right 50s linear infinite;
   animation-direction: reverse;
 }
 
