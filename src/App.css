@@ -2,10 +2,7 @@
   background-image: url('./rfm25es1j2iz.jpg');
   top: 14vh;
   left: 0;
-}
-
-.login-container {
-  top: 0;
+  position:relative;
 }
 
 .login-bar {
@@ -20,6 +17,7 @@
 
 .portfolio {
   text-align: center;
+  top: 14vh;
   width: 100vw;
   color: white;
   /*overflow: hidden;*/
@@ -29,17 +27,6 @@
   text-align: center;
   width: 100vw;
   padding-top: 14vh;
-}
-
-.chicken-bounce {
-  animation: chicken-bounce infinite 53s ease-in-out 5s alternate;
-  height: 20vh;
-  position: relative;
-}
-
-.chicken-roll {
-  animation: roll-out 2.7s ease-out 0s 1;
-  height: 25vh;
 }
 
 a{
@@ -60,49 +47,6 @@ h3 {
 
 form {
   height: 80px;
-}
-
-@keyframes rotisserie {
-  from {
-    transform: rotateX();
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-  to   {
-    transform: rotateX(360deg);
-    background-color: rgba(255, 255, 255, 0.8);
-   }
-}
-
-@-webkit-keyframes chicken-bounce {
-  0% {
-    transform: translateX(0px) translateY(0px) rotate(0deg);
-  }
-  20% {
-    transform: translateX(-422px) translateY(-15px) rotate(320deg);
-  }
-  40% {
-    transform: translateX(580px) translateY(-24px) rotate(123deg);
-  }
-  60% {
-    transform: translateX(-320px) translateY(25px) rotate(23deg);
-  }
-  80% {
-    transform: translateX(275px) translateY(-35px) rotate(196deg);
-  }
-  100% {
-    transform: translateX(-10px) translateY(5px) rotate(32deg);
-  }
-}
-
-@-webkit-keyframes roll-out {
-   from {
-      opacity: 1;
-      transform: translateX(0px) rotate(0deg);
-   }
-   to {
-      opacity: 0;
-      transform: translateX(-100%) rotate(320deg);
-   }
 }
 
 @-webkit-keyframes neon1 {
@@ -534,28 +478,44 @@ form {
   height: 5vw;
   width: 5vw;
   border-radius: 100%;
+  /*background-color: lime;*/
   -webkit-animation: spin-right 4s ease alternate infinite;
   animation: spin-right 4s ease alternate infinite;
 }
 
-.fifth-orbit-moon00 {
+.fifth-orbit-moon-chicken {
+  align-content: center;
   position: absolute;
   top: -2vw;
-  right: 0;
-  height: 3.5vw;
-  width: 3.5vw;
+  right: 0.5vw;
+  height: 4.5vw;
+  width: 4.5vw;
   border-radius: 100%;
   background-color: gray;
 }
 
-.fifth-orbit-moon01 {
+.chicken {
+  position: absolute;
+  top: -1.2vw;
+  left: -1.4vw;
+  height: 13vh;
+}
+
+.fifth-orbit-moon-egg {
   position: absolute;
   bottom: -1vw;
-  right: 0;
-  height: 4.2vw;
-  width: 4.2vw;
+  right: 0.5vw;
+  height: 3.2vw;
+  width: 3.2vw;
   border-radius: 100%;
-  background-color: gray;
+  background-color: lime;
+}
+
+.egg {
+  position: absolute;
+  top: .3vw;
+  left: .35vw;
+  height: 5vh;
 }
 
 .fifth-orbit-planet1 {

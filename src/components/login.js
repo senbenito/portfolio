@@ -8,26 +8,12 @@ export default class Login extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      hideChicken: false,
-      hideLogin: true,
-      hideAddSite: true,
-      chickenClass: 'chicken-bounce',
+      hideLogin: this.props.hideLogin,
+      hideAddSite: this.props.hideAddSite,
     };
     this.handleLogin = this.handleLogin.bind(this);
     this.handleSiteSubmit = this.handleSiteSubmit.bind(this);
    };
-
-  toggleForm=()=>{
-    this.setState({
-      chickenClass: 'chicken-roll'
-    });
-    setTimeout(()=>{
-      this.setState({
-        hideLogin: !this.state.hideLogin,
-        hideChicken: !this.state.hideChicken
-      })
-    } , 1500)
-  };
 
   notify=(message)=>toast(message);
 
@@ -60,7 +46,6 @@ export default class Login extends React.Component{
     this.setState({
         hideAddSite: !this.state.hideAddSite,
         hideChicken: !this.state.hideChicken,
-        chickenClass: 'chicken-bounce'
     });
     const response = await fetch('https://senbenito-server.herokuapp.com/sites',
       {method: 'POST',
@@ -86,9 +71,6 @@ export default class Login extends React.Component{
         <input type="submit" value="Submit" />
       </form>
     )
-    const Chicken = () => (
-      <img className={this.state.chickenClass} src="https://orig00.deviantart.net/c283/f/2014/021/5/2/chicken_caw_animation_by_captaintoog-d7338wq.gif" alt="./chicken_caw_animation_by_captaintoog-d7338wq.gif" onClick={this.toggleForm}/>
-    )
 
     const AddWebsite = () => (
       <form onSubmit={this.handleSiteSubmit}>
@@ -98,21 +80,19 @@ export default class Login extends React.Component{
       </form>
     )
     return(
-      <div className="login-container">
-        <ToastContainer
-         position="top-right"
-         type="default"
-         autoClose={5000}
-         hideProgressBar={true}
-         newestOnTop={false}
-         closeOnClick
-         pauseOnHover
-        />
-        <div className="login-bar">
-          {!this.state.hideChicken && <Chicken />}
+      <div className="login-bar">
+          <ToastContainer
+          position="top-right"
+          type="default"
+          autoClose={5000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          pauseOnHover
+          />
           {!this.state.hideLogin && <LoginForm />}
           {!this.state.hideAddSite && <AddWebsite />}
-        </div>
+          <h3>this is some of the neat stuff <a href="https://github.com/senbenito">senbenito</a> has crafted:</h3>
       </div>
     )
    }

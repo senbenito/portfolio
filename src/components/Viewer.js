@@ -11,6 +11,7 @@ export default class Viewer extends React.Component{
   render(){
     return(
       <div>
+      {this.state.viewerURL}
         <iframe
           id="player"
           title={this.state.viewerURL}

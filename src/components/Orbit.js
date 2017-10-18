@@ -56,7 +56,8 @@ export default class Orbit extends React.Component{
         <PlanetMoon key={index}
         orbit={orbit}
         className={planetClass}
-        onClick={(e)=>this.props.handleSiteClick(e, passVal)}
+        handleSiteClick={(e)=>this.props.handleSiteClick(e, passVal)}
+        toggleForm={this.props.toggleForm}
         website={website}/>
       )
     };
@@ -65,7 +66,7 @@ export default class Orbit extends React.Component{
         return (
           <PlanetRings key={index}
           className={planetClass}
-          onClick={(e)=>this.props.handleSiteClick(e, passVal)}
+          handleSiteClick={(e)=>this.props.handleSiteClick(e, passVal)}
           website={website}/>
         )
       }
@@ -73,7 +74,7 @@ export default class Orbit extends React.Component{
     return (
       <Planet key={index}
       className={planetClass}
-      onClick={(e)=>this.props.handleSiteClick(e, passVal)}
+      handleSiteClick={(e)=>this.props.handleSiteClick(e, passVal)}
       website={website}/>
     )
   };

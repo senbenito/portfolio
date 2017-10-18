@@ -1,26 +1,17 @@
 import React from 'react';
 
 export default class PlanetRings extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      className: this.props.className,
-      website: this.props.website,
-      handleSiteClick: this.props.onClick
-    };
-  };
-
-  render(){
+  render(props){
     return(
-      <div className={this.state.className}
-      onClick={(e)=>this.state.handleSiteClick(e)}
-      key={this.state.website.id}
-      value={this.state.website.url}>
+      <div className={this.props.className}
+      onClick={e=>this.props.handleSiteClick(e)}
+      key={this.props.website.id}
+      value={this.props.website.url}>
         <div className="ring"
-        onClick={(e)=>this.state.handleSiteClick(e)}
-        key={this.state.website.id+9}
-        value={this.state.website.url}></div>
-        {this.state.website.title}
+        onClick={e=>this.props.handleSiteClick(e)}
+        key={this.props.website.id+9}
+        value={this.props.website.url}></div>
+        {this.props.website.title}
       </div>
     )
   };

@@ -11,7 +11,7 @@ export default class Portfolio extends Component {
     super(props);
     this.state = {
       viewerURL: '',
-      hideModal: true
+      hideModal: true,
     }
   };
 
@@ -32,8 +32,10 @@ export default class Portfolio extends Component {
   render() {
     return (
       <div className="portfolio">
-        <h3>this is some of the neat stuff <a href="https://github.com/senbenito">senbenito</a> has crafted:</h3>
-        <Orbit handleSiteClick={this.handleSiteClick}/>
+        <Orbit
+          handleSiteClick={this.handleSiteClick}
+          toggleForm={this.props.toggleForm}
+        />
         <Modal isOpen={!this.state.hideModal} contentLabel="Modal">
           <Viewer viewerURL={this.state.viewerURL}/>
           <Button onClick={this.toggleModal}/>
