@@ -64,11 +64,15 @@ It was in here that I swapped out the controlled input on the `<Login />` for an
 
 Tinkering with all those CSS values and effects, I stumbled on a neat way of gimballing my planets so they're always up: **counter-rotation**! If you rotate an object at the same rate widdershins as the object's orbit proceeds deasil, the top will always point up; thanks... Euclid?
 
+Right about the sixth update of the `fourth-orbit`, I realized [Sass](http://sass-lang.com/) would have made this iteration so much easier, but I like poking around in raw CSS to grok how these properties work - which led to this kinda super-cool "black hole" animation that will become my `<About />` link.
+
 My [bouncing chicken](#-Step-3:-very-basic-styling) is getting a little ridiculous with all this celestial whirling, and I'm a little tired of chasing the thing around... let's just strand our chicken out in the furthest reaches of space to ponder an age-old question!
 
 This chicken toggle is pretty awesome:
 + from a great-great-grandchild component, `<PlanetMoon />`, a `state` change is propogated up to `App`
 + and then back down to another grandchild component, `<Login />`
+
+Passing `props` in `{ Route } from 'react-router-dom'` is a no-go, so this sweet npm package, [react-router-with-props](https://www.npmjs.com/package/react-router-with-props) saved the day with `{ PropsRoute }`. It even has a `{ PrivateRoute }` module for auth; we'll have to remember that when we get to `<About />` and some of the [OAuth2](https://oauth.net/2/) via [Passport.js](http://passportjs.org/) linking I'm scheming on for [LinkedIn](https://developer.linkedin.com/docs/oauth2), [Goggle](https://developers.google.com/identity/protocols/OAuth2), [GitHub](https://developer.github.com/apps/building-integrations/setting-up-and-registering-oauth-apps/)....
 
 That said, any much further and we should bring in [Redux](http://redux.js.org/) to easily manage `state` from one central container.
 >Git branch [orbit-component](https://github.com/senbenito/portfolio-frontend/tree/orbit-component)
