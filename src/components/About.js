@@ -7,18 +7,16 @@ export default class About extends React.Component{
   constructor(props){
      super(props);
      this.state = {
-       url: '',
-       title: ''
      };
    };
 
-  handleChange=(event)=>{
-    const value = event.target.value;
-    const name = event.target.name;
-    this.setState({
-      [name]: value
-    });
-  };
+  // handleChange=(event)=>{
+  //   const value = event.target.value;
+  //   const name = event.target.name;
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // };
 
   notify=(message)=>toast(message);
 
@@ -34,15 +32,7 @@ export default class About extends React.Component{
          closeOnClick
          pauseOnHover
         />
-        <iframe
-          id="player"
-          title="about"
-          type="text/html"
-          width="1200"
-          height="400"
-          src="../README.md"
-          frameBorder="10">
-        </iframe>
+        <object data="README.html" type="text/html"><a href="https://github.com/senbenito/portfolio-frontend/blob/master/README.md">GitHub</a></object>
       </div>
     )
    }

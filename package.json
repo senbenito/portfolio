@@ -17,9 +17,13 @@
     "reactstrap": "^4.8.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "prestart": "node generateReadMe.js",
+    "start": "react-scripts start ",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "marked": "^0.3.6"
   }
 }
