@@ -6,6 +6,7 @@ body {
   font-family: sans-serif;
   align-content: center;
   background-image: url('./rfm25es1j2iz.jpg');
+  overflow: hidden;
 }
 
 footer {

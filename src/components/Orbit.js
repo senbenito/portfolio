@@ -10,28 +10,7 @@ export default class Orbit extends React.Component{
     super(props);
     this.state = {
       viewerURL: this.props.viewerURL,
-      websites: [
-        [
-          {id:0, url: 'abc', title: '123'},
-          {id:1, url: 'def', title: '456'},
-          {id:2, url: 'ghi', title: '789'},
-          {id:3, url: 'jkl', title: '111'}
-        ],
-        [
-          {id:4, url: 'mno', title: '222'},
-          {id:5, url: 'pqr', title: '333'}
-        ],
-        [
-          {id:6, url: 'stu', title: '444'},
-          {id:7, url: 'vwx', title: '555'},
-          {id:8, url: 'yzz', title: '666'}
-        ],
-        [
-          {id:9, url: 'aaa', title: '777'},
-          {id:10, url: 'bbb', title: '888'},
-          {id:11, url: 'ccc', title: '999'}
-        ]
-      ]
+      websites: [],
     };
     this.fetchPlaces = this.fetchPlaces.bind(this);
   }
@@ -45,7 +24,7 @@ export default class Orbit extends React.Component{
   };
 
   componentWillMount() {
-    // this.fetchPlaces();
+    this.fetchPlaces();
   };
 
   makePlanet=(website, index, orbit)=>{

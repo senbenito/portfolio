@@ -93,7 +93,6 @@ export default class Login extends React.Component{
         pauseOnHover
         />
         <div className="login-bar">
-          <h3>this is some of the neat stuff <a href="https://github.com/senbenito">senbenito</a> has crafted:</h3>
           {!this.props.hideLogin && <LoginForm />}
           {!this.state.hideAddSite && <AddWebsite />}
         </div>

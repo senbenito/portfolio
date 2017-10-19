@@ -34,7 +34,15 @@ export default class About extends React.Component{
          closeOnClick
          pauseOnHover
         />
-      <h1>Hello World!</h1>
+        <iframe
+          id="player"
+          title="about"
+          type="text/html"
+          width="1200"
+          height="400"
+          src="../README.md"
+          frameBorder="10">
+        </iframe>
       </div>
     )
    }

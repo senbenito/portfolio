@@ -17,7 +17,7 @@ At this point, React is probably overkill to display a few `<iframe>`s, but I am
 Those [`<iframe>`s](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe "refer to the MDN docs") tho... I recognized the power of a simple `<iframe>` during that [React-a-thon](https://github.com/lerning/gelato) - you can just supply a URI with API key as the src - so I wanted to bring them in here. Who knows, we may find future advances replacing the `<iframe>`s but for now, I like their simplicity and literal window into another world...
 
 At this point, we have a simple front-end, so let's deploy to [Surge](http://surge.sh/) for a quick preview: [senbenito's portfolio](http://senbenito-portfolio.surge.sh/ "basic front-end on surge.sh"). This was a super-simple deployment thanks to create-react-app's `yarn build` command. Just `surge` in the `build` directory and **POOF!** ... *website*.
->Git branch [master](https://github.com/senbenito/portfolio-frontend)
+>Git branch [portfolio-frontend/master](https://github.com/senbenito/portfolio-frontend)
 
 ## Step 2: let's get dynamic!
 I knew I wasn't done making websites and wanting to show them off. Rather than manually add in a new `<iframe>` each time I make a new site to rebuild and redeploy, I took a lesson from my [Serene MVP](https://github.com/adam-serene/serene-mvp) Google Map integration and decided to query a [Knex.js](http://knexjs.org/) [PostgreSQL](https://www.postgresql.org/) database via a RESTful [Express.js](https://expressjs.com/) server. This way, I can just [.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) a data array of submitted websites into those beloved `<iframe>`s.
@@ -26,12 +26,13 @@ Here's the [personal-server](https://github.com/senbenito/personal-server) repo 
 
 HOLD ON! Someone else could Post to my website database, so let's bring in some basic authentication via [BcryptJS](https://www.npmjs.com/package/bcryptjs) and allow user persistence via [JSON Web Tokens](https://www.npmjs.com/package/jsonwebtoken).
 _note: I started out with Bcrypt, but ELF header errors plagued my Heroku build, so I finally found BcryptJS which is slower... but works!_
+>Git branch [personal-server/auth](https://github.com/senbenito/personal-server/tree/auth)
 
 Which brings up an interesting 'problem': I've created a couple components to deal with (portfolio, login, submit website) so let's add [React Router DOM](https://www.npmjs.com/package/react-router-dom) to take care of rendering components as needed!
->Git branch [react-router](https://github.com/senbenito/portfolio-frontend/tree/react-router)
+>Git branch [portfolio-frontend/react-router](https://github.com/senbenito/portfolio-frontend/tree/react-router)
 
 Way back on my Q1 Project, [Eatertain.Me](http://eatertain_me.surge.sh/), I had a [chicken GIF](https://captaintoog.deviantart.com/) easter egg that would display chicken recipes. It became a "thing" that we'd sneak the chicken into our quarterly projects [Family Hub: add 'chicken' to grocery list and mark it done](https://familyhub.herokuapp.com/), [ReZact Hunter: click on Difficulty Level bar to face Chicken Boss](https://github.com/zpassarelli/rezact-hunter), [Serene: click the chicken icon to view chicken restaurants](https://serene-green.herokuapp.com/chickenplaces) - so as an ode to my friends-forever from g[49], my login bar is accessed by clicking the chicken.
->Git branch [chicken-login](https://github.com/senbenito/portfolio-frontend/tree/chicken-login)
+>Git branch [portfolio-frontend/chicken-login](https://github.com/senbenito/portfolio-frontend/tree/chicken-login)
 
 At this point, I'm loving Polymorphism because I've just added some serious backend functionality with a few NPM packages; rock on modularity!!!
 
@@ -39,10 +40,10 @@ At this point, I'm loving Polymorphism because I've just added some serious back
 My plan is to integrate some [Sass](http://sass-lang.com/) CSS framework shortly, but even I see the site is looking like only I can love it...
 
 So I've animated my chicken GIF to run around and make it bothersome to login, and used my favorite CSS font effect, [neon glow](https://codepen.io/FelixRilling/pen/qzfoc) and thrown a little texture and imagery into the site.
->Git branch [super-basic-styling](https://github.com/senbenito/portfolio-frontend/tree/super-basic-styling)
+>Git branch [portfolio-frontend/super-basic-styling](https://github.com/senbenito/portfolio-frontend/tree/super-basic-styling)
 
 It was at this point I realized that rather than replace the portfolio component upon successful login, it would make more sense to just replace the login with the submission form instead. React rocks because I can just toggle these swap around where these components are toggled and rendered... voila! I'm going to save the AddWebsite component skeleton & routing to point to the About page that will store this recap ;)
->Git branch [refactor-login-add](https://github.com/senbenito/portfolio-frontend/tree/refactor-login-add)
+>Git branch [portfolio-frontend/refactor-login-add](https://github.com/senbenito/portfolio-frontend/tree/refactor-login-add)
 
 ## Step 4: revamp the display functionality
 As alluded to earlier, it's time to fix up the `<iframe>`s. Displaying a list of my sites to select one that will display in a single `<iframe>` is going to cut down on load-time as well as hide all those console errors from the sites. Getting back to Bootstrap 4 via [reactstrap](https://reactstrap.github.io/) seems like a good jumping off point because of components like Jumbotron, Modal and Cards...
@@ -53,7 +54,7 @@ And then I remember this sketch I made of my portfolio site back in Q2, so now I
 ![solar-wireframe](./PortfolioWireframe.jpg)
 
 A quick search on [CSS-Tricks]() gave me a basic [orbiting planet framework](https://codepen.io/alandunning/pen/bNNRvQ) I could tinker with, which I did - [A LOT](#step-5:-the-joys-of-building-a-solar-system).
->Git branch [revamp-portfolio-display](https://github.com/senbenito/portfolio-frontend/tree/revamp-portfolio-display)
+>Git branch [portfolio-frontend/revamp-portfolio-display](https://github.com/senbenito/portfolio-frontend/tree/revamp-portfolio-display)
 
 ## Step 5: the joys of building a solar system
 Since this orbiting display is literally the centerpiece of this site, we should make it pretty AND functional.
@@ -75,4 +76,89 @@ This chicken toggle is pretty awesome:
 Passing `props` in `{ Route } from 'react-router-dom'` is a no-go, so this sweet npm package, [react-router-with-props](https://www.npmjs.com/package/react-router-with-props) saved the day with `{ PropsRoute }`. It even has a `{ PrivateRoute }` module for auth; we'll have to remember that when we get to `<About />` and some of the [OAuth2](https://oauth.net/2/) via [Passport.js](http://passportjs.org/) linking I'm scheming on for [LinkedIn](https://developer.linkedin.com/docs/oauth2), [Goggle](https://developers.google.com/identity/protocols/OAuth2), [GitHub](https://developer.github.com/apps/building-integrations/setting-up-and-registering-oauth-apps/)....
 
 That said, any much further and we should bring in [Redux](http://redux.js.org/) to easily manage `state` from one central container.
->Git branch [orbit-component](https://github.com/senbenito/portfolio-frontend/tree/orbit-component)
+>Git branch [portfolio-frontend/orbit-component](https://github.com/senbenito/portfolio-frontend/tree/orbit-component)
+
+## Step 6: let's finish this styling
+One of the filters within `.map()`-ing through `this.state.websites` are nested arrays. We could make these client-side, but one of the joys of being a full-stack developer is I can just change the server-side output to fit my specs:
+```javascript
+let websites = [
+    {id:0, url: 'abc', title: '123'},
+    {id:1, url: 'def', title: '456'},
+    {id:2, url: 'ghi', title: '789'},
+    {id:3, url: 'jkl', title: '111'}
+  ],
+  [
+    {id:4, url: 'mno', title: '222'},
+    {id:5, url: 'pqr', title: '333'}
+  ],
+  [
+    {id:6, url: 'stu', title: '444'},
+    {id:7, url: 'vwx', title: '555'},
+    {id:8, url: 'yzz', title: '666'}
+  ],
+  [
+    {id:9, url: 'aaa', title: '777'},
+    {id:10, url: 'bbb', title: '888'},
+    {id:11, url: 'ccc', title: '999'}
+  ];
+```
+>Git branch [personal-server/nested-output](https://github.com/senbenito/senbenito/personal-server/tree/nested-output)
+
+###### <TODO>Food for Thought</TODO>
+
+```javascript
+//food for thought: component-type signifies website property
+in `personal-server/seeds/1_sites.js`:
+  let data = [
+    {id: 8,
+    url: 'https://serene-capstone.herokuapp.com/',
+    title:'Serene',
+    type: 'project'},
+
+    {id: 7,
+    url: 'https://checkout-vr.surge.sh/',
+    title:'Checkout VR',
+    type: 'project'},
+
+    {id: 6,
+    url: 'https://musicator.surge.sh/',
+    title: 'Musicator',
+    type: 'fun'},
+
+    {id: 5,
+    url: 'https://wry-noise.herokuapp.com/',
+    title: 'Dreaddit',
+    type: 'assignment'},
+    ...
+  ];
+
+in `personal-server/server.js`:
+  knex('sites')
+  ...
+  .then(data=> {
+    data.forEach(site=> {
+      switch (site.type) {
+        case 'project':
+          return site.component = 'PlanetMoon';
+        case 'fun':
+          return site.component = 'PlanetRings';
+        default:
+          return site.component = 'Planet';
+      }
+    })
+    res.send(data);
+  });
+
+in `portfolio-frontend/src/components/Orbit.js`:
+  makePlanet=(website, index, orbit)=>{
+    let passVal = website.url;
+    let planetClass = `${orbit}-orbit-planet${index}`;
+    switch (website.component) {
+      case 'PlanetMoon':
+        return (
+          <PlanetMoon key={index}/>
+        )
+      case 'PlanetRings':
+    ...
+  });
+```
