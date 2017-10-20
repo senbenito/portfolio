@@ -21,18 +21,20 @@ export default class About extends React.Component{
   // </UncontrolledTooltip>
 
   toolToast=()=>{
-    toast.warn("... this a document describing the creation of this website that is actually a miniature website that will take you to the website that I used to create this website ...");
+    this.notify("... this a document describing the creation of this website that is actually a miniature website that will take you to the website that I used to create this website ...");
   };
 
+  notify=(message)=>toast.warn(message);
 
   render(){
     return(
       <div className="about">
         <ToastContainer
-         position="top-center"
+         position="top-left"
          autoClose={5000}
+         toastClassName="tool-toast"
          hideProgressBar={false}
-         newestOnTop={false}
+         newestOnTop={true}
          closeOnClick
          pauseOnHover
         />
