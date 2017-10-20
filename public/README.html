@@ -152,3 +152,17 @@ in `portfolio-frontend/src/components/Orbit.js`:
     ...
   });
 </code></pre>
+<h2 id="step-7-using-readme-md-as-about-">Step 7: Using <code>README.md</code> as <code>&lt;About /&gt;</code></h2>
+<p>Brilliantly <em>efficient</em> me thought,</p>
+<blockquote>
+<p>&quot;I&#39;ve been documenting this website, and I want to create an About page... let&#39;s just merge them!&quot;</p>
+</blockquote>
+<p>Knowing my love of <code>&lt;iframe&gt;</code>s, you&#39;d expect me to just pop an <code>&lt;iframe&gt;</code> of the <a href="https://github.com/senbenito/portfolio-frontend/blob/master/README.md">GitHub-hosted <code>README.md</code></a>, right?</p>
+<p>But, that violates a <code>Content Security Policy directive</code> and overriding that seems like a no-no.</p>
+<p>So I explored a few options for rendering Markdown into HTML, settling on a pretty straightfoward solution from <a href="https://stackoverflow.com/users/5739047/gliemezis">gliemezis on StackOverflow</a>, using <a href="https://www.npmjs.com/package/marked">Marked</a> to turn this <code>README.md</code> into <code>README.html</code> as a <code>&quot;script.prestart&quot; &amp;&amp; &quot;script.prebuild&quot;</code> in the <code>package.json</code>.</p>
+<p>And, add a little meta-HTML styling courtesy of <a href="https://gist.github.com/andyferra/2554919#file-github-css">github.css</a>.</p>
+<p><a href="http://www.marcusoft.net/2015/08/pre-and-post-hooks-for-npm-scripting.html">npm scripting is rad</a></p>
+<blockquote>
+<p>Git branch <a href="https://github.com/senbenito/portfolio-frontend/tree/about-markdown">portfolio-frontend/about-markdown</a></p>
+</blockquote>
+<link rel="stylesheet" href="README.css">

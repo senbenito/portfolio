@@ -23,7 +23,7 @@ export default class App extends React.Component{
       <div>
          <div id="React-body">
            <PropsRoute exact path="/" component={Portfolio} toggleForm={this.toggleForm}/>
-           <PropsRoute path="/about" component={About}/>
+           <PropsRoute path="/about" component={About} toggleForm={this.toggleForm}/>
          </div>
          <Login hideLogin={this.state.hideLogin}/>
        </div>

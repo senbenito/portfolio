@@ -162,3 +162,24 @@ in `portfolio-frontend/src/components/Orbit.js`:
     ...
   });
 ```
+
+## Step 7: Using `README.md` as `<About />`
+
+Brilliantly _efficient_ me thought,
+>"I've been documenting this website, and I want to create an About page... let's just merge them!"
+
+Knowing my love of `<iframe>`s, you'd expect me to just pop an `<iframe>` of the [GitHub-hosted `README.md`](https://github.com/senbenito/portfolio-frontend/blob/master/README.md), right?
+
+But, that violates a `Content Security Policy directive` and overriding that seems like a no-no.
+
+So I explored a few options for rendering Markdown into HTML, settling on a pretty straightfoward solution from [gliemezis on StackOverflow](https://stackoverflow.com/users/5739047/gliemezis), using [Marked](https://www.npmjs.com/package/marked) to turn this `README.md` into `README.html` as a `"script.prestart" && "script.prebuild"` in the `package.json`.
+
+And, add a little meta-HTML styling courtesy of [github.css](https://gist.github.com/andyferra/2554919#file-github-css).
+
+[npm scripting is rad](http://www.marcusoft.net/2015/08/pre-and-post-hooks-for-npm-scripting.html)
+
+
+>Git branch [portfolio-frontend/about-markdown](https://github.com/senbenito/portfolio-frontend/tree/about-markdown)
+
+
+<link rel="stylesheet" href="README.css">

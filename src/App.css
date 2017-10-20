@@ -10,7 +10,6 @@
   height: 4vh;
   width: 100vw;
   text-align: center;
-  /*background: repeating-linear-gradient(59deg, #998090 0%, #998090 10%, #3f3344 0%, #3f3344 50%) 0 / 15px 15px;*/
   position: absolute;
 }
 
@@ -23,8 +22,28 @@
 
 .about {
   text-align: center;
-  width: 100vw;
-  padding-top: 14vh;
+  width: 90vw;
+  height: 90vh;
+  left: 5vw;
+  position: absolute;
+}
+
+#readme-bar {
+  height: auto;
+  width: auto;
+  background: repeating-linear-gradient(59deg, #998090 0%, #998090 10%, #3f3344 0%, #3f3344 50%) 0 / 15px 15px;
+  color: pink;
+  text-shadow: 1px 1px 2px orange;
+}
+
+.hidden-link, .hidden-link:hover {
+  font-size: 4vh;
+  text-decoration: none;
+}
+
+object {
+  width: 90vw;
+  height: 90vh;
 }
 
 a{
