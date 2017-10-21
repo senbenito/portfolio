@@ -15,6 +15,10 @@ export default class Login extends React.Component{
    };
 
   notify=(message)=>toast(message);
+  notifyRed=(message)=>toast.error(message);
+  notifyGreen=(message)=>toast.success(message);
+  notifyYellow=(message)=>toast.warn(message);
+
 
   async handleLogin(event) {
     event.preventDefault();
@@ -28,9 +32,9 @@ export default class Login extends React.Component{
       },
       body: qs.stringify({username, password})
       });
-    if (response.status !== 200) return this.notify(`Could not login: ${username}`);
+    if (response.status !== 200) return this.notifyRed(`Could not login: ${username}`);
     const data = await response.json();
-    this.notify(`Righteous. Welcome to the fun, ${data.greeting}`);
+    this.notifyGreen(`Righteous. Welcome to the fun, ${data.greeting}`);
     this.setState({
       hideLogin: true,
       hideAddSite: false
@@ -41,7 +45,7 @@ export default class Login extends React.Component{
     event.preventDefault();
     const url = this._url.value;
     const title = this._title.value;
-    this.notify(`Yeah buddy! You made another site!! Let's add ${title}`);
+    this.notifyGreen(`Yeah buddy! You made another site!! Let's add ${title}`);
     this.setState({
         hideAddSite: !this.state.hideAddSite,
     });
@@ -54,10 +58,10 @@ export default class Login extends React.Component{
       body: qs.stringify({url, title})
       });
     if (response.status !== 200) {
-      this.notify(`Something went wrong, dude.`)
+      this.notifyYellow(`Something went wrong, dude.`)
     } else {
       const data = await response.json();
-      this.notify(`Another site added: ${data.title}... ROCK ON!!`);
+      this.notifyGreen(`Another site added: ${data.title}... ROCK ON!!`);
       this.setState({
         hideLogin: true,
         hideAddSite: true
@@ -87,7 +91,7 @@ export default class Login extends React.Component{
         position="top-right"
         type="default"
         autoClose={5000}
-        hideProgressBar={true}
+        hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
         pauseOnHover

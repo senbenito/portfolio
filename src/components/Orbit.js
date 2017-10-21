@@ -90,7 +90,12 @@ export default class Orbit extends React.Component{
             )
         }
       })}
-        <Link to="/about" id="about">
+        <Link to="/about" id="about" className="hidden-link2">
+        ?¿?¿?¿
+        <br/>¿?¿?WHAT¿?¿?
+        <br/>?¿?¿?¿IS?¿?¿?¿
+        <br/>¿?¿?THIS¿?¿?
+        <br/>?¿?¿?¿
         <div className="ring1"/>
         <div className="ring2"/>
         <div className="ring3"/>
