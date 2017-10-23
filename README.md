@@ -182,4 +182,11 @@ And, add a little meta-HTML styling courtesy of [github.css](https://gist.github
 >Git branch [portfolio-frontend/about-markdown](https://github.com/senbenito/portfolio-frontend/tree/about-markdown)
 
 
+## Step 8: Another Dimension
+
+Clicking on the `<About />` link takes you through the blackhole/wormhole to another place: this `README` world. So let's change the UI to let everyone know we've broken through some wall somewhere.
+
+>Git branch [portfolio-frontend/about-parallax](https://github.com/senbenito/portfolio-frontend/tree/about-parallax)
+
+
 <link rel="stylesheet" href="README.css">
