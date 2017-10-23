@@ -92,9 +92,9 @@ export default class Orbit extends React.Component{
       })}
         <Link to="/about" id="about" className="hidden-link2">
         ?¿?¿?¿
-        <br/>¿?¿?WHAT¿?¿?
-        <br/>?¿?¿?¿IS?¿?¿?¿
-        <br/>¿?¿?THIS¿?¿?
+        <br/>¿?¿?<span className="blackhole-text">WHAT</span>¿?¿?
+        <br/>?¿?¿?¿<span className="blackhole-text">IS</span>?¿?¿?¿
+        <br/>¿?¿?<span className="blackhole-text">THIS</span>¿?¿?
         <br/>?¿?¿?¿
         <div className="ring1"/>
         <div className="ring2"/>

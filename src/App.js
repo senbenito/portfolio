@@ -25,7 +25,7 @@ export default class App extends React.Component{
            <PropsRoute exact path="/" component={Portfolio} toggleForm={this.toggleForm}/>
            <PropsRoute path="/about" component={About} toggleForm={this.toggleForm}/>
          </div>
-         <Login hideLogin={this.state.hideLogin}/>
+         <Login hideLogin={this.state.hideLogin} toggleForm={this.toggleForm}/>
        </div>
      )
    }

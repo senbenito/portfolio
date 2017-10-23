@@ -35,8 +35,8 @@ export default class Login extends React.Component{
     if (response.status !== 200) return this.notifyRed(`Could not login: ${username}`);
     const data = await response.json();
     this.notifyGreen(`Righteous. Welcome to the fun, ${data.greeting}`);
+    this.props.toggleForm();
     this.setState({
-      hideLogin: true,
       hideAddSite: false
     })
   }
@@ -63,7 +63,6 @@ export default class Login extends React.Component{
       const data = await response.json();
       this.notifyGreen(`Another site added: ${data.title}... ROCK ON!!`);
       this.setState({
-        hideLogin: true,
         hideAddSite: true
       })
     }
