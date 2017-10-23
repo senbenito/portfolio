@@ -29,12 +29,17 @@ export default class Portfolio extends Component {
     });
   };
 
+  componentWillMount() {
+    this.props.toggleBodyClass('portfolio-body');
+  }
+
   render() {
     return (
       <div className="portfolio">
         <Orbit
           handleSiteClick={this.handleSiteClick}
           toggleForm={this.props.toggleForm}
+          toggleBodyClass={this.props.toggleBodyClass}
         />
         <h3>this is some of the neat stuff <a href="https://github.com/senbenito">senbenito</a> has crafted</h3>
         <Modal isOpen={!this.state.hideModal} contentLabel="Modal">

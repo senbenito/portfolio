@@ -1,3 +1,4 @@
+
 #React-body {
   top: 4vh;
   left: 0;
@@ -13,17 +14,15 @@
   position: absolute;
 }
 
-.portfolio {
-  text-align: center;
-  top: 1vh;
-  width: 100vw;
-  color: white;
+.about-body{
+  height: 100vh;
+  background-color: green;
 }
 
 .about {
   text-align: center;
   width: 90vw;
-  height: 90vh;
+  height: 80vh;
   left: 5vw;
   position: absolute;
 }
@@ -46,7 +45,19 @@
 
 object {
   width: 90vw;
-  height: 90vh;
+  height: inherit;
+}
+
+.portfolio-body{
+  height: 100vh;
+  background-image: url('./rfm25es1j2iz.jpg');
+}
+
+.portfolio {
+  text-align: center;
+  top: 1vh;
+  width: 100vw;
+  color: white;
 }
 
 a{
@@ -73,6 +84,17 @@ h3 {
   to {
     color: #3f3344;
     text-shadow: 0 0 5px #7b5a52, 0 0 10px #ca877c, 0 0 15px #7b5a52, 0 0 20px #ca877c, 0 0 35px #7b5a52, 0 0 40px #ca877c, 0 0 50px #7b5a52, 0 0 75px #ca877c;
+  }
+}
+
+@-webkit-keyframes neon2 {
+  from {
+    color: yellow;
+    text-shadow: 0 0 10px orchid, 0 0 20px violet, 0 0 30px orchid, 0 0 40px violet, 0 0 70px orchid, 0 0 80px violet, 0 0 100px violet, 0 0 150px orchid;
+  }
+  to {
+    color: purple;
+    text-shadow: 0 0 5px pink, 0 0 10px white, 0 0 15px pink, 0 0 20px white, 0 0 35px pink, 0 0 40px white, 0 0 50px pink, 0 0 75px white;
   }
 }
 
@@ -118,20 +140,26 @@ h3 {
 
 #about:hover {
   position: absolute;
-  top: 43.5vw;
-  left: 43.5vw;
-  width: 8vw;
-  height: 8vw;
+  top: 42.5vw;
+  left: 42.5vw;
+  width: 10vw;
+  height: 10vw;
   border-radius: 100%;
   background-color: rgba(255,255,255,.3);
   -webkit-animation: none;
   animation: none;
 }
+
 .hidden-link2:hover {
   color: magenta;
   text-shadow: .2vh .2vh 2vh violet;
-  font-size: 2vh;
+  font-size: 2.5vh;
   text-decoration: none;
+}
+
+.blackhole-text {
+  color: cyan;
+  animation: neon2 3s linear infinite alternate;
 }
 
 .ring1 {
@@ -147,6 +175,17 @@ h3 {
   -webkit-animation: spin-right 2s linear infinite alternate;
   animation: spin-right 2s linear infinite alternate;
 }
+.ring-hover1 {
+  width: 110%;
+  height: 110%;
+  border: dashed 5px magenta;
+  border-radius: 50%;
+  top: -5%;
+  left: -5%;
+  position: absolute;
+  -webkit-animation: spin-right 3s linear infinite reverse;
+  animation: spin-right 3s linear infinite reverse;
+}
 
 .ring2 {
   width: 150%;
@@ -160,6 +199,15 @@ h3 {
   box-sizing: border-box;
   -webkit-animation: spin-right 4s linear infinite alternate;
   animation: spin-right 4s linear infinite alternate;
+}
+.ring-hover2 {
+  width: 120%;
+  height: 120%;
+  border: double 5px orchid;
+  border-radius: 50%;
+  top: -10%;
+  left: -10%;
+  position: absolute;
 }
 
 .ring3 {
@@ -175,6 +223,17 @@ h3 {
   -webkit-animation: spin-right 4s linear infinite alternate;
   animation: spin-right 4s linear infinite alternate;
 }
+.ring-hover3 {
+  width: 130%;
+  height: 130%;
+  border: dotted 5px yellow;
+  border-radius: 50%;
+  top: -15%;
+  left: -15%;
+  position: absolute;
+  -webkit-animation: spin-right 12s linear infinite;
+  animation: spin-right 12s linear infinite;
+}
 
 .ring4 {
   width: 150%;
@@ -188,6 +247,17 @@ h3 {
   box-sizing: border-box;
   -webkit-animation: spin-right 1s linear infinite alternate;
   animation: spin-right 1s linear infinite alternate;
+}
+.ring-hover4 {
+  width: 140%;
+  height: 140%;
+  border: dashed 7px magenta;
+  border-radius: 50%;
+  top: -20%;
+  left: -20%;
+  position: absolute;
+  -webkit-animation: spin-right 5s linear infinite;
+  animation: spin-right 5s linear infinite;
 }
 
 .ring5 {
@@ -203,6 +273,17 @@ h3 {
   -webkit-animation: spin-right 2s linear infinite alternate;
   animation: spin-right 2s linear infinite alternate;
 }
+.ring-hover5 {
+  width: 150%;
+  height: 150%;
+  border: dotted 9px orchid;
+  border-radius: 50%;
+  top: -25%;
+  left: -25%;
+  position: absolute;
+  -webkit-animation: spin-right 8s linear infinite reverse;
+  animation: spin-right 8s linear infinite reverse;
+}
 
 .ring6 {
   width: 150%;
@@ -216,6 +297,15 @@ h3 {
   box-sizing: border-box;
   -webkit-animation: spin-right 4s linear infinite alternate;
   animation: spin-right 4s linear infinite alternate;
+}
+.ring-hover6 {
+  width: 160%;
+  height: 160%;
+  border: double 5px purple;
+  border-radius: 50%;
+  top: -30%;
+  left: -30%;
+  position: absolute;
 }
 
 .ring7 {

@@ -9,6 +9,9 @@ export default class About extends React.Component{
     };
   };
 
+  componentWillMount() {
+    this.props.toggleBodyClass('about-body');
+  }
 
   render(){
     return(
