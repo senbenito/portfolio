@@ -181,5 +181,4 @@ And, add a little meta-HTML styling courtesy of [github.css](https://gist.github
 
 >Git branch [portfolio-frontend/about-markdown](https://github.com/senbenito/portfolio-frontend/tree/about-markdown)
 
-
 <link rel="stylesheet" href="README.css">
