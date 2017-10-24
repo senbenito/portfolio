@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import { Parallax } from 'react-parallax';
+import { Parallax, Background } from 'react-parallax';
 
 export default class About extends React.Component{
   constructor(props){
@@ -20,9 +20,12 @@ export default class About extends React.Component{
       <div className="about">
 
         <Parallax bgImage="https://www.hendricksgin.com/bundles/wgshgwebsite/img/pages/home/parallax/middle/tower.png" strength={500}>
-          <div style={{height: '200vh'}}>
-            <div style={insideStyles}>some parallax text</div>
-          </div>
+          <Background>
+            <img src="https://www.hendricksgin.com/bundles/wgshgwebsite/img/pages/home/parallax/top/large-red-balloon.gif" alt="balloon"/>
+            <div style={{height: '200vh'}}>
+              <div style={insideStyles}>some parallax text</div>
+            </div>
+          </Background>
         </Parallax>
 
       </div>
