@@ -1,72 +1,39 @@
-<<<<<<< HEAD
+
 import React from 'react';
 import './App.css';
-import { Route } from 'react-router-dom';
+import { PropsRoute } from 'react-router-with-props';
 import Login from './components/Login.js';
 import Portfolio from './components/Portfolio.js';
-import AddWebsite from './components/AddWebsite.js';
+import About from './components/About.js';
 
-const App = () => (
-  <div className="Home-header">
-    <Login />
-    <div id="React-body">
-      <Route exact path="/" component={Portfolio}/>
-      <Route path="/addwebsite" component={AddWebsite}/>
-    </div>
-  </div>
-)
-=======
-import React, { Component } from 'react';
-import './App.css';
-import Login from './components/login.js';
-import Website from './components/website.js';
-
-class App extends Component {
+export default class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      websites:[],
-    }
-    this.fetchPlaces = this.fetchPlaces.bind(this);
+      hideLogin: true,
+      bodyClass: "portfolio-body",
+    };
+
+  };
+  toggleForm=()=>{
+    this.setState({hideLogin: !this.state.hideLogin})
+  };
+
+  toggleBodyClass=(bodyClass)=>{
+    this.setState({bodyClass});
   }
 
-  async fetchPlaces(){
-    const response = await fetch('https://senbenito-server.herokuapp.com/sites');
-    const websites = await response.json()
-    this.setState({
-      websites: websites
-    });
-  }
-
-  componentWillMount() {
-    this.fetchPlaces();
-  }
-
-  render() {
+  render(){
     return (
-      <div className="App">
-
-        <div className="App-header">
-          <h2>Look upon my works ye mighty...</h2>
-        </div>
-
-        <Login />
-
-        <p className="App-intro">
-        Hey! Check it out... this is some of the neat stuff <a href="https://github.com/senbenito">senbenito</a> has crafted:
-        </p>
-
-        {this.state.websites.map(website =>
-          <Website
-            key={website.id}
-            title={website.title}
-            url={website.url}
-          />
-        )}
-      </div>
-    );
-  }
-}
->>>>>>> 7de08b79ca75f4a304bb52b9f06cf633ed619e14
-
-export default App;
+      <div className={this.state.bodyClass}>
+         <div id="React-body">
+           <PropsRoute exact path="/" component={Portfolio} toggleForm={this.toggleForm}
+           toggleBodyClass={this.toggleBodyClass}/>
+           <PropsRoute path="/about" component={About} toggleForm={this.toggleForm}
+           toggleBodyClass={this.toggleBodyClass}/>
+         </div>
+         <Login hideLogin={this.state.hideLogin} toggleForm={this.toggleForm}/>
+       </div>
+     )
+   }
+};

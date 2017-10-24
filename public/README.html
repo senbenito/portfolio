@@ -1,0 +1,168 @@
+<h1 id="about-senbenito-s-portfolio">About senbenito&#39;s portfolio</h1>
+<p>This repoistory started life as a 15-minute warmup during my <a href="https://www.galvanize.com/boulder/web-development" title="Galvanize Boulder shoutout">Web Development Immersive at Galvanize, Boulder</a>.</p>
+<h5 id="learn-more-about-my-time-galvanize-const-senbenito-g-49-16-https-talent-galvanize-com-students-1556-galvanize-talent-link-">Learn more about my time @ Galvanize: <a href="https://talent.galvanize.com/students/1556" title="Galvanize Talent link">const senbenito = { ... g[49].16 }</a></h5>
+<p>Originally intended as a simple listing of select, deployed projects, this portfolio will be used to document my on-going developer development as I learn and apply new technologies.</p>
+<h2 id="step-1-a-front-end-">Step 1: a front-end...</h2>
+<p>I selected <a href="https://facebook.github.io/react/">React.js</a> because:</p>
+<ol>
+<li>it was the most-recent framework we studied</li>
+<li>I loved developing our cross-cohort React hackathon app: <a href="https://github.com/lerning/gelato">Gela.To</a></li>
+<li>there were a number of on-campus resources proficient in React</li>
+<li>it&#39;s the &#39;new cool&#39;</li>
+<li><a href="https://www.npmjs.com/package/create-react-app">create-react-app</a></li>
+</ol>
+<p>At this point, React is probably overkill to display a few <code>&lt;iframe&gt;</code>s, but I am a fan of the <a href="https://stackoverflow.com/a/27642444" title="Travis J on StackOverflow">Polymorphism Principle of Object-Oriented Programming (POOP) (and its dependency Inheritance)</a> and React embodies this ability of object-oriented languages like Javascript to instantiate new Object classes / &quot;children&quot; / component by extending an original / &quot;parent&quot; / app Object ensuring plug&amp;play component compatability (kinda like my old NES but fixing problems with React console instead of blowing on cartridges). So I can find amazing NPM modules that someone else has created and wire them up to extend my portfolio&#39;s functionality - cool!!</p>
+<p>Those <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe" title="refer to the MDN docs"><code>&lt;iframe&gt;</code>s</a> tho... I recognized the power of a simple <code>&lt;iframe&gt;</code> during that <a href="https://github.com/lerning/gelato">React-a-thon</a> - you can just supply a URI with API key as the src - so I wanted to bring them in here. Who knows, we may find future advances replacing the <code>&lt;iframe&gt;</code>s but for now, I like their simplicity and literal window into another world...</p>
+<p>At this point, we have a simple front-end, so let&#39;s deploy to <a href="http://surge.sh/">Surge</a> for a quick preview: <a href="http://senbenito-portfolio.surge.sh/" title="basic front-end on surge.sh">senbenito&#39;s portfolio</a>. This was a super-simple deployment thanks to create-react-app&#39;s <code>yarn build</code> command. Just <code>surge</code> in the <code>build</code> directory and <strong>POOF!</strong> ... <em>website</em>.</p>
+<blockquote>
+<p>Git branch <a href="https://github.com/senbenito/portfolio-frontend">portfolio-frontend/master</a></p>
+</blockquote>
+<h2 id="step-2-let-s-get-dynamic-">Step 2: let&#39;s get dynamic!</h2>
+<p>I knew I wasn&#39;t done making websites and wanting to show them off. Rather than manually add in a new <code>&lt;iframe&gt;</code> each time I make a new site to rebuild and redeploy, I took a lesson from my <a href="https://github.com/adam-serene/serene-mvp">Serene MVP</a> Google Map integration and decided to query a <a href="http://knexjs.org/">Knex.js</a> <a href="https://www.postgresql.org/">PostgreSQL</a> database via a RESTful <a href="https://expressjs.com/">Express.js</a> server. This way, I can just <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">.map()</a> a data array of submitted websites into those beloved <code>&lt;iframe&gt;</code>s.</p>
+<p>Here&#39;s the <a href="https://github.com/senbenito/personal-server">personal-server</a> repo to dive into this crucial step.</p>
+<p>HOLD ON! Someone else could Post to my website database, so let&#39;s bring in some basic authentication via <a href="https://www.npmjs.com/package/bcryptjs">BcryptJS</a> and allow user persistence via <a href="https://www.npmjs.com/package/jsonwebtoken">JSON Web Tokens</a>.
+<em>note: I started out with Bcrypt, but ELF header errors plagued my Heroku build, so I finally found BcryptJS which is slower... but works!</em></p>
+<blockquote>
+<p>Git branch <a href="https://github.com/senbenito/personal-server/tree/auth">personal-server/auth</a></p>
+</blockquote>
+<p>Which brings up an interesting &#39;problem&#39;: I&#39;ve created a couple components to deal with (portfolio, login, submit website) so let&#39;s add <a href="https://www.npmjs.com/package/react-router-dom">React Router DOM</a> to take care of rendering components as needed!</p>
+<blockquote>
+<p>Git branch <a href="https://github.com/senbenito/portfolio-frontend/tree/react-router">portfolio-frontend/react-router</a></p>
+</blockquote>
+<p>Way back on my Q1 Project, <a href="http://eatertain_me.surge.sh/">Eatertain.Me</a>, I had a <a href="https://captaintoog.deviantart.com/">chicken GIF</a> easter egg that would display chicken recipes. It became a &quot;thing&quot; that we&#39;d sneak the chicken into our quarterly projects <a href="https://familyhub.herokuapp.com/">Family Hub: add &#39;chicken&#39; to grocery list and mark it done</a>, <a href="https://github.com/zpassarelli/rezact-hunter">ReZact Hunter: click on Difficulty Level bar to face Chicken Boss</a>, <a href="https://serene-green.herokuapp.com/chickenplaces">Serene: click the chicken icon to view chicken restaurants</a> - so as an ode to my friends-forever from g[49], my login bar is accessed by clicking the chicken.</p>
+<blockquote>
+<p>Git branch <a href="https://github.com/senbenito/portfolio-frontend/tree/chicken-login">portfolio-frontend/chicken-login</a></p>
+</blockquote>
+<p>At this point, I&#39;m loving Polymorphism because I&#39;ve just added some serious backend functionality with a few NPM packages; rock on modularity!!!</p>
+<h2 id="step-3-_very_-basic-styling">Step 3: <em>very</em> basic styling</h2>
+<p>My plan is to integrate some <a href="http://sass-lang.com/">Sass</a> CSS framework shortly, but even I see the site is looking like only I can love it...</p>
+<p>So I&#39;ve animated my chicken GIF to run around and make it bothersome to login, and used my favorite CSS font effect, <a href="https://codepen.io/FelixRilling/pen/qzfoc">neon glow</a> and thrown a little texture and imagery into the site.</p>
+<blockquote>
+<p>Git branch <a href="https://github.com/senbenito/portfolio-frontend/tree/super-basic-styling">portfolio-frontend/super-basic-styling</a></p>
+</blockquote>
+<p>It was at this point I realized that rather than replace the portfolio component upon successful login, it would make more sense to just replace the login with the submission form instead. React rocks because I can just toggle these swap around where these components are toggled and rendered... voila! I&#39;m going to save the AddWebsite component skeleton &amp; routing to point to the About page that will store this recap ;)</p>
+<blockquote>
+<p>Git branch <a href="https://github.com/senbenito/portfolio-frontend/tree/refactor-login-add">portfolio-frontend/refactor-login-add</a></p>
+</blockquote>
+<h2 id="step-4-revamp-the-display-functionality">Step 4: revamp the display functionality</h2>
+<p>As alluded to earlier, it&#39;s time to fix up the <code>&lt;iframe&gt;</code>s. Displaying a list of my sites to select one that will display in a single <code>&lt;iframe&gt;</code> is going to cut down on load-time as well as hide all those console errors from the sites. Getting back to Bootstrap 4 via <a href="https://reactstrap.github.io/">reactstrap</a> seems like a good jumping off point because of components like Jumbotron, Modal and Cards...</p>
+<p>But there&#39;s a known <a href="https://github.com/reactstrap/reactstrap/issues/502">issue</a> with reactstrap modals which means I&#39;ll use <a href="https://www.npmjs.com/package/react-modal">react-modal</a>!</p>
+<p>And then I remember this sketch I made of my portfolio site back in Q2, so now I&#39;ve gotta make my site ... &#39;out of this world&#39; (<a href="https://www.reddit.com/r/dadjokes/">r/dadjokes</a>):
+<img src="./src/images/PortfolioWireframe.jpg" alt="solar-wireframe"></p>
+<p>A quick search on <a href="">CSS-Tricks</a> gave me a basic <a href="https://codepen.io/alandunning/pen/bNNRvQ">orbiting planet framework</a> I could tinker with, which I did - <a href="#step-5:-the-joys-of-building-a-solar-system">A LOT</a>.</p>
+<blockquote>
+<p>Git branch <a href="https://github.com/senbenito/portfolio-frontend/tree/revamp-portfolio-display">portfolio-frontend/revamp-portfolio-display</a></p>
+</blockquote>
+<h2 id="step-5-the-joys-of-building-a-solar-system">Step 5: the joys of building a solar system</h2>
+<p>Since this orbiting display is literally the centerpiece of this site, we should make it pretty AND functional.</p>
+<p>I noticed the orbit <code>&lt;div&gt;</code>s wouldn&#39;t allow clicking when I used JSX to <code>.map()</code> over the website array I got back from the server. So I started splitting out <code>&lt;Planet /&gt;</code>s from <code>&lt;Orbit /&gt;</code>, and then thought <code>&lt;PlanetMoon /&gt;</code>s and <code>&lt;PlanetRings&gt;</code>s would be cool.</p>
+<p>It was in here that I swapped out the controlled input on the <code>&lt;Login /&gt;</code> for an <a href="https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/">uncontrolled input</a> which took care of that losing focus after each keypress; &quot;control only what you need to.&quot;</p>
+<p>Tinkering with all those CSS values and effects, I stumbled on a neat way of gimballing my planets so they&#39;re always up: <strong>counter-rotation</strong>! If you rotate an object at the same rate widdershins as the object&#39;s orbit proceeds deasil, the top will always point up; thanks... Euclid?</p>
+<p>Right about the sixth update of the <code>fourth-orbit</code>, I realized <a href="http://sass-lang.com/">Sass</a> would have made this iteration so much easier, but I like poking around in raw CSS to grok how these properties work - which led to this kinda super-cool &quot;black hole&quot; animation that will become my <code>&lt;About /&gt;</code> link.</p>
+<p>My <a href="#-Step-3:-very-basic-styling">bouncing chicken</a> is getting a little ridiculous with all this celestial whirling, and I&#39;m a little tired of chasing the thing around... let&#39;s just strand our chicken out in the furthest reaches of space to ponder an age-old question!</p>
+<p>This chicken toggle is pretty awesome:</p>
+<ul>
+<li>from a great-great-grandchild component, <code>&lt;PlanetMoon /&gt;</code>, a <code>state</code> change is propogated up to <code>App</code></li>
+<li>and then back down to another grandchild component, <code>&lt;Login /&gt;</code></li>
+</ul>
+<p>Passing <code>props</code> in <code>{ Route } from &#39;react-router-dom&#39;</code> is a no-go, so this sweet npm package, <a href="https://www.npmjs.com/package/react-router-with-props">react-router-with-props</a> saved the day with <code>{ PropsRoute }</code>. It even has a <code>{ PrivateRoute }</code> module for auth; we&#39;ll have to remember that when we get to <code>&lt;About /&gt;</code> and some of the <a href="https://oauth.net/2/">OAuth2</a> via <a href="http://passportjs.org/">Passport.js</a> linking I&#39;m scheming on for <a href="https://developer.linkedin.com/docs/oauth2">LinkedIn</a>, <a href="https://developers.google.com/identity/protocols/OAuth2">Goggle</a>, <a href="https://developer.github.com/apps/building-integrations/setting-up-and-registering-oauth-apps/">GitHub</a>....</p>
+<p>That said, any much further and we should bring in <a href="http://redux.js.org/">Redux</a> to easily manage <code>state</code> from one central container.</p>
+<blockquote>
+<p>Git branch <a href="https://github.com/senbenito/portfolio-frontend/tree/orbit-component">portfolio-frontend/orbit-component</a></p>
+</blockquote>
+<h2 id="step-6-let-s-finish-this-styling">Step 6: let&#39;s finish this styling</h2>
+<p>One of the filters within <code>.map()</code>-ing through <code>this.state.websites</code> are nested arrays. We could make these client-side, but one of the joys of being a full-stack developer is I can just change the server-side output to fit my specs:</p>
+<pre><code class="lang-javascript">let websites = [
+    {id:0, url: &#39;abc&#39;, title: &#39;123&#39;},
+    {id:1, url: &#39;def&#39;, title: &#39;456&#39;},
+    {id:2, url: &#39;ghi&#39;, title: &#39;789&#39;},
+    {id:3, url: &#39;jkl&#39;, title: &#39;111&#39;}
+  ],
+  [
+    {id:4, url: &#39;mno&#39;, title: &#39;222&#39;},
+    {id:5, url: &#39;pqr&#39;, title: &#39;333&#39;}
+  ],
+  [
+    {id:6, url: &#39;stu&#39;, title: &#39;444&#39;},
+    {id:7, url: &#39;vwx&#39;, title: &#39;555&#39;},
+    {id:8, url: &#39;yzz&#39;, title: &#39;666&#39;}
+  ],
+  [
+    {id:9, url: &#39;aaa&#39;, title: &#39;777&#39;},
+    {id:10, url: &#39;bbb&#39;, title: &#39;888&#39;},
+    {id:11, url: &#39;ccc&#39;, title: &#39;999&#39;}
+  ];
+</code></pre>
+<blockquote>
+<p>Git branch <a href="https://github.com/senbenito/senbenito/personal-server/tree/nested-output">personal-server/nested-output</a></p>
+</blockquote>
+<h6 id="-todo-food-for-thought-todo-"><TODO>Food for Thought</TODO></h6>
+<pre><code class="lang-javascript">//food for thought: component-type signifies website property
+in `personal-server/seeds/1_sites.js`:
+  let data = [
+    {id: 8,
+    url: &#39;https://serene-capstone.herokuapp.com/&#39;,
+    title:&#39;Serene&#39;,
+    type: &#39;project&#39;},
+
+    {id: 7,
+    url: &#39;https://checkout-vr.surge.sh/&#39;,
+    title:&#39;Checkout VR&#39;,
+    type: &#39;project&#39;},
+
+    {id: 6,
+    url: &#39;https://musicator.surge.sh/&#39;,
+    title: &#39;Musicator&#39;,
+    type: &#39;fun&#39;},
+
+    {id: 5,
+    url: &#39;https://wry-noise.herokuapp.com/&#39;,
+    title: &#39;Dreaddit&#39;,
+    type: &#39;assignment&#39;},
+    ...
+  ];
+
+in `personal-server/server.js`:
+  knex(&#39;sites&#39;)
+  ...
+  .then(data=&gt; {
+    data.forEach(site=&gt; {
+      switch (site.type) {
+        case &#39;project&#39;:
+          return site.component = &#39;PlanetMoon&#39;;
+        case &#39;fun&#39;:
+          return site.component = &#39;PlanetRings&#39;;
+        default:
+          return site.component = &#39;Planet&#39;;
+      }
+    })
+    res.send(data);
+  });
+
+in `portfolio-frontend/src/components/Orbit.js`:
+  makePlanet=(website, index, orbit)=&gt;{
+    let passVal = website.url;
+    let planetClass = `${orbit}-orbit-planet${index}`;
+    switch (website.component) {
+      case &#39;PlanetMoon&#39;:
+        return (
+          &lt;PlanetMoon key={index}/&gt;
+        )
+      case &#39;PlanetRings&#39;:
+    ...
+  });
+</code></pre>
+<h2 id="step-7-using-readme-md-as-about-">Step 7: Using <code>README.md</code> as <code>&lt;About /&gt;</code></h2>
+<p>Brilliantly <em>efficient</em> me thought,</p>
+<blockquote>
+<p>&quot;I&#39;ve been documenting this website, and I want to create an About page... let&#39;s just merge them!&quot;</p>
+</blockquote>
+<p>Knowing my love of <code>&lt;iframe&gt;</code>s, you&#39;d expect me to just pop an <code>&lt;iframe&gt;</code> of the <a href="https://github.com/senbenito/portfolio-frontend/blob/master/README.md">GitHub-hosted <code>README.md</code></a>, right?</p>
+<p>But, that violates a <code>Content Security Policy directive</code> and overriding that seems like a no-no.</p>
+<p>So I explored a few options for rendering Markdown into HTML, settling on a pretty straightfoward solution from <a href="https://stackoverflow.com/users/5739047/gliemezis">gliemezis on StackOverflow</a>, using <a href="https://www.npmjs.com/package/marked">Marked</a> to turn this <code>README.md</code> into <code>README.html</code> as a <code>&quot;script.prestart&quot; &amp;&amp; &quot;script.prebuild&quot;</code> in the <code>package.json</code>.</p>
+<p>And, add a little meta-HTML styling courtesy of <a href="https://gist.github.com/andyferra/2554919#file-github-css">github.css</a>.</p>
+<p><a href="http://www.marcusoft.net/2015/08/pre-and-post-hooks-for-npm-scripting.html">npm scripting is rad</a></p>
+<blockquote>
+<p>Git branch <a href="https://github.com/senbenito/portfolio-frontend/tree/about-markdown">portfolio-frontend/about-markdown</a></p>
+</blockquote>
+<link rel="stylesheet" href="README.css">
