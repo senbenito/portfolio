@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 #React-body {
   top: 4vh;
@@ -44,6 +45,16 @@
 object {
   height: 75vh;
   width: 75vw;
+=======
+<<<<<<< HEAD
+.App, .portfolio, .chicken {
+  text-align: center;
+  background-image: url('./IMG_20170429_132354.jpg');
+=======
+.App {
+  text-align: center;
+>>>>>>> 7de08b79ca75f4a304bb52b9f06cf633ed619e14
+>>>>>>> master
 }
 
 #iframe {
