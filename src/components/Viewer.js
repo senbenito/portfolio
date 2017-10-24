@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css';
 
 export default class Viewer extends React.Component{
   constructor(props){
@@ -9,17 +10,23 @@ export default class Viewer extends React.Component{
   };
 
   render(){
+    const intVH = window.innerHeight;
+    const intVW = window.innerWidth;
+
     return(
-      <div>
-      {this.state.viewerURL}
+      <div
+        id="iframe"
+        width={intVW * .732}
+        height={intVH  * .8}
+      >
         <iframe
           id="player"
           title={this.state.viewerURL}
           type="text/html"
-          width="800"
-          height="500"
+          width={intVW * .732}
+          height={intVH * .75}
           src= {this.state.viewerURL}
-          frameBorder="10">
+        >
         </iframe>
       </div>
     )

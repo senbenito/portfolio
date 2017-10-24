@@ -51,7 +51,7 @@ As alluded to earlier, it's time to fix up the `<iframe>`s. Displaying a list of
 But there's a known [issue](https://github.com/reactstrap/reactstrap/issues/502) with reactstrap modals which means I'll use [react-modal](https://www.npmjs.com/package/react-modal)!
 
 And then I remember this sketch I made of my portfolio site back in Q2, so now I've gotta make my site ... 'out of this world' ([r/dadjokes](https://www.reddit.com/r/dadjokes/)):
-![solar-wireframe](./PortfolioWireframe.jpg)
+![solar-wireframe](./src/images/PortfolioWireframe.jpg)
 
 A quick search on [CSS-Tricks]() gave me a basic [orbiting planet framework](https://codepen.io/alandunning/pen/bNNRvQ) I could tinker with, which I did - [A LOT](#step-5:-the-joys-of-building-a-solar-system).
 >Git branch [portfolio-frontend/revamp-portfolio-display](https://github.com/senbenito/portfolio-frontend/tree/revamp-portfolio-display)

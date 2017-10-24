@@ -48,15 +48,31 @@
 
 object {
   /*position: absolute;*/
-  height: inherit;
-  width: 90vw;
+  height: 75vh;
+  width: 75vw;
   /*background-size: cover;
   background-image: url('https://www.hendricksgin.com/bundles/wgshgwebsite/img/pages/home/parallax/middle/tower.png');*/
 }
 
+#iframe {
+  position: absolute;
+  top: 6vh;
+  left: 0;
+  background-color: lime;
+  overflow-y: scroll;
+}
+
+#modalButton {
+  position: absolute;
+  background-color: red;
+  height: 1vh;
+  width: 1vh;
+  border-radius: 50%
+}
+
 .portfolio-body{
   height: 100vh;
-  background-image: url('./rfm25es1j2iz.jpg');
+  background-image: url('./images/rfm25es1j2iz.jpg');
 }
 
 .portfolio {
