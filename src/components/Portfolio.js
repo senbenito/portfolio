@@ -7,6 +7,8 @@ import SafariWindow from '../images/SafariWindow.png';
 import Viewer from './Viewer.js';
 import { Button } from 'reactstrap';
 
+//aspect ratios: 1.33:1, 1.77:1,
+
 const modalStyle = {
   overlay: {
     position: 'fixed',
@@ -23,12 +25,13 @@ const modalStyle = {
     left: '11vw',
     width: '73.5vw',
     height: '82.45vh',
-    maxHeight: '45vw',
+    maxHeight: '56.25vw',
+    maxWidth: '133.33vh',
     border: '1px solid black',
     background: `url(${SafariWindow})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-    overflow: 'scroll',
+    overflow: 'hidden',
     WebkitOverflowScrolling: 'touch',
     outline: 'none',
   }
