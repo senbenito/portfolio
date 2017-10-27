@@ -2,32 +2,33 @@ import React from 'react';
 import '../App.css';
 
 export default class Viewer extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      viewerURL: this.props.viewerURL,
-    };
-  };
-
-  render(){
-    const intVH = window.innerHeight;
-    const intVW = window.innerWidth;
-
+  render(props){
     return(
       <div
-        id="iframe"
-        width={intVW * .732}
-        height={intVH  * .8}
+        id={this.props.iframeID}
+        width={this.props.intVW}
+        height={this.props.intVH}
       >
+      {this.props.iframeID === "iframe169" ?
         <iframe
-          id="player"
-          title={this.state.viewerURL}
+          id="player169"
+          title={this.props.viewerURL}
           type="text/html"
-          width={intVW * .732}
-          height={intVH * .75}
-          src= {this.state.viewerURL}
+          width={this.props.intVW * .739}
+          height={this.props.intVH * .77}
+          src= {this.props.viewerURL}
         >
         </iframe>
+        :
+        <iframe
+          id="player43"
+          title={this.props.viewerURL}
+          type="text/html"
+          width={this.props.intVW * .748}
+          height={this.props.intVH * .625}
+          src= {this.props.viewerURL}
+        >
+        </iframe>}
       </div>
     )
   };

@@ -9,7 +9,7 @@ import { Button } from 'reactstrap';
 
 //aspect ratios: 1.33:1, 1.77:1,
 
-const modalStyle = {
+const modalStyle43 = {
   overlay: {
     position: 'fixed',
     left: '1.5vw',
@@ -23,13 +23,41 @@ const modalStyle = {
     position: 'absolute',
     top: '5vh',
     left: '11vw',
-    width: '73.5vw',
+    width: '75vw',
     height: '82.45vh',
-    maxHeight: '56.25vw',
-    maxWidth: '133.33vh',
+    maxHeight: '47vw',
+    maxWidth: '133vh',
     border: '1px solid black',
     background: `url(${SafariWindow})`,
-    backgroundSize: 'cover',
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    overflow: 'hidden',
+    WebkitOverflowScrolling: 'touch',
+    outline: 'none',
+  }
+};
+
+const modalStyle169 = {
+  overlay: {
+    position: 'fixed',
+    left: '1.5vw',
+    height: 'auto',
+    width: '97vw',
+    background: `url(${MBP13})`,
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+  },
+  content: {
+    position: 'absolute',
+    top: '5vh',
+    left: '11vw',
+    width: '75vw',
+    height: '82.45vh',
+    maxHeight: '47vw',
+    maxWidth: '121vh',
+    border: '1px solid black',
+    background: `url(${SafariWindow})`,
+    backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
     overflow: 'hidden',
     WebkitOverflowScrolling: 'touch',
@@ -50,7 +78,9 @@ export default class Portfolio extends Component {
     console.log(passVal);
     this.setState({
       viewerURL: passVal,
-      hideModal: false
+      hideModal: false,
+      modalStyle: modalStyle169,
+      iframeID: 'iframe169'
     });
   };
 
@@ -60,8 +90,22 @@ export default class Portfolio extends Component {
     });
   };
 
+  applyAspectRatio=()=>{
+    (this.props.intVW / this.props.intVH > 1.4) ?
+      this.setState({
+        modalStyle: modalStyle169,
+        iframeClass: 'iframe169'
+      })
+      :
+      this.setState({
+        modalStyle: modalStyle43,
+        iframeID: 'iframe43'
+      })
+  }
+
   componentWillMount() {
     this.props.toggleBodyClass('portfolio-body');
+    // this.applyAspectRatio();
   }
 
   render() {
@@ -80,12 +124,17 @@ export default class Portfolio extends Component {
           isOpen = {!this.state.hideModal}
           onRequestClose={this.toggleModal}
           contentLabel = "Modal"
-          style={modalStyle}
+          style={this.state.modalStyle}
         >
           <Button
             onClick = {this.toggleModal}
             id="modalButton"/>
-          <Viewer viewerURL = {this.state.viewerURL}/>
+          <Viewer
+            viewerURL = {this.state.viewerURL}
+            intVH = {this.props.intVH}
+            intVW = {this.props.intVW}
+            iframeID = {this.state.iframeID}
+          />
         </Modal>
       </div>
     )

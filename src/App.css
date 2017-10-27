@@ -46,12 +46,24 @@ object {
   width: 75vw;
 }
 
-#iframe {
+#iframe43 {
   position: absolute;
-  top: 6vh;
+  top: 4.4vh;
   left: 0;
   background-color: lime;
   overflow-y: scroll;
+  max-height: 43.4vw;
+  max-width: 110vh;
+}
+
+#iframe169 {
+  position: absolute;
+  top: 5.6vh;
+  left: 0;
+  background-color: lime;
+  overflow-y: scroll;
+  max-height: 76vw;
+  max-width: 131vh;
 }
 
 #modalButton {
@@ -63,8 +75,7 @@ object {
 }
 
 .portfolio-body{
-  height: 100vh;
-  background-image: url('./images/rfm25es1j2iz.jpg');
+  height: 120vh;
 }
 
 .portfolio {
