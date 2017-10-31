@@ -1,7 +1,7 @@
 import React from 'react';
 import qs from 'qs';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.min.css';
+// import 'react-toastify/dist/ReactToastify.min.css';
 import '../App.css';
 
 export default class Login extends React.Component{
@@ -87,13 +87,13 @@ export default class Login extends React.Component{
     return(
       <div>
         <ToastContainer
-        position="top-right"
-        type="default"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        pauseOnHover
+          position="top-right"
+          type="default"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          pauseOnHover
         />
         <div className="login-bar">
           {!this.props.hideLogin && <LoginForm />}

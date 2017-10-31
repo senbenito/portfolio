@@ -12,8 +12,6 @@ export default class App extends React.Component{
     this.state = {
       hideLogin: true,
       bodyClass: "portfolio-body",
-      intVH: 1068,
-      intVW: 803,
     };
 
   };
@@ -25,15 +23,6 @@ export default class App extends React.Component{
     this.setState({bodyClass});
   }
 
-  componentDidMount() {
-    const intVH = window.innerHeight;
-    const intVW = window.innerWidth;
-    this.setState({
-      intVH,
-      intVW,
-    })
-  }
-
   render(){
     return (
       <div className={this.state.bodyClass}>
@@ -43,8 +32,6 @@ export default class App extends React.Component{
             component={Portfolio}
             toggleForm={this.toggleForm}
             toggleBodyClass={this.toggleBodyClass}
-            intVH = {this.state.intVH}
-            intVW = {this.state.intVW}
           />
           <PropsRoute
             path="/about"

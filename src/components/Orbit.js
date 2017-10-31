@@ -10,7 +10,66 @@ export default class Orbit extends React.Component{
     super(props);
     this.state = {
       viewerURL: this.props.viewerURL,
-      websites: [],
+      websites: [
+        [
+          {},
+          {
+            id: 8,
+            url: "https://serene-capstone.herokuapp.com/",
+            title: "Serene",
+            toast: "PSSSSSSSST.......... username = 'Shotgun'        password = 'password'"
+          },
+          {
+            id: 7,
+            url: "https://checkout-vr.surge.sh/",
+            title: "Checkout VR",
+            toast: ''
+          },
+          {
+            id: 6,
+            url: "https://musicator.surge.sh/",
+            title: "Musicator",
+            toast: ''
+          },
+          {
+            id: 5,
+            url: "https://wry-noise.herokuapp.com/",
+            title: "Dreaddit",
+            toast: ''
+          }
+        ],
+        [
+          {
+            id: 4,
+            url: "https://drinking-buddies.herokuapp.com/",
+            title: "Drinking Buddies",
+            toast: "PSSSSSSSST.......... username = 'Shotgun'        password = 'cocktailpassword'"
+          },
+          {
+            id: 3,
+            url: "https://eatertain_me.surge.sh/",
+            title: "Eatertain.Me",
+            toast: ''
+          }
+        ],
+        [
+          {
+            id: 2,
+            url: "https://utopian-locket.surge.sh/",
+            title: "Pyrate Personality Test",
+            toast: ''
+          },
+          {
+            id: 1,
+            url: "https://senbenito.surge.sh/",
+            title: "Let's meet Shannon!",
+            toast: ''
+          }
+        ],
+        [
+
+        ]
+      ],
       ring1Class: 'ring1',
       ring2Class: 'ring2',
       ring3Class: 'ring3',
@@ -33,7 +92,7 @@ export default class Orbit extends React.Component{
   };
 
   componentWillMount() {
-    this.fetchPlaces();
+    // this.fetchPlaces();
   };
 
   toggleHoverOn=()=>{
@@ -65,7 +124,10 @@ export default class Orbit extends React.Component{
   }
 
   makePlanet=(website, index, orbit)=>{
-    let passVal = website.url;
+    let passVal = {
+      url: website.url,
+      toastMessage: website.toast,
+    };
     let planetClass = `${orbit}-orbit-planet${index}`;
     if (index === 0) {
       return (

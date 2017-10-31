@@ -3,63 +3,35 @@ import '../App.css';
 import Orbit from './Orbit.js';
 import Modal from 'react-modal';
 import MBP13 from '../images/MBP13.png';
-import SafariWindow from '../images/SafariWindow.png';
 import Viewer from './Viewer.js';
 import { Button } from 'reactstrap';
+import { ToastContainer, toast } from 'react-toastify';
 
-//aspect ratios: 1.33:1, 1.77:1,
-
-const modalStyle43 = {
+const modalStyle = {
   overlay: {
     position: 'fixed',
+    top: 0,
+    bottom: 0,
     left: '1.5vw',
+    right: 0,
     height: 'auto',
     width: '97vw',
+    border: 'none',
     background: `url(${MBP13})`,
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
   },
   content: {
     position: 'absolute',
-    top: '5vh',
-    left: '11vw',
-    width: '75vw',
-    height: '82.45vh',
-    maxHeight: '47vw',
-    maxWidth: '133vh',
-    border: '1px solid black',
-    background: `url(${SafariWindow})`,
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
+    top: '2vw',
+    left: '12vw',
     overflow: 'hidden',
-    WebkitOverflowScrolling: 'touch',
-    outline: 'none',
-  }
-};
-
-const modalStyle169 = {
-  overlay: {
-    position: 'fixed',
-    left: '1.5vw',
     height: 'auto',
-    width: '97vw',
-    background: `url(${MBP13})`,
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-  },
-  content: {
-    position: 'absolute',
-    top: '5vh',
-    left: '11vw',
-    width: '75vw',
-    height: '82.45vh',
-    maxHeight: '47vw',
-    maxWidth: '121vh',
-    border: '1px solid black',
-    background: `url(${SafariWindow})`,
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-    overflow: 'hidden',
+    width: '74vw',
+    maxHeight: '48vw',
+    maxWidth: '128vh',
+    background: 'black',
+    border: 'none',
     WebkitOverflowScrolling: 'touch',
     outline: 'none',
   }
@@ -74,43 +46,45 @@ export default class Portfolio extends Component {
     }
   };
 
+  toastId = null;
+  notifyYellow=(message)=> {
+    if (! toast.isActive(this.toastId)) {
+      this.toastId = toast.warn(message, {
+        position: toast.POSITION.TOP_LEFT,
+        autoClose: false,
+        closeOnClick: false,
+        className: 'helpful-toast'
+      });
+    } else {return this.dismissToast()}
+  };
+  dismissToast = () =>  toast.dismiss();
+
   handleSiteClick = (e, passVal) => {
-    console.log(passVal);
     this.setState({
-      viewerURL: passVal,
+      viewerURL: passVal.url,
+      toastMessage: passVal.toastMessage,
       hideModal: false,
-      modalStyle: modalStyle169,
-      iframeID: 'iframe169'
     });
+    if (passVal.toastMessage !== '') {
+      this.notifyYellow(passVal.toastMessage);
+    } else {return this.dismissToast()};
   };
 
   toggleModal = () => {
     this.setState({
       hideModal: !this.state.hideModal
     });
+    this.dismissToast();
   };
-
-  applyAspectRatio=()=>{
-    (this.props.intVW / this.props.intVH > 1.4) ?
-      this.setState({
-        modalStyle: modalStyle169,
-        iframeClass: 'iframe169'
-      })
-      :
-      this.setState({
-        modalStyle: modalStyle43,
-        iframeID: 'iframe43'
-      })
-  }
 
   componentWillMount() {
     this.props.toggleBodyClass('portfolio-body');
-    // this.applyAspectRatio();
   }
 
   render() {
     return (
       <div className = "portfolio">
+        <ToastContainer />
         <Orbit
           handleSiteClick = {this.handleSiteClick}
           toggleForm = {this.props.toggleForm}
@@ -118,23 +92,18 @@ export default class Portfolio extends Component {
         />
         <h3>
           this is some of the neat stuff
-          <a href="https://github.com/senbenito"> senbenito </a>
+          <a href = "https://github.com/senbenito"> senbenito </a>
           has crafted</h3>
         <Modal
           isOpen = {!this.state.hideModal}
-          onRequestClose={this.toggleModal}
+          onRequestClose = {this.toggleModal}
           contentLabel = "Modal"
-          style={this.state.modalStyle}
+          style = {modalStyle}
         >
           <Button
             onClick = {this.toggleModal}
             id="modalButton"/>
-          <Viewer
-            viewerURL = {this.state.viewerURL}
-            intVH = {this.props.intVH}
-            intVW = {this.props.intVW}
-            iframeID = {this.state.iframeID}
-          />
+          <Viewer viewerURL = {this.state.viewerURL}/>
         </Modal>
       </div>
     )
