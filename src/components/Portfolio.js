@@ -66,8 +66,10 @@ export default class Portfolio extends Component {
       hideModal: false,
     });
     if (passVal.toastMessage !== '') {
-      this.notifyYellow(passVal.toastMessage);
-    } else {return this.dismissToast()};
+      return this.notifyYellow(passVal.toastMessage);
+    } else {
+      return this.dismissToast()
+    }
   };
 
   toggleModal = () => {

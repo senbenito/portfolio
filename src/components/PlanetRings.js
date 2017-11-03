@@ -14,7 +14,6 @@ export default class PlanetRings extends React.Component{
         <div
           className="ring"
           style={pointer}
-          onClick={e=>this.props.handleSiteClick(e)}
           key={this.props.website.id+9}
           value={this.props.website.url}
         />
