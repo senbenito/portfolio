@@ -4,7 +4,6 @@ import Orbit from './Orbit.js';
 import Modal from 'react-modal';
 import MBP13 from '../images/MBP13.png';
 import Viewer from './Viewer.js';
-import { Button } from 'reactstrap';
 import { ToastContainer, toast } from 'react-toastify';
 
 const modalStyle = {
@@ -102,9 +101,6 @@ export default class Portfolio extends Component {
           contentLabel = "Modal"
           style = {modalStyle}
         >
-          <Button
-            onClick = {this.toggleModal}
-            id="modalButton"/>
           <Viewer viewerURL = {this.state.viewerURL}/>
         </Modal>
       </div>

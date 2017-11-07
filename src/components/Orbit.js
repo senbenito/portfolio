@@ -92,7 +92,7 @@ export default class Orbit extends React.Component{
   };
 
   componentWillMount() {
-    // this.fetchPlaces();
+    this.fetchPlaces();
   };
 
   toggleHoverOn=()=>{

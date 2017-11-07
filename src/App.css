@@ -61,7 +61,7 @@ object {
 
 #iframe {
   position: absolute;
-  background-color: white;
+  background: white url(./images/loading.gif) center/40vh no-repeat;
   overflow-y: scroll;
 }
 
