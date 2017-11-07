@@ -8,6 +8,7 @@ export default class Planet extends React.Component{
         className={this.props.className}
         style={pointer}
         onClick={this.props.handleSiteClick}
+        onMouseEnter={this.props.handleHover}
         key={this.props.website.id}
         value={this.props.website.url}
       >

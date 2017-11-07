@@ -2,33 +2,65 @@ import React, { Component } from 'react';
 import '../App.css';
 import Orbit from './Orbit.js';
 import Modal from 'react-modal';
+import {default as Tooltip} from 'react-modal';
 import MBP13 from '../images/MBP13.png';
-import SafariWindow from '../images/SafariWindow.png';
 import Viewer from './Viewer.js';
-import { Button } from 'reactstrap';
+import { ToastContainer, toast } from 'react-toastify';
+
+const tooltipStyle = {
+  overlay: {
+    position: 'fixed',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 'auto',
+    width: 'auto',
+    border: 'none',
+    background: 'rgba(255,255,255,.2)',
+  },
+  content: {
+    position: 'absolute',
+    top: '25vh',
+    bottom: 'auto',
+    left: '5vw',
+    right: '5vh',
+    height: '70vh',
+    width: '90vw',
+    border: 'none',
+    overflow: 'hidden',
+    background: 'rgba(0,0,0,.7)',
+    WebkitOverflowScrolling: 'touch',
+    outline: 'none',
+    textAlign: 'center',
+  }
+};
 
 const modalStyle = {
   overlay: {
     position: 'fixed',
+    top: 0,
+    bottom: 0,
     left: '1.5vw',
+    right: 0,
     height: 'auto',
     width: '97vw',
+    border: 'none',
     background: `url(${MBP13})`,
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
   },
   content: {
     position: 'absolute',
-    top: '5vh',
-    left: '11vw',
-    width: '73.5vw',
-    height: '82.45vh',
-    maxHeight: '45vw',
-    border: '1px solid black',
-    background: `url(${SafariWindow})`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    overflow: 'scroll',
+    top: '2vw',
+    left: '12vw',
+    overflow: 'hidden',
+    height: 'auto',
+    width: '74vw',
+    maxHeight: '48vw',
+    maxWidth: '128vh',
+    background: 'black',
+    border: 'none',
     WebkitOverflowScrolling: 'touch',
     outline: 'none',
   }
@@ -40,21 +72,69 @@ export default class Portfolio extends Component {
     this.state = {
       viewerURL: '',
       hideModal: true,
+      tooltipOpen: false,
+      title: '',
+      description: '',
     }
   };
 
+  toastId = null;
+  notifyYellow=(message)=> {
+    if (! toast.isActive(this.toastId)) {
+      this.toastId = toast.warn(message, {
+        position: toast.POSITION.TOP_LEFT,
+        autoClose: false,
+        closeOnClick: false,
+        className: 'helpful-toast'
+      });
+    } else {return this.dismissToast()}
+  };
+  dismissToast = () =>  toast.dismiss();
+
   handleSiteClick = (e, passVal) => {
-    console.log(passVal);
-    this.setState({
-      viewerURL: passVal,
-      hideModal: false
-    });
+    if (!passVal) {
+      this.setState({
+        hideModal: false,
+        tooltipOpen: false,
+      })
+      if (this.state.toastMessage !== '') {
+        return this.notifyYellow(this.state.toastMessage);
+      } else {
+        return this.dismissToast()
+      }
+    } else {
+      this.setState({
+        viewerURL: passVal.url,
+        toastMessage: passVal.toastMessage,
+        hideModal: false,
+        tooltipOpen: false,
+      })
+      if (passVal.toastMessage !== '') {
+        return this.notifyYellow(passVal.toastMessage);
+      } else {
+        return this.dismissToast()
+      }
+    }
+  };
+
+  handleHover = (e, passVal) => {
+    (!passVal) ?
+      this.setState({tooltipOpen:!this.state.tooltipOpen})
+    :
+      this.setState({
+        viewerURL: passVal.url,
+        toastMessage: passVal.toastMessage,
+        title: passVal.title,
+        description: passVal.description,
+        tooltipOpen: !this.state.tooltipOpen,
+      })
   };
 
   toggleModal = () => {
     this.setState({
       hideModal: !this.state.hideModal
     });
+    this.dismissToast();
   };
 
   componentWillMount() {
@@ -64,24 +144,38 @@ export default class Portfolio extends Component {
   render() {
     return (
       <div className = "portfolio">
+        <ToastContainer />
         <Orbit
           handleSiteClick = {this.handleSiteClick}
+          handleHover = {this.handleHover}
           toggleForm = {this.props.toggleForm}
           toggleBodyClass = {this.props.toggleBodyClass}
         />
-        <h3>
+        <h3 id="headerText">
           this is some of the neat stuff
-          <a href="https://github.com/senbenito"> senbenito </a>
+          <a href = "https://github.com/senbenito"> senbenito </a>
           has crafted</h3>
+        <Tooltip
+          isOpen = {this.state.tooltipOpen}
+          onRequestClose = {this.handleHover}
+          contentLabel = "Tooltip"
+          style = {tooltipStyle}
+        >
+          <span className="closeX" onClick={this.handleHover}>
+            X
+          </span>
+          <h2>{this.state.title}</h2>
+          <p id="tooltip-description">{this.state.description}</p>
+          <button id="tooltip-button" onClick={this.handleSiteClick}>
+            try  the  site
+          </button>
+        </Tooltip>
         <Modal
           isOpen = {!this.state.hideModal}
-          onRequestClose={this.toggleModal}
+          onRequestClose = {this.toggleModal}
           contentLabel = "Modal"
-          style={modalStyle}
+          style = {modalStyle}
         >
-          <Button
-            onClick = {this.toggleModal}
-            id="modalButton"/>
           <Viewer viewerURL = {this.state.viewerURL}/>
         </Modal>
       </div>

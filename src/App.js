@@ -26,13 +26,24 @@ export default class App extends React.Component{
   render(){
     return (
       <div className={this.state.bodyClass}>
-         <div id="React-body">
-           <PropsRoute exact path="/" component={Portfolio} toggleForm={this.toggleForm}
-           toggleBodyClass={this.toggleBodyClass}/>
-           <PropsRoute path="/about" component={About} toggleForm={this.toggleForm}
-           toggleBodyClass={this.toggleBodyClass}/>
-         </div>
-         <Login hideLogin={this.state.hideLogin} toggleForm={this.toggleForm}/>
+        <div id="React-body">
+          <PropsRoute
+            exact path="/"
+            component={Portfolio}
+            toggleForm={this.toggleForm}
+            toggleBodyClass={this.toggleBodyClass}
+          />
+          <PropsRoute
+            path="/about"
+            component={About}
+            toggleForm={this.toggleForm}
+            toggleBodyClass={this.toggleBodyClass}
+          />
+        </div>
+        <Login
+          hideLogin={this.state.hideLogin}
+          toggleForm={this.toggleForm}
+        />
        </div>
      )
    }

@@ -14,7 +14,8 @@ export default class PlanetMoon extends React.Component{
               <div
                 className={this.props.orbit + '-orbit-moon00'}
                 style={pointer}
-                onClick={e=>this.props.handleSiteClick(e)}
+                onClick={this.props.handleSiteClick}
+                onMouseEnter={this.props.handleHover}
                 key={this.props.website.id + 10}
                 value={this.props.website.url}
               />
@@ -22,7 +23,8 @@ export default class PlanetMoon extends React.Component{
             <div
               className={this.props.className}
               style={pointer}
-              onClick={e=>this.props.handleSiteClick(e)}
+              onClick={this.props.handleSiteClick}
+              onMouseEnter={this.props.handleHover}
               key={this.props.website.id}
               value={this.props.website.url}
             >
@@ -37,28 +39,32 @@ export default class PlanetMoon extends React.Component{
               <div
                 className={this.props.orbit + '-orbit-moon00'}
                 style={pointer}
-                onClick={e=>this.props.handleSiteClick(e)}
+                onClick={this.props.handleSiteClick}
+                onMouseEnter={this.props.handleHover}
                 key={this.props.website.id + 10}
                 value={this.props.website.url}
               />
               <div
                 className={this.props.orbit + '-orbit-moon01'}
                 style={pointer}
-                onClick={e=>this.props.handleSiteClick(e)}
+                onClick={this.props.handleSiteClick}
+                onMouseEnter={this.props.handleHover}
                 key={this.props.website.id + 11}
                 value={this.props.website.url}
               />
               <div
               className={this.props.orbit + '-orbit-moon02'}
               style={pointer}
-                onClick={e=>this.props.handleSiteClick(e)}
-                key={this.props.website.id + 12}
+              onClick={this.props.handleSiteClick}
+              onMouseEnter={this.props.handleHover}
+              key={this.props.website.id + 12}
                 value={this.props.website.url}
               />
               <div
                 className={this.props.orbit + '-orbit-moon03'}
                 style={pointer}
-                onClick={e=>this.props.handleSiteClick(e)}
+                onClick={this.props.handleSiteClick}
+                onMouseEnter={this.props.handleHover}
                 key={this.props.website.id + 13}
                 value={this.props.website.url}
               />
@@ -66,7 +72,8 @@ export default class PlanetMoon extends React.Component{
             <div
               className={this.props.className}
               style={pointer}
-              onClick={e=>this.props.handleSiteClick(e)}
+              onClick={this.props.handleSiteClick}
+              onMouseEnter={this.props.handleHover}
               key={this.props.website.id}
               value={this.props.website.url}
             >
@@ -81,14 +88,16 @@ export default class PlanetMoon extends React.Component{
                 <div
                   className={this.props.orbit + '-orbit-moon00'}
                   style={pointer}
-                  onClick={e=>this.props.handleSiteClick(e)}
+                  onClick={this.props.handleSiteClick}
+                  onMouseEnter={this.props.handleHover}
                   key={this.props.website.id + 10}
                   value={this.props.website.url}
                 />
                 <div
                   className={this.props.orbit + '-orbit-moon01'}
                   style={pointer}
-                  onClick={e=>this.props.handleSiteClick(e)}
+                  onClick={this.props.handleSiteClick}
+                  onMouseEnter={this.props.handleHover}
                   key={this.props.website.id + 11}
                   value={this.props.website.url}
                 />
@@ -96,7 +105,8 @@ export default class PlanetMoon extends React.Component{
               <div
                 className={this.props.className}
                 style={pointer}
-                onClick={e=>this.props.handleSiteClick(e)}
+                onClick={this.props.handleSiteClick}
+                onMouseEnter={this.props.handleHover}
                 key={this.props.website.id}
                 value={this.props.website.url}
               >
