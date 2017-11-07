@@ -5,6 +5,7 @@ import Modal from 'react-modal';
 import MBP13 from '../images/MBP13.png';
 import Viewer from './Viewer.js';
 import { ToastContainer, toast } from 'react-toastify';
+import { Tooltip } from 'reactstrap';
 
 const modalStyle = {
   overlay: {
@@ -42,6 +43,8 @@ export default class Portfolio extends Component {
     this.state = {
       viewerURL: '',
       hideModal: true,
+      tooltipOpen: false,
+      description: '',
     }
   };
 
@@ -71,6 +74,16 @@ export default class Portfolio extends Component {
     }
   };
 
+  handleHover = (e, passVal) => {
+    (!passVal) ?
+      this.setState({tooltipOpen:!this.state.tooltipOpen})
+    :
+      this.setState({
+        description: passVal.description,
+        tooltipOpen: !this.state.tooltipOpen,
+      })
+  }
+
   toggleModal = () => {
     this.setState({
       hideModal: !this.state.hideModal
@@ -88,13 +101,22 @@ export default class Portfolio extends Component {
         <ToastContainer />
         <Orbit
           handleSiteClick = {this.handleSiteClick}
+          handleHover = {this.handleHover}
           toggleForm = {this.props.toggleForm}
           toggleBodyClass = {this.props.toggleBodyClass}
         />
-        <h3>
+        <h3 id="headerText">
           this is some of the neat stuff
           <a href = "https://github.com/senbenito"> senbenito </a>
           has crafted</h3>
+        <Tooltip
+          placement="bottom"
+          isOpen={this.state.tooltipOpen}
+          target="headerText"
+          toggle={this.handleHover}
+        >
+          {this.state.description}
+        </Tooltip>
         <Modal
           isOpen = {!this.state.hideModal}
           onRequestClose = {this.toggleModal}

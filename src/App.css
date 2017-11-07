@@ -157,8 +157,8 @@ h3 {
 }
 .hidden-link2 {
   color: black;
-  text-shadow: .5vh .5vh .02vh gold, -.5vh -.5vh .02vh silver;
-  font-size: 2vh;
+  text-shadow: .5vw .5vw .02vw gold, -.5vw -.5vw .02vw silver;
+  font-size: 1.15vw;
   text-decoration: none;
 }
 
@@ -176,8 +176,8 @@ h3 {
 
 .hidden-link2:hover {
   color: magenta;
-  text-shadow: .2vh .2vh 2vh violet;
-  font-size: 2.5vh;
+  text-shadow: .2vw .2vw 2vw violet;
+  font-size: 1.4vw;
   text-decoration: none;
 }
 
