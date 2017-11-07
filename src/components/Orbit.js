@@ -126,6 +126,7 @@ export default class Orbit extends React.Component{
     let passVal = {
       url: website.url,
       toastMessage: website.toast,
+      title: website.title,
       description: website.description,
     };
     let planetClass = `${orbit}-orbit-planet${index}`;

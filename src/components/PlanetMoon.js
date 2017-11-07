@@ -16,7 +16,6 @@ export default class PlanetMoon extends React.Component{
                 style={pointer}
                 onClick={this.props.handleSiteClick}
                 onMouseEnter={this.props.handleHover}
-                onMouseLeave={this.props.handleHover}
                 key={this.props.website.id + 10}
                 value={this.props.website.url}
               />
@@ -26,7 +25,6 @@ export default class PlanetMoon extends React.Component{
               style={pointer}
               onClick={this.props.handleSiteClick}
               onMouseEnter={this.props.handleHover}
-              onMouseLeave={this.props.handleHover}
               key={this.props.website.id}
               value={this.props.website.url}
             >
@@ -43,7 +41,7 @@ export default class PlanetMoon extends React.Component{
                 style={pointer}
                 onClick={this.props.handleSiteClick}
                 onMouseEnter={this.props.handleHover}
-                onMouseLeave={this.props.handleHover}                key={this.props.website.id + 10}
+                key={this.props.website.id + 10}
                 value={this.props.website.url}
               />
               <div
@@ -51,7 +49,7 @@ export default class PlanetMoon extends React.Component{
                 style={pointer}
                 onClick={this.props.handleSiteClick}
                 onMouseEnter={this.props.handleHover}
-                onMouseLeave={this.props.handleHover}                key={this.props.website.id + 11}
+                key={this.props.website.id + 11}
                 value={this.props.website.url}
               />
               <div
@@ -59,7 +57,7 @@ export default class PlanetMoon extends React.Component{
               style={pointer}
               onClick={this.props.handleSiteClick}
               onMouseEnter={this.props.handleHover}
-              onMouseLeave={this.props.handleHover}                key={this.props.website.id + 12}
+              key={this.props.website.id + 12}
                 value={this.props.website.url}
               />
               <div
@@ -67,7 +65,7 @@ export default class PlanetMoon extends React.Component{
                 style={pointer}
                 onClick={this.props.handleSiteClick}
                 onMouseEnter={this.props.handleHover}
-                onMouseLeave={this.props.handleHover}                key={this.props.website.id + 13}
+                key={this.props.website.id + 13}
                 value={this.props.website.url}
               />
             </div>
@@ -76,7 +74,7 @@ export default class PlanetMoon extends React.Component{
               style={pointer}
               onClick={this.props.handleSiteClick}
               onMouseEnter={this.props.handleHover}
-              onMouseLeave={this.props.handleHover}              key={this.props.website.id}
+              key={this.props.website.id}
               value={this.props.website.url}
             >
               {this.props.website.title}
@@ -92,7 +90,7 @@ export default class PlanetMoon extends React.Component{
                   style={pointer}
                   onClick={this.props.handleSiteClick}
                   onMouseEnter={this.props.handleHover}
-                  onMouseLeave={this.props.handleHover}                  key={this.props.website.id + 10}
+                  key={this.props.website.id + 10}
                   value={this.props.website.url}
                 />
                 <div
@@ -100,7 +98,7 @@ export default class PlanetMoon extends React.Component{
                   style={pointer}
                   onClick={this.props.handleSiteClick}
                   onMouseEnter={this.props.handleHover}
-                  onMouseLeave={this.props.handleHover}                  key={this.props.website.id + 11}
+                  key={this.props.website.id + 11}
                   value={this.props.website.url}
                 />
               </div>
@@ -109,7 +107,7 @@ export default class PlanetMoon extends React.Component{
                 style={pointer}
                 onClick={this.props.handleSiteClick}
                 onMouseEnter={this.props.handleHover}
-                onMouseLeave={this.props.handleHover}                key={this.props.website.id}
+                key={this.props.website.id}
                 value={this.props.website.url}
               >
                 {this.props.website.title}

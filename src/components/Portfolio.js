@@ -2,10 +2,39 @@ import React, { Component } from 'react';
 import '../App.css';
 import Orbit from './Orbit.js';
 import Modal from 'react-modal';
+import {default as Tooltip} from 'react-modal';
 import MBP13 from '../images/MBP13.png';
 import Viewer from './Viewer.js';
 import { ToastContainer, toast } from 'react-toastify';
-import { Tooltip } from 'reactstrap';
+
+const tooltipStyle = {
+  overlay: {
+    position: 'fixed',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 'auto',
+    width: 'auto',
+    border: 'none',
+    background: 'rgba(255,255,255,.2)',
+  },
+  content: {
+    position: 'absolute',
+    top: '25vh',
+    bottom: 'auto',
+    left: '5vw',
+    right: '5vh',
+    height: '70vh',
+    width: '90vw',
+    border: 'none',
+    overflow: 'hidden',
+    background: 'rgba(0,0,0,.7)',
+    WebkitOverflowScrolling: 'touch',
+    outline: 'none',
+    textAlign: 'center',
+  }
+};
 
 const modalStyle = {
   overlay: {
@@ -44,6 +73,7 @@ export default class Portfolio extends Component {
       viewerURL: '',
       hideModal: true,
       tooltipOpen: false,
+      title: '',
       description: '',
     }
   };
@@ -62,15 +92,28 @@ export default class Portfolio extends Component {
   dismissToast = () =>  toast.dismiss();
 
   handleSiteClick = (e, passVal) => {
-    this.setState({
-      viewerURL: passVal.url,
-      toastMessage: passVal.toastMessage,
-      hideModal: false,
-    });
-    if (passVal.toastMessage !== '') {
-      return this.notifyYellow(passVal.toastMessage);
+    if (!passVal) {
+      this.setState({
+        hideModal: false,
+        tooltipOpen: false,
+      })
+      if (this.state.toastMessage !== '') {
+        return this.notifyYellow(this.state.toastMessage);
+      } else {
+        return this.dismissToast()
+      }
     } else {
-      return this.dismissToast()
+      this.setState({
+        viewerURL: passVal.url,
+        toastMessage: passVal.toastMessage,
+        hideModal: false,
+        tooltipOpen: false,
+      })
+      if (passVal.toastMessage !== '') {
+        return this.notifyYellow(passVal.toastMessage);
+      } else {
+        return this.dismissToast()
+      }
     }
   };
 
@@ -79,10 +122,13 @@ export default class Portfolio extends Component {
       this.setState({tooltipOpen:!this.state.tooltipOpen})
     :
       this.setState({
+        viewerURL: passVal.url,
+        toastMessage: passVal.toastMessage,
+        title: passVal.title,
         description: passVal.description,
         tooltipOpen: !this.state.tooltipOpen,
       })
-  }
+  };
 
   toggleModal = () => {
     this.setState({
@@ -110,12 +156,19 @@ export default class Portfolio extends Component {
           <a href = "https://github.com/senbenito"> senbenito </a>
           has crafted</h3>
         <Tooltip
-          placement="bottom"
-          isOpen={this.state.tooltipOpen}
-          target="headerText"
-          toggle={this.handleHover}
+          isOpen = {this.state.tooltipOpen}
+          onRequestClose = {this.handleHover}
+          contentLabel = "Tooltip"
+          style = {tooltipStyle}
         >
-          {this.state.description}
+          <span className="closeX" onClick={this.handleHover}>
+            X
+          </span>
+          <h2>{this.state.title}</h2>
+          <p id="tooltip-description">{this.state.description}</p>
+          <button id="tooltip-button" onClick={this.handleSiteClick}>
+            try  the  site
+          </button>
         </Tooltip>
         <Modal
           isOpen = {!this.state.hideModal}
