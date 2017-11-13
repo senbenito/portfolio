@@ -2,15 +2,10 @@ import React from 'react';
 import '../App.css';
 
 export default class About extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      readmeText: "<soo-meta> this document that describes the creation of this website  is actually a miniature website that will take you to the website that I used to create this website </soo-meta>"
-    };
-  };
 
   componentWillMount() {
     this.props.toggleBodyClass('about-body');
+    window.scrollTo(0, 0);
   }
 
   render(){
