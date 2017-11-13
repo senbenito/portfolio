@@ -163,12 +163,14 @@ h3 {
   left: 2.5vw;
   height: 87vh;
   width: 95vw;
+  font-family: 'Bungee', cursive;
+  text-shadow: .05vw .05vw .02vw orange, -.05vw -.05vw .02vw purple;
 }
 
 .ring {
   width: 150%;
   height: 150%;
-  border: double 10px darkgray;
+  border: double 10px blue;
   border-radius: 50%;
   top: -25%;
   left: -25%;
@@ -414,9 +416,11 @@ h3 {
   height: 6vw;
   width: 6vw;
   border-radius: 100%;
-  background-color: gray;
+  background: radial-gradient(rgba(255,102,204,0.9) 0%, rgba(255,51,0, 0.7) 75%);
   -webkit-animation: spin-right 20s linear infinite reverse;
   animation: spin-right 20s linear infinite reverse;
+  font-size: .9vw;
+  line-height: 9vw;
 }
 
 .second-orbit-planet0-moon-orbit {
@@ -437,7 +441,7 @@ h3 {
   height: 1vw;
   width: 1vw;
   border-radius: 100%;
-  background-color: gray;
+  background: radial-gradient(rgba(255,51,0,0.9) 0%, rgba(255,255,153, 0.7) 75%);
 }
 
 .second-orbit-planet1 {
@@ -447,9 +451,11 @@ h3 {
   height: 6vw;
   width: 6vw;
   border-radius: 100%;
-  background-color: gray;
+  background: radial-gradient(rgba(255,255,153,0.9) 0%, rgba(255,102,204, 0.7) 75%);
   -webkit-animation: spin-right 20s linear infinite reverse;
   animation: spin-right 20s linear infinite reverse;
+  font-size: .9vw;
+  line-height: 9vw;
 }
 
 .second-orbit-planet2 {
@@ -459,9 +465,11 @@ h3 {
   height: 8vw;
   width: 8vw;
   border-radius: 100%;
-  background-color: gray;
+  background: radial-gradient(rgba(255,255,153,0.9) 0%, rgba(255,51,0, 0.7) 75%);
   -webkit-animation: spin-right 20s linear infinite reverse;
   animation: spin-right 20s linear infinite reverse;
+  font-size: .9vw;
+  line-height: 9vw;
 }
 
 /* ---------- Third orbit - This is the middle closest to the central point ---------- */
@@ -485,9 +493,12 @@ h3 {
   height: 9vw;
   width: 9vw;
   border-radius: 100%;
-  background-color: gray;
+  background: radial-gradient(rgba(153,102,51,0.9) 0%, rgba(255,102,0, 0.7) 75%);
   -webkit-animation: spin-right 30s linear infinite reverse;
   animation: spin-right 30s linear infinite reverse;
+  font-size: .7vw;
+  line-height: 9vw;
+  color: yellow;
 }
 
 .third-orbit-planet0-moon-orbit {
@@ -508,7 +519,7 @@ h3 {
   height: 1vw;
   width: 1vw;
   border-radius: 100%;
-  background-color: gray;
+  background: radial-gradient(rgba(255,102,204,0.9) 0%, rgba(255,204,0, 0.7) 75%);
 }
 
 .third-orbit-moon01 {
@@ -518,7 +529,7 @@ h3 {
   height: 1.5vw;
   width: 1.5vw;
   border-radius: 100%;
-  background-color: gray;
+  background: radial-gradient(rgba(255,204,0,0.9) 0%, rgba(255,102,204, 0.7) 75%);
 }
 
 .third-orbit-moon02 {
@@ -528,7 +539,7 @@ h3 {
   height: 2.2vw;
   width: 2.2vw;
   border-radius: 100%;
-  background-color: gray
+  background: radial-gradient(rgba(153,102,51,0.9) 0%, rgba(255,102,204, 0.7) 75%);
 }
 
 .third-orbit-moon03 {
@@ -538,7 +549,7 @@ h3 {
   height: 1vw;
   width: 1vw;
   border-radius: 100%;
-  background-color: gray;
+  background: radial-gradient(rgba(255,102,0,0.9) 0%, rgba(153,102,51, 0.7) 75%);
 }
 
 .third-orbit-planet1 {
@@ -549,9 +560,12 @@ h3 {
   height: 8vw;
   width: 8vw;
   border-radius: 100%;
-  background-color: gray;
+  background: radial-gradient(rgba(255,204,0,0.9) 0%, rgba(255,102,0, 0.7) 75%);
   -webkit-animation: spin-right 30s linear infinite reverse;
   animation: spin-right 30s linear infinite reverse;
+  font-size: .9vw;
+  line-height: 9vw;
+  color: yellow;
 }
 .third-orbit-planet2 {
   position: absolute;
@@ -560,9 +574,12 @@ h3 {
   height: 6vw;
   width: 6vw;
   border-radius: 100%;
-  background-color: gray;
+  background: radial-gradient(rgba(255,204,0,0.9) 0%, rgba(153,102,51, 0.7) 75%);
   -webkit-animation: spin-right 30s linear infinite reverse;
   animation: spin-right 30s linear infinite reverse;
+  font-size: .9vw;
+  line-height: 9vw;
+  color: yellow;
 }
 
 /* ---------- Fourth orbit - This is the circles second farthest to the central point ---------- */
@@ -586,9 +603,12 @@ h3 {
   height: 12vw;
   width: 12vw;
   border-radius: 100%;
-  background-color: gray;
+  background: radial-gradient(rgba(51,204,51,0.9) 0%, rgba(0,255,204, 0.7) 75%);
   -webkit-animation: spin-right 40s linear infinite reverse;
   animation: spin-right 40s linear infinite reverse;
+  font-size: 1vw;
+  line-height: 12vw;
+  color: #006600;
 }
 
 .fourth-orbit-planet0-moon-orbit {
@@ -609,7 +629,7 @@ h3 {
   height: 1vw;
   width: 1vw;
   border-radius: 100%;
-  background-color: gray;
+  background: radial-gradient(rgba(0,255,204,0.9) 0%, rgba(0,255,0, 0.7) 75%);
 }
 
 .fourth-orbit-moon01 {
@@ -619,7 +639,7 @@ h3 {
   height: 2vw;
   width: 2vw;
   border-radius: 100%;
-  background-color: gray;
+  background: radial-gradient(rgba(0,255,0,0.9) 0%, rgba(51,204,51, 0.7) 75%);
 }
 
 .fourth-orbit-planet1 {
@@ -629,9 +649,12 @@ h3 {
   height: 12vw;
   width: 12vw;
   border-radius: 100%;
-  background-color: gray;
+  background: radial-gradient(rgba(0,255,0,0.9) 0%, rgba(51,204,51, 0.7) 75%);
   -webkit-animation: spin-right 40s linear infinite reverse;
   animation: spin-right 40s linear infinite reverse;
+  font-size: 1.3vw;
+  line-height: 11vw;
+  color: #ff0066;
 }
 
 /* ---------- Fifth orbit - This is the circles furthest away from the central point ---------- */
@@ -668,7 +691,7 @@ h3 {
   height: 4.5vw;
   width: 4.5vw;
   border-radius: 100%;
-  background-color: gray;
+  background: radial-gradient(rgba(102,0,102,0.9) 0%, rgba(204,102,255, 0.7) 75%);
 }
 
 .chicken {
@@ -685,7 +708,7 @@ h3 {
   height: 3.2vw;
   width: 3.2vw;
   border-radius: 100%;
-  background-color: gray;
+  background: radial-gradient(rgba(204,102,255, 0.7) 20%,  rgba(102,0,102,0.9) 85%);
 }
 
 .egg {
@@ -703,10 +726,15 @@ h3 {
   height: 11vw;
   width: 11vw;
   border-radius: 100%;
-  background-color: gray;
+  background: radial-gradient(rgba(0,102,255,0.9) 0%, rgba(255,255,255, 0.7) 75%);
   -webkit-animation: spin-right 50s linear infinite reverse;
   animation: spin-right 50s linear infinite reverse;
+  font-family: 'Bungee', cursive;
+  font-size: 1.5vw;
+  line-height: 10vw;
+  color: cyan;
 }
+
 .fifth-orbit-planet2 {
   position: absolute;
   top: 9.5vw;
@@ -714,10 +742,14 @@ h3 {
   height: 9vw;
   width: 9vw;
   border-radius: 100%;
-  background-color: gray;
+  background: radial-gradient(rgba(0,102,255, 0.7) 0%, rgba(0,255,255,0.9) 75%);
   -webkit-animation: spin-right 50s linear infinite reverse;
   animation: spin-right 50s linear infinite reverse;
+  font-size: 1.2vw;
+  line-height: 9vw;
+  color: #ff99ff;
 }
+
 .fifth-orbit-planet3 {
   position: absolute;
   bottom: 13vw;
@@ -725,9 +757,12 @@ h3 {
   height: 17vw;
   width: 17vw;
   border-radius: 100%;
-  background-color: gray;
+  background: radial-gradient(rgba(0,255,255, 0.7) 0%, rgba(0,102,255,0.9) 75%);
   -webkit-animation: spin-right 50s linear infinite reverse;
   animation: spin-right 50s linear infinite reverse;
+  font-size: 2.2vw;
+  line-height: 15vw;
+  color: purple;
 }
 
 /* ---------- Animation ---------- */
