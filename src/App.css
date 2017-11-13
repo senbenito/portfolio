@@ -163,6 +163,8 @@ h3 {
   left: 2.5vw;
   height: 87vh;
   width: 95vw;
+  font-family: 'Bungee', cursive;
+  text-shadow: .05vw .05vw .02vw orange, -.05vw -.05vw .02vw purple;
 }
 
 .ring {
@@ -494,7 +496,7 @@ h3 {
   background: radial-gradient(rgba(153,102,51,0.9) 0%, rgba(255,102,0, 0.7) 75%);
   -webkit-animation: spin-right 30s linear infinite reverse;
   animation: spin-right 30s linear infinite reverse;
-  font-size: .9vw;
+  font-size: .7vw;
   line-height: 9vw;
   color: yellow;
 }
@@ -604,7 +606,7 @@ h3 {
   background: radial-gradient(rgba(51,204,51,0.9) 0%, rgba(0,255,204, 0.7) 75%);
   -webkit-animation: spin-right 40s linear infinite reverse;
   animation: spin-right 40s linear infinite reverse;
-  font-size: 1.2vw;
+  font-size: 1vw;
   line-height: 12vw;
   color: #006600;
 }
@@ -652,7 +654,7 @@ h3 {
   animation: spin-right 40s linear infinite reverse;
   font-size: 1.3vw;
   line-height: 11vw;
-  color: darkred;
+  color: #ff0066;
 }
 
 /* ---------- Fifth orbit - This is the circles furthest away from the central point ---------- */
@@ -727,6 +729,7 @@ h3 {
   background: radial-gradient(rgba(0,102,255,0.9) 0%, rgba(255,255,255, 0.7) 75%);
   -webkit-animation: spin-right 50s linear infinite reverse;
   animation: spin-right 50s linear infinite reverse;
+  font-family: 'Bungee', cursive;
   font-size: 1.5vw;
   line-height: 10vw;
   color: cyan;
@@ -744,7 +747,7 @@ h3 {
   animation: spin-right 50s linear infinite reverse;
   font-size: 1.2vw;
   line-height: 9vw;
-  color: #ffccff;
+  color: #ff99ff;
 }
 
 .fifth-orbit-planet3 {
