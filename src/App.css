@@ -170,7 +170,7 @@ h3 {
 .ring {
   width: 150%;
   height: 150%;
-  border: double 10px blue;
+  border: double 10px cyan;
   border-radius: 50%;
   top: -25%;
   left: -25%;
@@ -499,6 +499,7 @@ h3 {
   font-size: .7vw;
   line-height: 9vw;
   color: yellow;
+  box-shadow: 0 0 1.5em yellow;
 }
 
 .third-orbit-planet0-moon-orbit {
@@ -565,7 +566,8 @@ h3 {
   animation: spin-right 30s linear infinite reverse;
   font-size: .9vw;
   line-height: 9vw;
-  color: yellow;
+  color: red;
+  box-shadow: 0 0 1.5em red;
 }
 .third-orbit-planet2 {
   position: absolute;
@@ -579,7 +581,8 @@ h3 {
   animation: spin-right 30s linear infinite reverse;
   font-size: .9vw;
   line-height: 9vw;
-  color: yellow;
+  color: orange;
+  box-shadow: 0 0 1.5em orange;
 }
 
 /* ---------- Fourth orbit - This is the circles second farthest to the central point ---------- */
@@ -609,6 +612,7 @@ h3 {
   font-size: 1vw;
   line-height: 12vw;
   color: #006600;
+  box-shadow: 0 0 1.5em #006600;
 }
 
 .fourth-orbit-planet0-moon-orbit {
@@ -655,6 +659,7 @@ h3 {
   font-size: 1.3vw;
   line-height: 11vw;
   color: #ff0066;
+  box-shadow: 0 0 1.5em #ff0066;
 }
 
 /* ---------- Fifth orbit - This is the circles furthest away from the central point ---------- */
@@ -692,6 +697,7 @@ h3 {
   width: 4.5vw;
   border-radius: 100%;
   background: radial-gradient(rgba(102,0,102,0.9) 0%, rgba(204,102,255, 0.7) 75%);
+  box-shadow: 0 0 1.5em rgb(102,0,102);
 }
 
 .chicken {
@@ -709,6 +715,7 @@ h3 {
   width: 3.2vw;
   border-radius: 100%;
   background: radial-gradient(rgba(204,102,255, 0.7) 20%,  rgba(102,0,102,0.9) 85%);
+  box-shadow: 0 0 1.5em rgb(204,102,255);
 }
 
 .egg {
@@ -733,6 +740,7 @@ h3 {
   font-size: 1.5vw;
   line-height: 10vw;
   color: cyan;
+  box-shadow: 0 0 1.5em cyan;
 }
 
 .fifth-orbit-planet2 {
@@ -748,6 +756,7 @@ h3 {
   font-size: 1.2vw;
   line-height: 9vw;
   color: #ff99ff;
+  box-shadow: 0 0 1.5em #ff99ff;
 }
 
 .fifth-orbit-planet3 {
@@ -763,6 +772,7 @@ h3 {
   font-size: 2.2vw;
   line-height: 15vw;
   color: purple;
+  box-shadow: 0 0 1.5em purple;
 }
 
 /* ---------- Animation ---------- */
