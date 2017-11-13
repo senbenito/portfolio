@@ -7,8 +7,7 @@ export default class PlanetRings extends React.Component{
         <div
         className={this.props.className}
         style={pointer}
-        onClick={this.props.handleSiteClick}
-        onMouseEnter={this.props.handleHover}
+        onClick={this.props.handlePlanetClick}
         key={this.props.website.id}
         value={this.props.website.url}
       >

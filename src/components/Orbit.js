@@ -9,66 +9,7 @@ export default class Orbit extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      websites: [
-        // [
-        //   {},
-        //   {
-        //     id: 8,
-        //     url: "https://serene-capstone.herokuapp.com/",
-        //     title: "Serene",
-        //     toast: "PSSSSSSSST.......... username = 'Shotgun'        password = 'password'"
-        //   },
-        //   {
-        //     id: 7,
-        //     url: "https://checkout-vr.surge.sh/",
-        //     title: "Checkout VR",
-        //     toast: ''
-        //   },
-        //   {
-        //     id: 6,
-        //     url: "https://musicator.surge.sh/",
-        //     title: "Musicator",
-        //     toast: ''
-        //   },
-        //   {
-        //     id: 5,
-        //     url: "https://wry-noise.herokuapp.com/",
-        //     title: "Dreaddit",
-        //     toast: ''
-        //   }
-        // ],
-        // [
-        //   {
-        //     id: 4,
-        //     url: "https://drinking-buddies.herokuapp.com/",
-        //     title: "Drinking Buddies",
-        //     toast: "PSSSSSSSST.......... username = 'Shotgun'        password = 'cocktailpassword'"
-        //   },
-        //   {
-        //     id: 3,
-        //     url: "https://eatertain_me.surge.sh/",
-        //     title: "Eatertain.Me",
-        //     toast: ''
-        //   }
-        // ],
-        // [
-        //   {
-        //     id: 2,
-        //     url: "https://utopian-locket.surge.sh/",
-        //     title: "Pyrate Personality Test",
-        //     toast: ''
-        //   },
-        //   {
-        //     id: 1,
-        //     url: "https://senbenito.surge.sh/",
-        //     title: "Let's meet Shannon!",
-        //     toast: ''
-        //   }
-        // ],
-        // [
-        //
-        // ]
-      ],
+      websites: [],
       ring1Class: 'ring1',
       ring2Class: 'ring2',
       ring3Class: 'ring3',
@@ -84,7 +25,7 @@ export default class Orbit extends React.Component{
 
   async fetchPlaces(){
     const response = await fetch('https://senbenito-server.herokuapp.com/sites');
-    const websites = await response.json()
+    const websites = await response.json();
     this.setState({
       websites: websites,
     });
@@ -135,8 +76,7 @@ export default class Orbit extends React.Component{
         <PlanetMoon key={index}
         orbit={orbit}
         className={planetClass}
-        handleSiteClick={(e)=>this.props.handleSiteClick(e, passVal)}
-        handleHover={(e)=>this.props.handleHover(e, passVal)}
+        handlePlanetClick={(e)=>this.props.handlePlanetClick(e, passVal)}
         toggleForm={this.props.toggleForm}
         website={website}/>
       )
@@ -146,8 +86,7 @@ export default class Orbit extends React.Component{
         return (
           <PlanetRings key={index}
           className={planetClass}
-          handleSiteClick={(e)=>this.props.handleSiteClick(e, passVal)}
-          handleHover={(e)=>this.props.handleHover(e, passVal)}
+          handlePlanetClick={(e)=>this.props.handlePlanetClick(e, passVal)}
           website={website}/>
         )
       }
@@ -155,8 +94,7 @@ export default class Orbit extends React.Component{
     return (
       <Planet key={index}
       className={planetClass}
-      handleSiteClick={(e)=>this.props.handleSiteClick(e, passVal)}
-      handleHover={(e)=>this.props.handleHover(e, passVal)}
+      handlePlanetClick={(e)=>this.props.handlePlanetClick(e, passVal)}
       website={website}/>
     )
   };

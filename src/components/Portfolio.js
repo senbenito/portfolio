@@ -91,8 +91,7 @@ export default class Portfolio extends Component {
   };
   dismissToast = () =>  toast.dismiss();
 
-  handleSiteClick = (e, passVal) => {
-    if (!passVal) {
+  handleSiteClick = () => {
       this.setState({
         hideModal: false,
         tooltipOpen: false,
@@ -102,22 +101,9 @@ export default class Portfolio extends Component {
       } else {
         return this.dismissToast()
       }
-    } else {
-      this.setState({
-        viewerURL: passVal.url,
-        toastMessage: passVal.toastMessage,
-        hideModal: false,
-        tooltipOpen: false,
-      })
-      if (passVal.toastMessage !== '') {
-        return this.notifyYellow(passVal.toastMessage);
-      } else {
-        return this.dismissToast()
-      }
-    }
   };
 
-  handleHover = (e, passVal) => {
+  handlePlanetClick = (e, passVal) => {
     (!passVal) ?
       this.setState({tooltipOpen:!this.state.tooltipOpen})
     :
@@ -146,8 +132,7 @@ export default class Portfolio extends Component {
       <div className = "portfolio">
         <ToastContainer />
         <Orbit
-          handleSiteClick = {this.handleSiteClick}
-          handleHover = {this.handleHover}
+          handlePlanetClick = {this.handlePlanetClick}
           toggleForm = {this.props.toggleForm}
           toggleBodyClass = {this.props.toggleBodyClass}
         />
@@ -157,11 +142,11 @@ export default class Portfolio extends Component {
           has crafted</h3>
         <Tooltip
           isOpen = {this.state.tooltipOpen}
-          onRequestClose = {this.handleHover}
+          onRequestClose = {this.handlePlanetClick}
           contentLabel = "Tooltip"
           style = {tooltipStyle}
         >
-          <span className="closeX" onClick={this.handleHover}>
+          <span className="closeX" onClick={this.handlePlanetClick}>
             X
           </span>
           <h2>{this.state.title}</h2>
