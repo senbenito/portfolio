@@ -181,4 +181,28 @@ And, add a little meta-HTML styling courtesy of [github.css](https://gist.github
 
 >Git branch [portfolio-frontend/about-markdown](https://github.com/senbenito/portfolio-frontend/tree/about-markdown)
 
+## Step 8: Refining UX
+
+I wanted to give a visitor to my site a meta-experience accessing my portfolio of websited through `<iframes>`s but make that navigation easy to understand.
+
+1. Some of my websites use authentication, so rather than break my code to allow anyone to access, I'll just supply credentials using [Toastify](https://www.npmjs.com/package/react-toastify)
+2. Most of my portfolio is hosted on Heroku which spins down your site's server after inactivity leading to long load times... let's use this awesome loading GIF from [BoingBoing](https://boingboing.net/2015/10/18/loadingicon-trippy-looping-gi.html) to let users know "we're working on it"
+3. With [React-Modal](https://www.npmjs.com/package/react-modal#styles) we can style all aspects of the modal `<iframe>`; since I'm making this on a MacBook Pro, let's meta-skin this whole meta-experience! Messing with CSS on this took awhile, but ultimately I account for different views and keep things scaled - **PHEW!**
+4. This portfolio is as much an illustration of my progress as a developer, but how do I include my crappy pre-course sites without you thinking I make crappy websites? Let's just explain! My attempts at [reactstrap's Tooltip](https://reactstrap.github.io/components/tooltips/) seemed to come undone trying to supply the element that would serve as anchor for the tooltip given all those orbiting `<div>`s; plus, a tooltip isn't exactly a lot of room to explain, so I used another modal to interupt the user, describing a little bit about each site before passing them into the `<iframe>` modal.
+
+>Git branch [portfolio-frontend/modal-display](https://github.com/senbenito/portfolio-frontend/tree/modal-display)
+
+## Step 9: Parallax FTW
+
+Parallax is everywhere because it looks cool, incorporates a little material philosophy, and provides a measure of subtle interactivity, so of course I want some.
+
+My buddy Angus was reminding me of all the cool stuff I ideated before becoming a web developer, and suggested you all might like to know more about me, too.
+
+Let's make this site all Parallax-y with an introductory review of my brand-building experience creation and land on the Orbit-folio™!
+
+[Rellax](https://www.npmjs.com/package/rellax) is a super-tiny vanilla JS library that looks pretty tidy and well-documented...
+
+>Git branch [portfolio-frontend/portfolio-parallax](https://github.com/senbenito/portfolio-frontend/tree/portfolio-parallax)
+
+
 <link rel="stylesheet" href="README.css">
