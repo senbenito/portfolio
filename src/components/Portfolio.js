@@ -7,6 +7,7 @@ import MBP13 from '../images/MBP13.png';
 import Viewer from './Viewer.js';
 import { ToastContainer, toast } from 'react-toastify';
 
+
 const tooltipStyle = {
   overlay: {
     position: 'fixed',
@@ -129,7 +130,9 @@ export default class Portfolio extends Component {
 
   render() {
     return (
-      <div className = "portfolio">
+      <div
+        className="portfolio rellax"
+      >
         <ToastContainer />
         <Orbit
           handlePlanetClick = {this.handlePlanetClick}
