@@ -31,6 +31,7 @@ _note: I started out with Bcrypt, but ELF header errors plagued my Heroku build,
 Which brings up an interesting 'problem': I've created a couple components to deal with (portfolio, login, submit website) so let's add [React Router DOM](https://www.npmjs.com/package/react-router-dom) to take care of rendering components as needed!
 >Git branch [portfolio-frontend/react-router](https://github.com/senbenito/portfolio-frontend/tree/react-router)
 
+<a name="chicken"></a>
 Way back on my Q1 Project, [Eatertain.Me](http://eatertain_me.surge.sh/), I had a [chicken GIF](https://captaintoog.deviantart.com/) easter egg that would display chicken recipes. It became a "thing" that we'd sneak the chicken into our quarterly projects [Family Hub: add 'chicken' to grocery list and mark it done](https://familyhub.herokuapp.com/), [ReZact Hunter: click on Difficulty Level bar to face Chicken Boss](https://github.com/zpassarelli/rezact-hunter), [Serene: click the chicken icon to view chicken restaurants](https://serene-green.herokuapp.com/chickenplaces) - so as an ode to my friends-forever from g[49], my login bar is accessed by clicking the chicken.
 >Git branch [portfolio-frontend/chicken-login](https://github.com/senbenito/portfolio-frontend/tree/chicken-login)
 
@@ -201,6 +202,8 @@ My buddy Angus was reminding me of all the cool stuff I ideated before becoming 
 Let's make this site all Parallax-y with an introductory review of my brand-building experience creation and land on the Orbit-folio™!
 
 [React-Paralax](https://www.npmjs.com/package/react-parallax) looks like what we need...
+
+Taking a page from our [`<Login />` conditional render](#chicken) I'm going to make a `<Resume />` component to hold the `<Parallax />` that will be controlled by whether we're viewing `<Portfolio />` or `<About />`.
 
 >Git branch [portfolio-frontend/portfolio-parallax](https://github.com/senbenito/portfolio-frontend/tree/portfolio-parallax)
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import qs from 'qs';
 import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.min.css';
 import '../App.css';
 
 export default class Login extends React.Component{
@@ -18,7 +17,6 @@ export default class Login extends React.Component{
   notifyRed=(message)=>toast.error(message);
   notifyGreen=(message)=>toast.success(message);
   notifyYellow=(message)=>toast.warn(message);
-
 
   async handleLogin(event) {
     event.preventDefault();
