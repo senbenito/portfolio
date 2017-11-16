@@ -7,65 +7,6 @@ import MBP13 from '../images/MBP13.png';
 import Viewer from './Viewer.js';
 import { ToastContainer, toast } from 'react-toastify';
 
-const tooltipStyle = {
-  overlay: {
-    position: 'fixed',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    height: 'auto',
-    width: 'auto',
-    border: 'none',
-    background: 'rgba(255,255,255,.2)',
-  },
-  content: {
-    position: 'absolute',
-    top: '25vh',
-    bottom: 'auto',
-    left: '5vw',
-    right: '5vh',
-    height: '70vh',
-    width: '90vw',
-    border: 'none',
-    overflow: 'hidden',
-    background: 'rgba(0,0,0,.7)',
-    WebkitOverflowScrolling: 'touch',
-    outline: 'none',
-    textAlign: 'center',
-  }
-};
-
-const modalStyle = {
-  overlay: {
-    position: 'fixed',
-    top: 0,
-    bottom: 0,
-    left: '1.5vw',
-    right: 0,
-    height: 'auto',
-    width: '97vw',
-    border: 'none',
-    background: `url(${MBP13})`,
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-  },
-  content: {
-    position: 'absolute',
-    top: '2vw',
-    left: '12vw',
-    overflow: 'hidden',
-    height: 'auto',
-    width: '74vw',
-    maxHeight: '48vw',
-    maxWidth: '128vh',
-    background: 'black',
-    border: 'none',
-    WebkitOverflowScrolling: 'touch',
-    outline: 'none',
-  }
-};
-
 export default class Portfolio extends Component {
   constructor(props) {
     super(props);
@@ -128,6 +69,64 @@ export default class Portfolio extends Component {
   }
 
   render() {
+    const tooltipStyle = {
+      overlay: {
+        position: 'fixed',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: 'auto',
+        width: 'auto',
+        border: 'none',
+        background: 'rgba(255,255,255,.2)',
+      },
+      content: {
+        position: 'absolute',
+        top: '25vh',
+        bottom: 'auto',
+        left: '5vw',
+        right: '5vh',
+        height: '70vh',
+        width: '90vw',
+        border: 'none',
+        overflow: 'hidden',
+        background: 'rgba(0,0,0,.7)',
+        WebkitOverflowScrolling: 'touch',
+        outline: 'none',
+        textAlign: 'center',
+      }
+    };
+
+    const modalStyle = {
+      overlay: {
+        position: 'fixed',
+        top: 0,
+        bottom: 0,
+        left: '1.5vw',
+        right: 0,
+        height: 'auto',
+        width: '97vw',
+        border: 'none',
+        background: `url(${MBP13})`,
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat',
+      },
+      content: {
+        position: 'absolute',
+        top: '2vw',
+        left: '12vw',
+        overflow: 'hidden',
+        height: 'auto',
+        width: '74vw',
+        maxHeight: '48vw',
+        maxWidth: '128vh',
+        background: 'black',
+        border: 'none',
+        WebkitOverflowScrolling: 'touch',
+        outline: 'none',
+      }
+    };
     return (
       <div className="portfolio">
         <ToastContainer />

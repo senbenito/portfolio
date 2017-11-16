@@ -201,9 +201,7 @@ My buddy Angus was reminding me of all the cool stuff I ideated before becoming 
 
 Let's make this site all Parallax-y with an introductory review of my brand-building experience creation and land on the Orbit-folio™!
 
-[React-Paralax](https://www.npmjs.com/package/react-parallax) looks like what we need...
-
-Taking a page from our [`<Login />` conditional render](#chicken) I'm going to make a `<Resume />` component to hold the `<Parallax />` that will be controlled by whether we're viewing `<Portfolio />` or `<About />`.
+[Rellax](https://www.npmjs.com/package/rellax) is a super-tiny vanilla JS library that looks pretty tidy and well-documented...
 
 >Git branch [portfolio-frontend/portfolio-parallax](https://github.com/senbenito/portfolio-frontend/tree/portfolio-parallax)
 

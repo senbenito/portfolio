@@ -42,7 +42,87 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-<!-- <footer>Shout-out to <a style="font-size: 2vh" href="https://captaintoog.deviantart.com/">CaptainToog</a> for the chicken icon!!</footer> -->
+
+    <div class="fixed-top rellax" data-rellax-speed="-2"
+      style="transform: rotate(45deg);"
+    >
+    </div>
+
+    <main class="main">
+
+      <section class="section">
+        <div style="margin-top: 200px">
+          <div class="container">
+
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <h4>Javascript (accepts any class name)</h4>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-offset-2 col-md-8">
+                <div class="text-editor">
+                  <code>
+                    <span class="purple">var</span> rellax = <span class="green">new</span> <span class="white">Rellax</span>('.rellax');
+                  </code>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-12 text-center" style="margin-top:80px">
+                <h4>Basic Markup (default Speed: -4)</h4>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-offset-2 col-md-8">
+                <div class="text-editor">
+                  <code>
+                    &lt;div <span class="purple">class</span>="<span class="green">rellax</span>"&gt;<br>
+                    <span class="white">&nbsp;&nbsp;I’m slow and smooth</span><br>
+                    &lt;/div&gt;
+                  </code>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-12 text-center" style="margin-top:40px">
+                <h4>Optional Speed (-10 to +10)</h4>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-offset-2 col-md-8">
+                <div class="text-editor">
+                  <code>
+                    &lt;div <span class="purple">class</span>="<span class="green">rellax</span>" <span class="purple">data-rellax-speed</span>="<span class="green">-7</span>"&gt;<br>
+                    <span class="white">&nbsp;&nbsp;I’m extra slow and smooth</span><br>
+                    &lt;/div&gt;
+                  </code>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      
+    </main>
+
+    <script src="rellax.min.js"></script>
+    <script>
+      // Also can pass in optional settings block
+      var rellax = new Rellax('.rellax', {
+        speed: -2,
+        center: true,
+        round: true,
+      });
+    </script>
 
   </body>
 </html>
