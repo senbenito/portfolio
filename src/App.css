@@ -109,7 +109,6 @@ object {
 
 .portfolio-body{
   height: 120vh;
-  background-image: url('./images/rfm25es1j2iz.jpg');
 }
 
 .portfolio {
@@ -129,7 +128,7 @@ h3 {
   width: 100vw;
   font-family: 'Monoton', cursive;
   font-size: 5vh;
-  animation: neon1 1.1s ease-in-out infinite alternate;
+  animation: neon2 1.1s ease-in-out infinite alternate;
   transition: all 0.5s;
   position: absolute;
   top: 20vh;

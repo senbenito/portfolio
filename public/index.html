@@ -44,74 +44,80 @@
     -->
 
     <div class="fixed-top rellax" data-rellax-speed="-2"
-      style="transform: rotate(45deg);"
+    style="background-image: url('./zap_rocket.gif')"
     >
     </div>
 
     <main class="main">
 
       <section class="section">
-        <div style="margin-top: 200px">
-          <div class="container">
+        <div class="container">
 
-            <div class="row">
-              <div class="col-md-12 text-center">
-                <h4>Javascript (accepts any class name)</h4>
-              </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h2>Javascript (accepts any class name)</h2>
             </div>
-
-            <div class="row">
-              <div class="col-md-offset-2 col-md-8">
-                <div class="text-editor">
-                  <code>
-                    <span class="purple">var</span> rellax = <span class="green">new</span> <span class="white">Rellax</span>('.rellax');
-                  </code>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="row">
-              <div class="col-md-12 text-center" style="margin-top:80px">
-                <h4>Basic Markup (default Speed: -4)</h4>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-offset-2 col-md-8">
-                <div class="text-editor">
-                  <code>
-                    &lt;div <span class="purple">class</span>="<span class="green">rellax</span>"&gt;<br>
-                    <span class="white">&nbsp;&nbsp;I’m slow and smooth</span><br>
-                    &lt;/div&gt;
-                  </code>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="row">
-              <div class="col-md-12 text-center" style="margin-top:40px">
-                <h4>Optional Speed (-10 to +10)</h4>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-offset-2 col-md-8">
-                <div class="text-editor">
-                  <code>
-                    &lt;div <span class="purple">class</span>="<span class="green">rellax</span>" <span class="purple">data-rellax-speed</span>="<span class="green">-7</span>"&gt;<br>
-                    <span class="white">&nbsp;&nbsp;I’m extra slow and smooth</span><br>
-                    &lt;/div&gt;
-                  </code>
-                </div>
-              </div>
-            </div>
-
           </div>
+
+          <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+              <div class="text-editor">
+                <code>
+                  <span class="purple">class</span>
+                  <span class="green">rellax</span>
+                  <br>
+                  <span class="white">I’m slow and smooth</span>
+                  <br>
+                </code>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-12 text-center" style="margin-top:80px">
+              <h2>Basic Markup (default Speed: -4)</h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+              <div class="text-editor">
+                <code>
+                  <span class="purple">class</span>
+                  <span class="green">rellax</span>
+                  <br>
+                  <span class="white">I’m slow and smooth</span>
+                  <br>
+                </code>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-12 text-center" style="margin-top:40px">
+              <h2 id="start-here">Who are you?</h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+              <div class="text-editor">
+                <code>
+                  <span class="purple">class</span>
+                  <span class="green">rellax</span>
+                  <br>
+                  <span class="white">I’m slow and smooth</span>
+                  <br>
+                </code>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
-      
+
     </main>
 
     <script src="rellax.min.js"></script>
@@ -123,6 +129,18 @@
         round: true,
       });
     </script>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function (){
+        $(window).scrollTop(10000);
+      });
+      $(function(){
+        var style = $('.fixed-top').attr('style');
+        $(window).on("mousemove", ()=>{
+          $('.fixed-top').attr('style', style.replace('.gif', '_no-land_anim.gif'))
+          // window.setTimeout(()=>{$('.fixed-top').attr('style', style);}, 5000)
+        });
+      });
+    </script>
   </body>
 </html>

@@ -13,7 +13,6 @@ export default class App extends React.Component{
       hideLogin: true,
       bodyClass: "portfolio-body",
     };
-
   };
 
   toggleForm=()=>{
