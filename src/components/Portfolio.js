@@ -138,7 +138,7 @@ export default class Portfolio extends Component {
         />
         <h3 id="headerText">
           this is some of the neat stuff
-          <a href = "https://github.com/senbenito"> senbenito </a>
+          <a href = "https://github.com/senbenito" id="me"> shannon </a>
           has crafted</h3>
         <Tooltip
           isOpen = {this.state.tooltipOpen}

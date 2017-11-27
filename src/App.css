@@ -124,6 +124,12 @@ a{
   font-family: 'Raleway', cursive;
 }
 
+#me{
+  color: #FE5F00;
+  font-size: 7vh;
+  font-family: 'Monoton', cursive;
+}
+
 h3 {
   width: 100vw;
   font-family: 'Monoton', cursive;
